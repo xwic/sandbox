@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC
+		"-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+		"http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+    <session-factory>
+
+	<!-- NOTICE: Hibernate Properties are now specified in the hibernate.properties
+	   - file in the WEB-INF folder.
+	   -->
+
+	<!-- CRM COMMON entities -->
+	    <mapping resource="de/xwic/appkit/core/file/impl/hbn/HbnFile.hbm.xml"/>
+        <mapping resource="de/xwic/appkit/core/dao/impl/hbn/AH.hbm.xml"/>
+        <mapping resource="de/xwic/appkit/core/dao/impl/hbn/configproperty.hbm.xml"/>
+        <mapping resource="de/xwic/appkit/core/dao/impl/hbn/MonitoringElement.hbm.xml"/>
+		<mapping resource="de/xwic/appkit/core/dao/impl/hbn/EntityComment.hbm.xml"/> 		        
+        <mapping resource="de/xwic/appkit/core/dao/impl/hbn/PE.hbm.xml"/>        
+        <mapping resource="de/xwic/appkit/core/dao/impl/hbn/PL.hbm.xml"/>
+        <mapping resource="de/xwic/appkit/core/dao/impl/hbn/PT.hbm.xml"/>
+		<mapping resource="de/xwic/appkit/core/dao/impl/hbn/ReportFolder.hbm.xml"/>  
+		<mapping resource="de/xwic/appkit/core/dao/impl/hbn/ReportTemplate.hbm.xml"/>          
+		<mapping resource="de/xwic/appkit/core/dao/impl/hbn/CM.hbm.xml"/>  
+		<mapping resource="de/xwic/appkit/core/dao/impl/hbn/CM.history.hbm.xml"/>  
+		<mapping resource="de/xwic/appkit/core/dao/impl/hbn/ST.hbm.xml"/>          
+        <mapping resource="de/xwic/appkit/core/dao/impl/hbn/security.hbm.xml"/>
+		<mapping resource="de/xwic/appkit/core/dao/impl/hbn/SYNC_STATE.hbm.xml"/>
+		<mapping resource="de/xwic/appkit/core/dao/impl/hbn/UserListProfile.hbm.xml"/>
+		<mapping resource="de/xwic/appkit/core/dao/impl/hbn/UserViewConfiguration.hbm.xml"/>
+		<mapping resource="de/xwic/appkit/core/dao/impl/hbn/SystemTraceStatistic.hbm.xml"/>             
+	<!-- /CRM COMMON entities -->
+	
+	<!-- start component -->
+		<mapping resource="se/xwic/sandbox/start/model/entities/impl/QuickLaunch.hbm.xml" />
+
+
+    </session-factory>
+</hibernate-configuration>

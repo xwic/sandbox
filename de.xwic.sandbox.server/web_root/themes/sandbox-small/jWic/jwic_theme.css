@@ -1,0 +1,34 @@
+/** Default Theme */
+
+/**
+ * Toolbar Button on hover
+ */
+div.j-toolbar div.j-toolbar-elm {
+	height: 26px;
+	padding-left: 3px;
+}
+
+div.j-toolbar span.j-toolbar-label {
+	font-size: 8pt;
+	float: left;
+	color: #707070;
+	margin-top: 9px;
+}
+div.j-toolbar button.ui-button {
+	height: 24px;
+	font-size: 8pt;
+	padding: 1px;
+	margin: 0px;
+	border: 1px solid transparent;
+	background-color: transparent;
+	background: none;
+}
+div.j-toolbar button.ui-button .ui-button-text {
+	padding: 0px 2px;
+}
+div.j-toolbar button.ui-state-hover {
+	border: 1px solid #067be0; 
+	background: #75c0ff url(../jQuery/images/ui-bg_flat_75_75c0ff_40x100.png) 50% 50% repeat-x;
+	font-weight: normal; 
+	color: #212121;
+}

@@ -1,0 +1,107 @@
+/** sandbox-small theme */
+
+body
+{
+    font-size: 8pt;
+}
+
+ textarea {
+ 	font-family: Arial, Sans-Serif;
+ 	font-size: 8pt;
+ }
+
+#testInfo {
+		font-size: 8pt;
+	}
+	
+.testInfoLabel {
+	font-size: 8pt;
+}	
+
+#footer {
+	font-size: 8px;
+}
+
+
+/* Top Menu Styles */
+div.h_item {
+	font-size: 12px;
+}
+div.h_item.h_root {
+	font-size: 16px;
+}
+
+div.h_item.h_item_hover div.hmi_body {
+	font-size: 12px;
+}
+
+
+div.h_sm_item {
+	font-size: 12px;
+}
+/**
+ * h_menu sub box
+ */
+ 
+div.h_menu_subbox {
+	font-size: 12px;
+}
+
+/*
+ *  CONTENT Styles
+ */
+
+h1
+{
+    margin: 0px 0px 5px 0px;
+    font-size: 12pt;
+    color: #808080;
+    font-weight: normal;
+}
+
+.contentHeader h1 {
+	font-size: 16px;
+}
+.contentHeader .subtitle {
+	font-size: 10px;
+}
+
+div.fancyAttachmentBar a
+{
+    font-size: 8pt;
+}
+
+
+  select.small {
+  	font-size: 8pt;
+  }
+  
+
+ /**
+  * Override default table styles.
+  * The other styles are in the jwic/tbviewer.css file
+  */
+  
+ table.tblViewer table.tblData {
+ 	font-size: 8pt;
+ }
+
+ table.tblViewer table.tblData td {
+ 	font-size: 8pt;
+ } 
+
+div.shoutBox_comment {
+	padding-bottom: 10px;
+	padding-top: 2px;
+	padding-left: 4px;
+	padding-right: 4px;
+	background-color: #E0E0E0;
+	color: #000000;
+	font-size: 8pt;
+}
+div.shoutBox_commentFooter {
+	margin-top: 5px;
+	text-align: right;
+	font-size: 8pt;
+	color: #A0A0A0;
+}

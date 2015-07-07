@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE web-app PUBLIC '-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN' 'http://java.sun.com/dtd/web-app_2_3.dtd'>
+
+<web-app>
+
+	<context-param>
+		<param-name>sso.auth.enabled</param-name>
+		<param-value>true</param-value>
+	</context-param>
+
+	<context-param>
+		<param-name>sso.auth.serviceurl</param-name>
+		<param-value>http://xwic.de/xwicsso/ctrl.css</param-value>
+	</context-param>
+
+	<context-param>
+		<param-name>sso.auth.userurl</param-name>
+		<param-value>http://xwic.de/xwicsso/auth.xwic</param-value>
+	</context-param>
+
+	<context-param>
+		<param-name>sso.auth.basedomain</param-name>
+		<param-value>XWIC</param-value>
+	</context-param>
+	
+	<!-- Security specific resources -->
+	<filter>
+	  <filter-name>SessionRequestFilter</filter-name>
+	  <display-name>SessionRequestFilter</display-name>
+	  <filter-class>de.xwic.sandbox.security.SessionRequestFilter</filter-class>
+	</filter>
+
+	<filter>
+	  <filter-name>GlobalCookieHandler</filter-name>
+	  <display-name>GlobalCookieHandler</display-name>
+	  <filter-class>de.xwic.sandbox.security.CookieHandler</filter-class>
+	</filter>
+
+	<filter>
+	  <filter-name>SSOAuthFilter</filter-name>
+	  <display-name>SSOAuthFilter</display-name>
+	  <filter-class>de.xwic.sandbox.security.SSOAuthFilter</filter-class>
+	</filter>
+	
+	<filter-mapping>
+	  <filter-name>SessionRequestFilter</filter-name>
+	  <url-pattern>/*</url-pattern>
+	</filter-mapping>
+
+	<filter-mapping>
+	  <filter-name>GlobalCookieHandler</filter-name>
+	  <url-pattern>/*</url-pattern>
+	</filter-mapping>
+
+	<filter-mapping>
+	  <filter-name>SSOAuthFilter</filter-name>
+	  <url-pattern>*.xwic</url-pattern>
+	</filter-mapping>
+
+	<listener>
+		<listener-class>de.xwic.sandbox.server.ServletLifecycleListener</listener-class>
+	</listener>
+	<!-- Define the jWic main servlet -->
+	<servlet>
+		<servlet-name>jwic</servlet-name>
+		<servlet-class>de.jwic.web.DispatcherServlet</servlet-class>
+		<!-- Specifies the location of the log4j initialisation file. If you - 
+			do not specify this parameter, the servlet assumes that the - a logging system 
+			is already setup elsewhere. -->
+		<init-param>
+			<param-name>log4j-init-file</param-name>
+			<param-value>/WEB-INF/log4j.properties</param-value>
+		</init-param>
+		<init-param>
+			<param-name>setRootDir</param-name>
+			<param-value>jwicweb.root</param-value>
+		</init-param>
+		<load-on-startup>1</load-on-startup>
+	</servlet>
+
+	<!-- Define the ClassPathResourceServlet. - This servlet allows jWic application 
+		to reference - images that are stored in the classpath (jar). -->
+	<servlet>
+		<servlet-name>cpres</servlet-name>
+		<servlet-class>de.jwic.web.ClasspathResourceServlet</servlet-class>
+	</servlet>
+
+	<!-- map the servlet to all files ending with .wic -->
+	<servlet-mapping>
+		<servlet-name>jwic</servlet-name>
+		<url-pattern>*.xwic</url-pattern>
+	</servlet-mapping>
+
+
+	<servlet-mapping>
+		<servlet-name>cpres</servlet-name>
+		<url-pattern>/cp/*</url-pattern>
+	</servlet-mapping>
+
+	<welcome-file-list>
+		<welcome-file>
+			sandbox.xwic
+		</welcome-file>
+	</welcome-file-list>
+</web-app>

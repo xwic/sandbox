@@ -1,0 +1,53 @@
+#parse("jwic/include.header.vtl")
+##parse("ecolib/ecolib.page.header")
+
+	#if($context.getInitParameter("debug") == "1")
+	
+		# add your custom META, SCRIPT or LINK tags here
+		<link rel="stylesheet" type="text/css" href="xwiccube/xwiccube.css">
+		<link rel="stylesheet" type="text/css" href="sandbox.css">
+		<link rel="stylesheet" type="text/css" href="sandbox_new.css">
+		<link rel="stylesheet" type="text/css" href="xwic.css">
+		<link rel="stylesheet" type="text/css" href="sandbox_smhead.css">
+		
+		<SCRIPT LANGUAGE="JavaScript" SRC="sandbox.js"></SCRIPT>
+		<SCRIPT LANGUAGE="JavaScript" SRC="sandboxmenu.js"></SCRIPT>
+		<SCRIPT LANGUAGE="JavaScript" SRC="xwiccube/json2.js"></SCRIPT>	
+		<SCRIPT LANGUAGE="JavaScript" SRC="xwiccube/xwiccube.js"></SCRIPT>
+		
+		
+	#else
+	
+		#* PRODUCTION-MINIFY-START *#
+		#* This part is replaced during the build process with a single CSS and a single JS *#
+		#* Make sure to NOT comment out lines that you don't want added in the final build. The compressor will also pick up commented lines *#
+			## add your custom META, SCRIPT or LINK tags here
+		<link rel="stylesheet" type="text/css" href="xwiccube/xwiccube.css">
+		<link rel="stylesheet" type="text/css" href="sandbox.css">
+		<link rel="stylesheet" type="text/css" href="sandbox_new.css">
+		<link rel="stylesheet" type="text/css" href="xwic.css">
+		<link rel="stylesheet" type="text/css" href="sandbox_smhead.css">
+		<SCRIPT LANGUAGE="JavaScript" SRC="sandbox.js"></SCRIPT>
+		<SCRIPT LANGUAGE="JavaScript" SRC="sandboxmenu.js"></SCRIPT>
+		<SCRIPT LANGUAGE="JavaScript" SRC="xwiccube/json2.js"></SCRIPT>	
+		<SCRIPT LANGUAGE="JavaScript" SRC="xwiccube/xwiccube.js"></SCRIPT>
+		
+		#* PRODUCTION-MINIFY-END *#		
+	
+	#end
+	#* Add Theme Overlay *#
+	<link rel="stylesheet" type="text/css" href="$contextPath/themes/${context.themeName}/sandbox/sandbox_theme.css">	
+	#* PRODUCTION-RENAME-START *#
+			
+		
+	#* PRODUCTION-RENAME-END *#
+
+#parse("jwic/include.body.vtl")
+
+## Uncomment the following line to enable debug informations
+## #parse("jwic/include.debug.vtl")
+
+<!-- content -->
+$content.render()
+<!-- /content -->
+#parse("jwic/include.footer.vtl")

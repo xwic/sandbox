@@ -1,0 +1,13 @@
+<config>
+	<extensions>
+		<!--
+			ENTITY EDITORS 
+		 -->
+		
+		<extension extensionPointId="entityEditors" id="roleEditor"
+			className="de.xwic.sandbox.system.ui.roles.editor.RoleEditorCreator"
+			priority="0">
+			<attribute key="editedEntity">de.xwic.appkit.core.security.IRole</attribute>
+		</extension>
+	</extensions>
+</config>	

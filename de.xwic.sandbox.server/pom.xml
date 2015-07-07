@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<parent>
+		<groupId>de.xwic.sandbox</groupId>
+		<artifactId>mvn-parent-prj</artifactId>
+		<version>1.1.7-SNAPSHOT</version>
+	</parent>
+	<modelVersion>4.0.0</modelVersion>
+	<name>SANDBOX::SERVER</name>
+
+	<artifactId>server</artifactId>
+	<packaging>war</packaging>
+
+	<properties>
+		<server-dist>${project.build.directory}/${deployProfileFinalName}</server-dist>
+	</properties>
+	
+	<build>
+		<pluginManagement>
+			<plugins>
+            <plugin>
+				<artifactId>maven-resources-plugin</artifactId>
+				<version>2.6</version>
+				<executions>
+					<execution>
+						<id>copyinstaller</id>
+						<phase>validate</phase>
+						<goals>
+							<goal>copy-resources</goal>
+						</goals>
+						<configuration>
+							<outputDirectory>${server-dist}/WEB-INF/installer/</outputDirectory>
+							<resources>
+								<resource>
+									<directory>.</directory>
+									<includes>
+										<include>installer_files/**</include>
+										<include>defaults/**</include>
+										<include>installer.properties</include>
+										<include>installer.bat</include>
+										<include>log4j.properties</include>
+										<include>setcp.bat</include>
+									</includes>
+								</resource>
+							</resources>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
+			
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-source-plugin</artifactId>
+					<executions>
+						<execution>
+							<id>attach-sources</id>
+							<phase>prepare-package</phase>
+							<goals>
+								<goal>jar</goal>
+							</goals>
+							<configuration>
+								<outputDirectory>${project.build.directory}/${deployProfileFinalName}/WEB-INF/lib-src</outputDirectory>
+								<finalName>${project.artifactId}-${project.version}</finalName>
+							</configuration>
+						</execution>
+					</executions>
+				</plugin>
+
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-dependency-plugin</artifactId>
+					<version>2.8</version>
+					<executions>
+						<execution>
+							<id>copy-dependencies</id>
+							<phase>compile</phase>
+							<goals>
+								<goal>copy-dependencies</goal>
+							</goals>
+							<configuration>
+								<outputDirectory>${project.build.directory}/${deployProfileFinalName}/WEB-INF/lib-src</outputDirectory>
+								<excludeTransitive>true</excludeTransitive>
+								<includeGroupIds>de.xwic</includeGroupIds>
+								<classifier>sources</classifier>
+							</configuration>
+						</execution>
+					</executions>
+				</plugin>
+			</plugins>
+		</pluginManagement>
+	</build>
+	<profiles>
+		<profile>
+			<id>deploy-development</id>
+			<properties>
+				<deployProfileFinalName>sandbox_x1</deployProfileFinalName>
+			</properties>
+		</profile>
+	</profiles>
+
+	<dependencies>
+		<dependency>
+			<groupId>de.xwic.sandbox</groupId>
+			<artifactId>demoapp-model</artifactId>
+			<version>${project.version}</version>
+		</dependency>
+			
+		<dependency>
+			<groupId>de.xwic.sandbox</groupId>
+			<artifactId>demoapp-ui</artifactId>
+			<version>${project.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>de.xwic.sandbox</groupId>
+			<artifactId>util</artifactId>
+			<version>${project.version}</version>
+		</dependency>
+		<dependency>
+		    <groupId>jaxen</groupId>
+		    <artifactId>jaxen</artifactId>
+		</dependency>
+		
+		<dependency>
+			<groupId>de.xwic.jwic</groupId>
+			<artifactId>jwic-core</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>de.xwic.jwic</groupId>
+			<artifactId>jwic-controls</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>de.xwic.jwic</groupId>
+			<artifactId>jwic-compatibility</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>de.xwic.appkit</groupId>
+			<artifactId>appkit-core</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>de.xwic.appkit</groupId>
+			<artifactId>appkit-webbase</artifactId>
+		</dependency>
+		
+		<dependency>
+			<groupId>commons-dbcp</groupId>
+			<artifactId>commons-dbcp</artifactId>
+		</dependency>
+		
+		<dependency>
+			<groupId>javax.mail</groupId>
+			<artifactId>mail</artifactId>
+		</dependency>
+		
+		<dependency>
+			<groupId>de.xwic.sandbox</groupId>
+			<artifactId>resources-ui</artifactId>
+			<version>${project.version}</version>
+		</dependency>
+		
+		<dependency>
+			<groupId>de.xwic.sandbox</groupId>
+			<artifactId>start-ui</artifactId>
+			<version>${project.version}</version>
+		</dependency>
+		
+		<dependency>
+			<groupId>de.xwic.sandbox</groupId>
+			<artifactId>system-ui</artifactId>
+			<version>${project.version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>de.xwic.sandbox</groupId>
+			<artifactId>sandbox-security</artifactId>
+			<version>${project.version}</version>
+		</dependency>
+		
+		<dependency>
+        <groupId>org.codehaus.groovy</groupId>
+        <artifactId>groovy-all</artifactId>
+    </dependency>
+			
+		<!-- JUST TEST -->
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<scope>test</scope>
+		</dependency>
+
+	</dependencies>
+
+</project>

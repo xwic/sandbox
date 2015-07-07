@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entities>
+  <entity class="de.xwic.appkit.core.model.entities.IMitarbeiter" autoLoadProperties="true" history="true" replicationOrder="20" monitorable="true"  defaultDisplayProperty="nachname">
+  	<title>${nachname}, ${vorname}</title>
+  	<property name="nachname" maxLength="50" required="true" />
+    <property name="vorname" maxLength="50" required="true" />
+    <property name="zusatz" maxLength="120" required="false" />
+    <property name="email" maxLength="200" required="false" />
+    <property name="handyNr" maxLength="50" required="false" />
+    <property name="telefon" maxLength="50" required="false" />
+    <property name="fax" maxLength="50" required="false" />
+    <property name="logonName" maxLength="50" required="false" />
+    <property name="einheit" picklistId="cm.einheit" hidden="true" />
+    <property name="salesTeam" hidden="false" required="false"/>
+  </entity>
+</entities>

@@ -1,0 +1,49 @@
+<table>
+  <tr>
+    <td>$insert.control("lblName")</td>
+    <td>$insert.control("ibName")</td>
+  </tr>
+</table>
+
+<table style="margin:20px 10px 20px 10px">
+	<tr>
+		<td>
+			#foreach ($mapEntry in $control.packageMap.entrySet())
+				<span style="font:20px bold">$mapEntry.key</span>
+				<table class="roleEditTable" style="margin:10px 30px 50px 30px" width=100% cellspacing="0">
+						<tr>
+							<th width=40%>CLASS NAME</th>
+							<th width=40%>ENTITY NAME</th>
+							<th width=5%>READ</th>
+		          			<th width=5%>CREATE</th>
+		          			<th width=5%>UPDATE</th>
+		          			<th width=5%>DELETE</th>
+						</tr>
+					#foreach($controlId in $mapEntry.value)
+						<tr>
+		          			<td style="padding:7px;">
+		          				$insert.control($controlId.className)
+		          			</td>
+		          			<td style="padding:7px">
+		            			$insert.control($controlId.lblId)
+		          			</td>
+		          			<td style="padding:7px">
+		            			$insert.control($controlId.chkReadId)
+		          			</td>
+		          			<td style="padding:7px">
+		            			$insert.control($controlId.chkCreateId)
+		          			</td>
+		          			<td style="padding:7px">
+		            			$insert.control($controlId.chkUpdateId)
+		          			</td>
+		          			<td style="padding:7px">
+		            			$insert.control($controlId.chkDeleteId)
+		          			</td>
+		        		</tr>
+					#end
+				</table>
+			#end
+		</td>
+	</tr>
+</table>
+	

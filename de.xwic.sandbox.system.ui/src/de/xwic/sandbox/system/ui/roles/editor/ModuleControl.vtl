@@ -1,0 +1,17 @@
+<table class="roleEditTable" cellspacing="0">
+	<tr>
+		<th style="padding-left:10px; padding-right:0px" width="500">SCOPE</th>
+		<th style="padding-left:0px; padding-right:0px">ACCES</th>
+	</tr>
+	#foreach($controlId in $control.otherControlsIds)
+        <tr>
+          <td style="padding-left:10px; padding-right:0px">
+            $insert.control($controlId.lblId)
+          </td>
+          <td align = "right" style="padding-left:0px; padding-right:0px;">
+            $insert.control($controlId.chkAccessId)
+          </td>
+        </tr>
+	#end	
+		
+</table>

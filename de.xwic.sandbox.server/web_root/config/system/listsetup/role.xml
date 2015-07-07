@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<table type="de.xwic.appkit.core.security.IRole" id="default" default-sort="server" queryEntities="false">
+
+	<action>CREATE</action>
+	<action>EDIT</action>
+	<action>DELETE</action>
+
+
+	<column id="name" default="1" width="600"/>
+
+</table>

@@ -1,0 +1,77 @@
+#headerSmall
+{
+	background-image: url(images/header_back.jpg);
+	background-repeat: repeat-x;
+	height: 80px;
+	position: relative;
+}
+
+#headerSmall .h_logo {
+	position: absolute;
+	left: 6px;
+	top: 6px;
+}
+#headerSmall .h_help {
+	position: absolute;
+	bottom: 12px;
+	right: 80px;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	line-height: 14px;
+	color: #FFFFFF;
+}
+#headerSmall .h_help a {
+	color: #FFFFFF;
+	text-decoration: none;
+}
+#headerSmall .h_help a:hover {
+	text-decoration: underline;
+}
+#headerSmall .h_exit {
+	position: absolute;
+	bottom: 12px;
+	right: 26px;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	line-height: 14px;
+	color: #FFFFFF;
+}
+#headerSmall .h_exit a {
+	color: #FFFFFF;
+	text-decoration: none;
+}
+#headerSmall .h_exit a:hover {
+	text-decoration: underline;
+}
+#headerSmall .h_add {
+	position: absolute;
+	right: 26px;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	line-height: 14px;
+	color: #FFFFFF;
+	top: 26px;
+}
+
+#headerSmall .h_userinfo {
+	position: absolute;
+	bottom: 13px;
+	right: 144px;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	line-height: 14px;
+	color: #FFFFFF;
+}
+#headerSmall #h_menu {
+	height: 46px;
+	width: 536px;
+	margin-right: auto;
+	margin-left: auto;
+	background-image: url(images/meinmenu_back.png);
+	background-repeat: no-repeat;
+	background-position: center top;
+	text-align: center;
+	padding-left: 120px;
+	white-space: nowrap;
+	padding-top: 56px;
+}

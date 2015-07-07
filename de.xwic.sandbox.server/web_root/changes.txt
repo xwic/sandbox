@@ -1,0 +1,10 @@
+Change Notes
+============
+v1.1.5 (March 2015)
+	o Bugfixes in pdf reporting
+v1.1.4 (March 2015)
+	o Added pdf reporting
+	o Changed action "team" values
+	o Bugfixes	
+v1.0.0 (February 2015)
+	o First release

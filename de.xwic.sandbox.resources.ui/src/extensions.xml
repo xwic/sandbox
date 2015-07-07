@@ -1,0 +1,21 @@
+<config>
+	<extensions>
+		<!--
+			ENTITY EDITORS 
+		 -->
+		<extension extensionPointId="entityEditors" id="peopleEditor"
+			className="de.xwic.sandbox.resources.ui.people.editor.PeopleEditorCreator"
+			priority="0">
+			<attribute key="editedEntity">de.xwic.appkit.core.model.entities.IMitarbeiter</attribute>
+		</extension>
+		
+		<!--
+			LABEL PROVIDERS 
+		 -->
+		<extension extensionPointId="customLabelProviders" id="peopleLabelProvider"
+			className="de.xwic.sandbox.resources.ui.people.PeopleColumnLabelProvider"
+			priority="0">
+			<attribute key="entity">de.xwic.appkit.core.model.entities.IMitarbeiter</attribute>
+		</extension>
+	</extensions>
+</config>	

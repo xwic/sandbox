@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<export type="security">
+  <exportddate>22.03.2007 11:28:31</exportddate>
+  <data>
+    <entities type="de.xwic.appkit.core.security.IAction">
+      <entity id="1">
+        <name>CREATE</name>
+      </entity>
+      <entity id="2">
+        <name>READ</name>
+      </entity>
+      <entity id="3">
+        <name>UPDATE</name>
+      </entity>
+      <entity id="4">
+        <name>DELETE</name>
+      </entity>
+      <entity id="5">
+        <name>ACCESS</name>
+      </entity>
+      <entity id="6">
+        <name>NONE</name>
+      </entity>
+      <entity id="7">
+        <name>WRITE</name>
+      </entity>
+      <entity id="8">
+        <name>APPROVE</name>
+      </entity>
+      <entity id="9">
+        <name>EXECUTE</name>
+      </entity>
+    </entities>
+    <entities type="de.xwic.appkit.core.security.IActionSet">
+      <entity id="1">
+        <actions>
+          <set>
+            <element type="de.xwic.appkit.core.security.IAction">2</element>
+            <element type="de.xwic.appkit.core.security.IAction">4</element>
+            <element type="de.xwic.appkit.core.security.IAction">3</element>
+            <element type="de.xwic.appkit.core.security.IAction">1</element>
+          </set>
+        </actions>
+        <name>CRUD</name>
+      </entity>
+    </entities>
+	<entities type="de.xwic.appkit.core.security.IScope">
+      <entity id="1">
+        <actions>
+          <set>
+            <element type="de.xwic.appkit.core.security.IAction">5</element>
+          </set>
+        </actions>
+        <actionSets>
+          <set/>
+        </actionSets>
+        <description>
+          <null/>
+        </description>
+        <name>MODULE.ADMIN</name>
+      </entity>
+    </entities>   
+    <entities type="de.xwic.appkit.core.security.IRight">
+   <!-- Business Administrator -->
+      <entity>
+        <action>5</action>
+        <scope>1</scope>
+        <role>1</role>
+      </entity>
+   </entities>
+  </data>
+</export>

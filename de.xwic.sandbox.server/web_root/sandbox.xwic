@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- <!DOCTYPE application SYSTEM "http://www.jwic.de/dtd/xwic-3.0.dtd"> -->
+<application>
+
+	<name>xWic Sandbox Application</name>
+	<class>de.xwic.sandbox.server.SandboxApplication</class>
+	<serializable>false</serializable>
+	<singlesession>true</singlesession>
+	<requireauth>false</requireauth>
+	
+</application>

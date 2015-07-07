@@ -1,0 +1,19 @@
+#set($setup = $control.setup)
+#set($server = $setup.getProperty("server.name"))
+<div style="margin: 70px auto 0px auto; width: 780px; height: 415px; padding-top: 80px;">
+
+		<img src="images/Sandbox_Header_LowRes.jpg"><br>
+		<br>
+		
+	   	<div style="font-size: 8pt; float: left; padding-left: 20px; "><span style="color: #808080">System:</span> <span style="color: #0067C6">$!server</span></div>
+		<div style="font-size: 8pt; float: right; text-align: right; padding-right: 52px;"><span style="color: #808080">Version:</span> <span style="color: #0067C6">$!setup.version</span></div>
+	    
+	        <p align="center" style="padding-top: 50px; font-size: 10pt; color: #808080;">Starting Application...</p>
+</div>
+<script language="javascript">
+	window.setTimeout("JWic.fireAction('$control.controlID', 'load', '')", 100);
+</script>
+<noscript>
+	<p align="center" style="color: red;">You must enable JavaScript in order to use this application.</p>
+</noscript>
+

@@ -1,0 +1,49 @@
+<html xmlns="http://www.w3.org/1999/xhtml" >
+<head id="Head2" runat="server">
+    <title>xWic - Sandbox App logout</title>
+    <link rel="stylesheet" type="text/css" href="sandbox.css">
+    <script language="javascript">
+    	function permLogout() {
+        	if (document.cookie.indexOf("xwic.usersession.key=") != -1) {
+
+        		document.cookie = 'xwic.usersession.key=x; expires=Thu, 01-Jan-70 00:00:01 GMT;';
+        		document.getElementById("permLogoutInfo").innerHTML = '<b>You have been logged out permanently.</b>';
+        	}
+    	}
+    	function checkCookie() {
+    		if (document.cookie.indexOf("xwic.usersession.key=") != -1) {
+        		document.getElementById("permLogoutInfo").style.visibility = 'visible';
+    		}
+    	}
+    </script>
+    <style>
+    	a {
+    		color: #2020F0;
+    	}
+    	a:visited {
+    		color: #2020F0;
+    	}
+    </style>
+</head>
+<body onload="checkCookie(); return false;">
+    <form id="form2" runat="server" style="margin: 0px; padding: 0px;">
+<div style="margin: 70px auto 0px auto; text-align: center; background: url(images/frame_12.png); width: 600px; height: 415px;">
+  <div style="padding-top: 70px;">
+	  <p style="font-size: 24pt; color: #0266C4; margin-bottom: 0px; padding-bottom: 0px;">xWic - Sandbox App</p>
+        <p style="font-size: 14pt;">You have exited the application.</p>
+        <br />
+        <br>
+        <div id="permLogoutInfo" style="visibility: hidden;">
+        	<p style="font-size: 10pt;">A cookie is stored on your computer to<br> remember you when you come back. <br>
+        	<a href="#" onclick="permLogout(); return false;">Click here to permanently logout from this computer.</a>
+        </div>
+        <br />
+        
+        <br />
+        <br />
+        <a href="sandbox.xwic">Restart Application</a>
+    </div>
+</div>
+    </form>
+</body>
+</html>

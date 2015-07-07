@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<table type="de.xwic.appkit.core.model.entities.IMitarbeiter" id="default" default-sort="server" queryEntities="false">
+
+	<action>CREATE</action>
+	<action>EDIT</action>
+
+	<column id="nachname" default="1" width="100"/>
+	<column id="vorname" default="1" width="100"/>
+	<column id="telefon" default="1" width="100"/>
+	<column id="handyNr" default="1" width="100"/>
+	<column id="logonName" default="1" width="100"/>
+	<column id="email" default="0" width="150"/>
+	<column id="zusatz" default="0" width="120" />
+	<column id="fax" default="0" width="100" />
+</table>

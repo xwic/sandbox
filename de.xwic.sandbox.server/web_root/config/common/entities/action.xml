@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entities>
+  <entity class="de.xwic.appkit.core.security.IAction" autoLoadProperties="true" transform="true">
+  
+  </entity>
+</entities>

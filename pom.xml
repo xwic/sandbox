@@ -1,0 +1,438 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<name>SANDBOX</name>
+
+	<groupId>de.xwic.sandbox</groupId>
+	<artifactId>mvn-parent-prj</artifactId>
+	<version>1.1.7-SNAPSHOT</version>
+	<packaging>pom</packaging>
+
+	<build>
+		<directory>${pathTargetFolder}/${project.artifactId}</directory>
+		<outputDirectory>${pathTargetFolder}/${project.artifactId}/classes</outputDirectory>
+		<testOutputDirectory>${pathTargetFolder}/${project.artifactId}/test-classes</testOutputDirectory>
+
+		<finalName>${deployProfileFinalName}</finalName>
+
+		<sourceDirectory>src</sourceDirectory>
+		<testSourceDirectory>src_test</testSourceDirectory>
+		<scriptSourceDirectory>scripts</scriptSourceDirectory>
+
+		<resources>
+			<resource>
+				<directory>src</directory>
+				<excludes>
+					<exclude>**/*.java</exclude>
+				</excludes>
+			</resource>
+			<resource>
+				<directory>resources</directory>
+			</resource>
+		</resources>
+
+		<testResources>
+			<testResource>
+				<directory>src_test_resources</directory>
+			</testResource>
+		</testResources>
+
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>2.3.1</version>
+				<configuration>
+					<source>1.6</source>
+					<target>1.6</target>
+					<encoding>Cp1252</encoding>
+				</configuration>
+			</plugin>
+
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-war-plugin</artifactId>
+				<version>2.3</version>
+				<configuration>
+					<!-- Name of the generated WAR file -->
+					<warName>${deployProfileFinalName}</warName>
+
+					<webResources>
+						<!-- <resource> <directory>environment/templates</directory> <filtering>true</filtering> 
+							</resource> -->
+						<resource>
+							<directory>${deployProfileSettingsFolder}</directory>
+							<filtering>false</filtering>
+						</resource>
+					</webResources>
+
+					<!-- Name of the WEB folder -->
+					<warSourceDirectory>web_root</warSourceDirectory>
+
+					<!-- Pack sources in JAR -->
+					<archiveClasses>true</archiveClasses>
+
+					<!-- Generate separate JAR with sources -->
+					<!-- <attachClasses>true</attachClasses> <classesClassifier>classes</classesClassifier> -->
+					<packagingExcludes>
+						WEB-INF/lib/servlet-api-*.jar,
+						WEB-INF/xcube/**,
+						WEB-INF/prefstore/**,
+						WEB-INF/sessions/**,
+						jetty-session/**,
+						WEB-INF/server.override.properties
+					</packagingExcludes>
+					<filters>
+						<filter>${deployProfileFilterProperties}</filter>
+					</filters>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-source-plugin</artifactId>
+				<version>2.1.2</version>
+				<executions>
+					<execution>
+						<id>attach-sources</id>
+						<phase>prepare-package</phase>
+						<goals>
+							<goal>jar</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-jar-plugin</artifactId>
+				<version>2.3.2</version>
+				<configuration>
+					<finalName>${deployProfileFinalName}</finalName>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.jacoco</groupId>
+				<artifactId>jacoco-maven-plugin</artifactId>
+				<version>0.7.4.201502262128</version>
+				<executions>
+					<execution>
+						<goals>
+							<goal>prepare-agent</goal>
+						</goals>
+					</execution>
+					<execution>
+						<id>report</id>
+						<phase>prepare-package</phase>
+						<goals>
+							<goal>report</goal>
+						</goals>
+					</execution>
+				</executions>
+				<configuration>
+					<destFile>${sonar.jacoco.reportPath}</destFile>
+				</configuration>
+			</plugin>
+		</plugins>
+		<pluginManagement>
+			<plugins>
+				<!--This plugin's configuration is used to store Eclipse m2e settings 
+					only. It has no influence on the Maven build itself. -->
+				<plugin>
+					<groupId>org.eclipse.m2e</groupId>
+					<artifactId>lifecycle-mapping</artifactId>
+					<version>1.0.0</version>
+					<configuration>
+						<lifecycleMappingMetadata>
+							<pluginExecutions>
+								<pluginExecution>
+									<pluginExecutionFilter>
+										<groupId>
+											org.apache.maven.plugins
+										</groupId>
+										<artifactId>
+											maven-dependency-plugin
+										</artifactId>
+										<versionRange>
+											[2.8,)
+										</versionRange>
+										<goals>
+											<goal>
+												copy-dependencies
+											</goal>
+										</goals>
+									</pluginExecutionFilter>
+									<action>
+										<ignore />
+									</action>
+								</pluginExecution>
+								<pluginExecution>
+									<pluginExecutionFilter>
+										<groupId>org.jacoco</groupId>
+										<artifactId>jacoco-maven-plugin</artifactId>
+										<versionRange>[0.5,)
+										</versionRange>
+										<goals>
+											<goal>prepare-agent</goal>
+										</goals>
+									</pluginExecutionFilter>
+									<action>
+										<!-- m2e doesn't know what to do with jacoco,
+										let's ignore it or annoying error markers appear
+										see http://wiki.eclipse.org/M2E_plugin_execution_not_covered
+										-->
+										<ignore></ignore>
+									</action>
+								</pluginExecution>								
+							</pluginExecutions>
+						</lifecycleMappingMetadata>
+					</configuration>
+				</plugin>
+				<plugin>
+					<groupId>org.codehaus.mojo</groupId>
+					<artifactId>cobertura-maven-plugin</artifactId>
+					<version>2.6</version>
+				</plugin>
+			</plugins>
+		</pluginManagement>		
+		
+	</build>
+
+	<reporting>
+		<outputDirectory>${pathTargetFolder}/site</outputDirectory>
+	</reporting>
+
+    <properties>
+
+		<mvnDependencyVersionxWicjWic>5.2.8</mvnDependencyVersionxWicjWic>
+		<mvnDependencyVersionxWicCube>5.2.1</mvnDependencyVersionxWicCube>
+		<mvnDependencyVersionxWicAppKit>5.2.26</mvnDependencyVersionxWicAppKit>
+		<mvnDependencyVersionxWicETLGine>5.2.11</mvnDependencyVersionxWicETLGine>
+		
+		<pathMavenRoot>${project.basedir}/..</pathMavenRoot>
+		<pathTargetFolder>${pathMavenRoot}/.target-mvn</pathTargetFolder>
+
+		<pathMavenProjectRoot>${pathMavenRoot}/de.xwic.sandbox.mvn</pathMavenProjectRoot>
+
+		<pathMavenAssemblyFolder>${pathMavenProjectRoot}/assembly</pathMavenAssemblyFolder>
+		<pathMavenEnvironmentFolder>${pathMavenProjectRoot}/environment</pathMavenEnvironmentFolder>
+
+		<deployProfileFinalName>${project.artifactId}-${project.version}</deployProfileFinalName>
+		<deployProfileFilterProperties>${pathMavenEnvironmentFolder}/development.properties</deployProfileFilterProperties>
+		<deployProfileSettingsFolder>${pathMavenEnvironmentFolder}/development/</deployProfileSettingsFolder>
+
+		<sonar.core.codeCoveragePlugin>jacoco</sonar.core.codeCoveragePlugin>
+		<sonar.dynamicAnalysis>reuseReports</sonar.dynamicAnalysis>
+		<sonar.jacoco.reportPath>${pathTargetFolder}/jacoco.exec</sonar.jacoco.reportPath>
+	</properties>
+
+	<modules>
+		<module>de.xwic.sandbox.start.ui</module>
+		<module>de.xwic.sandbox.start.model</module>
+		<module>de.xwic.sandbox.server</module>
+  	<module>de.xwic.sandbox.model</module>
+		<module>de.xwic.sandbox.resources.model</module>
+		<module>de.xwic.sandbox.resources.ui</module>
+		<module>de.xwic.sandbox.security</module>
+		<module>de.xwic.base.gui</module>
+		<module>de.xwic.sandbox.demoapp.model</module>
+		<module>de.xwic.sandbox.demoapp.ui</module>
+		<module>de.xwic.sandbox.util</module>
+		<module>de.xwic.sandbox.system.ui</module>
+		<module>de.xwic.sandbox.system.model</module>
+	</modules>
+<profiles>
+		<profile>
+			<id>deploy-development</id>
+			<properties>
+				<deployProfileSettingsFolder>${pathMavenEnvironmentFolder}/development/</deployProfileSettingsFolder>
+			</properties>
+			<activation>
+				<property>
+					<name>deploy.environment</name>
+					<value>dev</value>
+				</property>
+			</activation>
+		</profile>
+
+		<profile>
+			<id>deploy-preview</id>
+			<properties>
+				<deployProfileSettingsFolder>${pathMavenEnvironmentFolder}/preview/</deployProfileSettingsFolder>
+			</properties>
+			<activation>
+				<property>
+					<name>deploy.environment</name>
+					<value>tst</value>
+				</property>
+			</activation>
+		</profile>
+
+		<profile>
+			<id>deploy-stage</id>
+			<properties>
+				<deployProfileSettingsFolder>${pathMavenEnvironmentFolder}/stage/</deployProfileSettingsFolder>
+			</properties>
+			<activation>
+				<property>
+					<name>deploy.environment</name>
+					<value>stage</value>
+				</property>
+			</activation>
+		</profile>
+
+		<profile>
+			<id>deploy-prod</id>
+			<properties>
+				<deployProfileSettingsFolder>${pathMavenEnvironmentFolder}/prod/</deployProfileSettingsFolder>
+			</properties>
+			<activation>
+				<property>
+					<name>deploy.environment</name>
+					<value>prod</value>
+				</property>
+			</activation>
+		</profile>
+
+		<profile>
+			<id>deploy-local</id>
+			<properties>
+				<deployProfileSettingsFolder>${pathMavenEnvironmentFolder}/local/</deployProfileSettingsFolder>
+			</properties>
+			<activation>
+				<property>
+					<name>deploy.environment</name>
+					<value>dev</value>
+				</property>
+			</activation>
+		</profile>
+
+		<profile>
+			<id>deploy-development_proj1</id>
+			<properties>
+				<deployProfileSettingsFolder>/w/apps/ci/sandbox/development/</deployProfileSettingsFolder>
+			</properties>
+			<activation>
+				<property>
+					<name>deploy.environment</name>
+					<value>dev_proj1</value>
+				</property>
+			</activation>
+		</profile>
+
+		<!-- special profiles -->
+		<profile>
+			<id>m2e</id>
+			<activation>
+				<property>
+					<name>m2e.version</name>
+				</property>
+			</activation>
+			<properties>
+				<pathMavenRoot>${project.basedir}</pathMavenRoot>
+				<pathTargetFolder>${pathMavenRoot}/.target-ide</pathTargetFolder>
+				<pathMavenProjectRoot>${pathMavenRoot}/../de.xwic.sandbox.mvn</pathMavenProjectRoot>
+			</properties>
+		</profile>
+
+	</profiles>
+    
+	<dependencyManagement>
+		<dependencies>
+			<dependency>
+				<groupId>de.xwic.jwic</groupId>
+				<artifactId>jwic-core</artifactId>
+				<version>${mvnDependencyVersionxWicjWic}</version>
+			</dependency>
+			<dependency>
+				<groupId>de.xwic.jwic</groupId>
+				<artifactId>jwic-controls</artifactId>
+				<version>${mvnDependencyVersionxWicjWic}</version>
+			</dependency>
+			<dependency>
+				<groupId>de.xwic.jwic</groupId>
+				<artifactId>jwic-compatibility</artifactId>
+				<version>${mvnDependencyVersionxWicjWic}</version>
+			</dependency>
+
+			<dependency>
+				<groupId>de.xwic.appkit</groupId>
+				<artifactId>appkit-core</artifactId>
+				<version>${mvnDependencyVersionxWicAppKit}</version>
+			</dependency>
+			<dependency>
+				<groupId>de.xwic.appkit</groupId>
+				<artifactId>appkit-webbase</artifactId>
+				<version>${mvnDependencyVersionxWicAppKit}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.codehaus.groovy</groupId>
+				<artifactId>groovy-all</artifactId>
+				<version>1.6.0</version>
+			</dependency>
+			<dependency>
+				<groupId>org.quartz-scheduler</groupId>
+				<artifactId>quartz</artifactId>
+				<version>1.7.2</version>
+			</dependency>
+			<dependency>
+				<groupId>junit</groupId>
+				<artifactId>junit</artifactId>
+				<version>4.11</version>
+				<scope>test</scope>
+			</dependency>			
+			<dependency>
+				<groupId>org.apache.poi</groupId>
+				<artifactId>poi</artifactId>
+				<version>3.10-FINAL</version>
+			</dependency>
+			<dependency>
+				<groupId>org.apache.poi</groupId>
+				<artifactId>poi-ooxml</artifactId>
+				<version>3.10-FINAL</version>
+			</dependency>
+			<dependency>
+				<groupId>jaxen</groupId>
+				<artifactId>jaxen</artifactId>
+				<version>1.1.6</version>
+			</dependency>
+			<dependency>
+			  <groupId>com.microsoft.sqlserver</groupId>
+			  <artifactId>sqljdbc4</artifactId>
+			  <version>3.0</version>
+			</dependency>
+			<dependency>
+				<groupId>commons-dbcp</groupId>
+				<artifactId>commons-dbcp</artifactId>
+				<version>1.4</version>
+			</dependency>
+			
+			<dependency>
+				<groupId>javax.mail</groupId>
+				<artifactId>mail</artifactId>
+				<version>1.4.7</version>
+			</dependency>
+			
+			<dependency>
+				<groupId>commons-io</groupId>
+				<artifactId>commons-io</artifactId>
+				<version>2.4</version>
+			</dependency>
+			
+			<dependency>
+				<groupId>org.zefer</groupId>
+				<artifactId>pd4ml</artifactId>
+				<version>3.9.5</version>
+			</dependency>
+			<dependency>
+				<groupId>org.zefer</groupId>
+				<artifactId>fonts</artifactId>
+				<version>1</version>
+			</dependency>
+			<dependency>
+				<groupId>org.zefer</groupId>
+				<artifactId>ss_css2</artifactId>
+				<version>3.9.5</version>
+			</dependency>
+			
+		</dependencies>
+	</dependencyManagement>
+
+</project>

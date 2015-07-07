@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<product>
+	<id>XWIC_SANDBOX</id>
+	<title>xWic Sandbox</title>
+	<version>1.0.0</version>
+	<languages default="en">
+		<lang id="en" title="English" />
+	</languages>
+
+	<domain id="common.entities">
+	<entities>
+			<entity class="de.xwic.appkit.core.security.IAction"
+				file="common/entities/action.xml" />
+			<entity class="de.xwic.appkit.core.security.IActionSet"
+				file="common/entities/actionset.xml" />
+			<entity class="de.xwic.appkit.core.security.IRole"
+				file="common/entities/role.xml" >
+				<list file="system/listsetup/role.xml"/>
+			</entity>
+			<entity class="de.xwic.appkit.core.security.IScope"
+				file="common/entities/scope.xml" />
+			<entity class="de.xwic.appkit.core.security.IUser"
+				file="common/entities/user.xml" />
+			<entity class="de.xwic.appkit.core.security.IUserSession"/>
+			<entity class="de.xwic.appkit.core.security.IRight"
+				file="common/entities/right.xml" />
+			<entity class="de.xwic.appkit.core.model.entities.IPickliste" />
+			<entity class="de.xwic.appkit.core.model.entities.IPicklistEntry" />
+			<entity class="de.xwic.appkit.core.model.entities.IPicklistText" />
+			<entity
+				class="de.xwic.appkit.core.model.entities.IServerConfigProperty" />
+			<entity class="de.xwic.appkit.core.model.entities.ISyncState" file="common/entities/syncState.xml"/>							
+			<entity class="de.xwic.appkit.core.model.entities.IReportTemplate" 
+				file="common/entities/reportTemplate.xml">							
+				
+			</entity>
+			<entity class="de.xwic.appkit.core.model.entities.IReportFolder" file="common/entities/reportFolder.xml"/>										
+			<entity class="de.xwic.appkit.core.model.entities.IMonitoringElement" />
+			<entity class="de.xwic.appkit.core.model.entities.IEntityComment" />			
+			<entity class="de.xwic.appkit.core.model.entities.IAnhang" />			
+			<entity
+				class="de.xwic.appkit.core.model.entities.IMitarbeiter"
+				file="common/entities/mitarbeiter.xml">
+				<list file="resources/listsetup/mitarbeiter.xml" />
+			</entity>
+			<entity class="de.xwic.appkit.core.model.entities.ISalesTeam"/>			
+			
+			<entity class="de.xwic.appkit.core.model.entities.IUserListProfile" />
+			<entity class="de.xwic.appkit.core.model.entities.IUserViewConfiguration" />
+		</entities>
+		<bundle basename="common/bundles/common.entities.resources" />
+	</domain>
+	
+	<domain id="demoapp">
+		<entities>
+			
+		</entities>
+		
+	</domain>
+	
+	<domain id="core">
+		<bundle basename="core/bundles/core.resources" />
+		<bundle basename="core/bundles/core.entities.resources" />
+	</domain>
+	
+	<domain id="start">
+  	   <entities>
+  			<entity class="de.xwic.sandbox.start.model.entities.IQuickLaunch" file="start/entities/QuickLaunch.xml" />
+     	</entities>
+  		<bundle basename="start/bundles/start.entities.resources"/>
+    </domain>
+    
+ 	<properties>
+ 		<property key="extra.access.scopes">
+ 			SYSADMIN
+ 			
+ 			MOD_GET_STARTED
+ 			SMOD_GET_STARTED_HOME
+ 		
+ 			MOD_RESOURCES
+ 			SMOD_RESOURCES_EMPLOYEE
+ 			
+ 			MOD_SYSTEM
+ 			SMOD_SYSTEM_ROLES
+		</property>
+		
+		<property key="ExitURL">byebye.html</property>
+		<property key="server.name">XWIC</property>
+	</properties>
+
+</product>

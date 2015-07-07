@@ -1,0 +1,55 @@
+<div id="header">
+	<div id="testInfo"></div>
+    <div class="h_logo"><img name="Logo" src="images/sandbox_logo_xs.png" onload="fixPNG(this)" title="Click to get back to the start page" style="cursor: pointer;" onClick="mainMenu.select('start;home');"/></div>
+	<div id="h_menu"></div>
+</div>
+<div id="infobar">
+	<div id="infobox">
+	    <div class="h_exit">$insert.control("btLogout")</div>
+	    <div class="h_help"><span id="ctrl_c1.btHelp"><a href="javascript:;">Help <img src="images/icon_help.gif" alt="Help" width="16" height="16" border="0" align="absmiddle" onload="fixPNG(this)"></a></span></div>
+    <!--    <div class="h_help">$insert.control("btHelp")</div>  -->
+    <!--	<div class="h_areainfo">$insert.control("lblAreaInfo")</div> -->
+    	<div class="h_userinfo">$insert.control("lbUsername")</div>
+	</div>
+
+<script type="text/javascript">
+  mainMenu.controlId = "$control.controlID";
+  mainMenu.baseItem = "SANDBOX";
+  mainMenu.clear();
+  var sm;
+  var smL2;
+#foreach($module in $control.getModules())
+  sm = mainMenu.add("$module.key", "$module.title");
+  #foreach($subModule in $module.getSubModules())
+	  #if($subModule.hasSubModules())
+		  #set($hasSM = "true")
+	  #else
+		  #set($hasSM = "false")
+	  #end
+	smL2 = sm.add("$subModule.key", "$subModule.title", "$module.key;$subModule.key", $hasSM);
+  	#if($subModule.hasSubModules())
+  		#foreach($subSubModule in $subModule.getSubModules())
+  			smL2.add("$subSubModule.key", "$subSubModule.title", "$module.key;$subModule.key;$subSubModule.key");
+		#end	  		
+	#end  
+  #end
+#end
+
+  mainMenu.activeModule = "$control.activeModuleKey;$control.activeSubModuleKey"
+  mainMenu.update();
+</script>
+	$insert.control("errorWarning")
+	<div id="BreadCrumb">
+	  $insert.control("breadCrumb")
+	</div>
+</div>
+        
+<div id="content">
+	$insert.control("content")
+</div>
+
+<div id="footer"><img src="images/tagline-footer.jpg"> &copy; $control.getCurrentYear() xWic Group | All rights reserved | $insert.control("lblVersionInfo") | <a href="changes.txt" target="_blank" style="color: #A0A0A0">change log</a>
+| $insert.control("flipStyle")</div>
+
+#** Dialog Area **#
+$insert.control("dialogs") 

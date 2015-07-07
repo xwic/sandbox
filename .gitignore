@@ -1,0 +1,16 @@
+.project
+.classpath
+*.target-ide/
+**/*.log
+**/*.log.*
+.settings/*
+**/.settings/*
+.target-mvn/*
+.metadata/*
+de.xwic.sandbox.server/web_root/WEB-INF/*.log*
+de.xwic.sandbox.server/web_root/WEB-INF/sessions/*
+de.xwic.sandbox.server/web_root/WEB-INF/prefstore
+de.xwic.sandbox.server/web_root/WEB-INF/hibernate.properties
+de.xwic.sandbox.server/web_root/WEB-INF/server.properties
+*/bin/*
+ 
