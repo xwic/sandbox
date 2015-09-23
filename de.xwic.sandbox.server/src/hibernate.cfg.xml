@@ -31,7 +31,7 @@
 	<!-- /CRM COMMON entities -->
 	
 	<!-- start component -->
-		<mapping resource="se/xwic/sandbox/start/model/entities/impl/QuickLaunch.hbm.xml" />
+		<mapping resource="de/xwic/sandbox/start/model/entities/impl/QuickLaunch.hbm.xml" />
 
 
     </session-factory>
