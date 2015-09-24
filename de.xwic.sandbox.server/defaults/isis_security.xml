@@ -61,6 +61,11 @@
         <name>MODULE.ADMIN</name>
       </entity>
     </entities>   
+    <entities type="de.xwic.appkit.core.security.IRole">
+      <entity id="1">
+        <name>Demo Role</name>
+      </entity>
+    </entities>     
     <entities type="de.xwic.appkit.core.security.IRight">
    <!-- Business Administrator -->
       <entity>
