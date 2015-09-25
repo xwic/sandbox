@@ -16,6 +16,7 @@
 package de.xwic.sandbox.demoapp.model.entities;
 
 import de.xwic.appkit.core.dao.IEntity;
+import de.xwic.appkit.core.model.entities.IPicklistEntry;
 
 /**
  * @author WebEnd
@@ -23,15 +24,17 @@ import de.xwic.appkit.core.dao.IEntity;
  */
 public interface IAddressBook extends IEntity {
 	
+	public static final String PL_ADDRESS_BOOK_TITLE = "addressbook.title";
+	
 	/**
 	 * @return address book entry title
 	 */
-	String getTitle();
+	IPicklistEntry getTitle();
 
 	/**
 	 * @param title
 	 */
-	void setTitle(String title);
+	void setTitle(IPicklistEntry title);
 
 	/**
 	 * @return address book entry firstName

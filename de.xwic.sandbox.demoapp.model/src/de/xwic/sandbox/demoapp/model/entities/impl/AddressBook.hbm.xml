@@ -39,9 +39,8 @@
 		</property>
 		<!-- Entity fields -->
       
-		<property name="title">
-			<column name="TITLE" length="50" />
-		</property>
+        <many-to-one name="title" class="de.xwic.appkit.core.model.entities.impl.PicklistEntry" column="TITLE" not-null="false"
+                     lazy="false"/>
 
 		<property name="firstName">
 			<column name="FIRST_NAME" length="50" />
