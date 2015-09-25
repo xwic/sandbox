@@ -47,4 +47,9 @@ public class AddressBookEditorView extends EntityEditorView {
 		new AddressBookEditorControl(tabGeneral, "addressBookEditorControl", model,toolkit);
 	}
 
+	@Override
+	protected boolean isShowInfoAfterSave() {
+		return false;
+	}
+
 }
