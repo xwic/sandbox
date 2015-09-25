@@ -42,9 +42,9 @@ public class SandboxModelConfig {
 	public static final String MOD_GET_STARTED = "MOD_GET_STARTED";
 	public static final String SMOD_GET_STARTED_HOME = "SMOD_GET_STARTED_HOME";
 
-	//ACTIONTRACKER
-	public static final String MOD_ACTION_TRACKER = "MOD_ACTION_TRACKER";
-	public static final String SMOD_ACTION_TRACKER_ACTION_TRACKER = "SMOD_ACTION_TRACKER_ACTION_TRACKER";
+	//DEMO_APP
+	public static final String MOD_DEMO_APP = "MOD_DEMO_APP";
+	public static final String SMOD_DEMO_APP_ADDRESS_BOOK = "SMOD_DEMO_APP_ADDRESS_BOOK";
 
 	// RESOURCES
 	public static final String MOD_RESOURCES = "MOD_RESOURCES";

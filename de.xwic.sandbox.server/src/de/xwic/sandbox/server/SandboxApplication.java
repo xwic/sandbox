@@ -39,9 +39,9 @@ import de.xwic.appkit.webbase.toolkit.login.LoginControl;
 import de.xwic.appkit.webbase.toolkit.login.LoginModel;
 import de.xwic.appkit.webbase.toolkit.login.LoginModel.ILoginListener;
 import de.xwic.appkit.webbase.toolkit.util.BundleAccessor;
-import de.xwic.sandbox.actiontracker.ActionTrackerModule;
 import de.xwic.sandbox.base.model.SandboxModelConfig;
 import de.xwic.sandbox.base.model.util.ConfigurationUtil;
+import de.xwic.sandbox.demoapp.ui.DemoAppModule;
 import de.xwic.sandbox.resources.ui.ResourcesModule;
 import de.xwic.sandbox.start.ui.StartModule;
 import de.xwic.sandbox.system.ui.SystemModule;
@@ -112,8 +112,8 @@ public class SandboxApplication extends ExtendedApplication{
 			site.addModule(new StartModule(site));
 		}
 
-		if (ConfigurationUtil.hasAccess(SandboxModelConfig.MOD_ACTION_TRACKER)) {
-			site.addModule(new ActionTrackerModule(site));
+		if (ConfigurationUtil.hasAccess(SandboxModelConfig.MOD_DEMO_APP)) {
+			site.addModule(new DemoAppModule(site));
 		}
 
 		if (ConfigurationUtil.hasAccess(SandboxModelConfig.MOD_RESOURCES)) {

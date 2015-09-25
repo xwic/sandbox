@@ -101,12 +101,6 @@
 	<dependencies>
 		<dependency>
 			<groupId>de.xwic.sandbox</groupId>
-			<artifactId>demoapp-model</artifactId>
-			<version>${project.version}</version>
-		</dependency>
-			
-		<dependency>
-			<groupId>de.xwic.sandbox</groupId>
 			<artifactId>demoapp-ui</artifactId>
 			<version>${project.version}</version>
 		</dependency>

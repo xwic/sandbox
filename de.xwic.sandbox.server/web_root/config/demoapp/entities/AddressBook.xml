@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entities>
+	<entity class="de.xwic.sandbox.demoapp.model.entities.IAddressBook" autoLoadProperties="true" history="false" defaultDisplayProperty="firstName">
+	  <title>${firstName} ${middleName} ${lastName}</title>
+	  <property name="firstName" maxLength="50" required="true" />
+	  <property name="middleName" maxLength="10" required="true" />
+	  <property name="lastName" maxLength="50" required="true" />
+	</entity>
+</entities>

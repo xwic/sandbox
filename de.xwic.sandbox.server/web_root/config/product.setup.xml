@@ -53,9 +53,12 @@
 	
 	<domain id="demoapp">
 		<entities>
+  			<entity class="de.xwic.sandbox.start.model.entities.IAddressBook" file="demoapp/entities/AddressBook.xml">
+  				<list file="demoapp/listsetup/address_book.xml" />
+  			</entity>
 			
 		</entities>
-		
+  		<bundle basename="demoapp/bundles/demoapp.entities.resources"/>
 	</domain>
 	
 	<domain id="core">
@@ -82,6 +85,10 @@
  			
  			MOD_SYSTEM
  			SMOD_SYSTEM_ROLES
+
+ 			MOD_DEMO_APP
+ 			SMOD_DEMO_APP_ADDRESS_BOOK
+ 			
 		</property>
 		
 		<property key="ExitURL">byebye.html</property>
