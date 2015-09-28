@@ -96,8 +96,8 @@ public class RolesEditorView extends BaseView {
 		tab = tabStrip.addTab("Get Started", "getStarted");
 		moduleControls.add(new ModuleControl(tab, "GetStartedControl", model));
 		
-		tab = tabStrip.addTab("Action Tracker", "actionTracker");
-		moduleControls.add(new ModuleControl(tab, "ActionTrackerControl", model));
+		tab = tabStrip.addTab("Demo Application", "demoApplication");
+		moduleControls.add(new ModuleControl(tab, "DemoApplicationControl", model));
 
 		tab = tabStrip.addTab("Resources", "resources");
 		moduleControls.add(new ModuleControl(tab, "ResourcesControl", model));

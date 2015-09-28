@@ -54,7 +54,7 @@ public class ModuleControl extends ControlContainer {
 
 		{
 			put("GetStartedControl", "MOD_GET_STARTED");
-			put("ActionTrackerControl", "MOD_ACTION_TRACKER");
+			put("DemoApplicationControl", "MOD_DEMO_APP");
 			put("ResourcesControl", "MOD_RESOURCES");
 			put("SystemControl", "MOD_SYSTEM");
 			put("OthersControl", "");
