@@ -36,7 +36,7 @@ public class AddressBookSubmodule extends SandboxSubModule {
 
 		setFullTitle("Address Book");
 		setDescription("View all Address Book entries. You may edit details for each entry in the address book.");
-		setIconLarge(new ImageRef("images/module_icons/people.jpg"));
+		setIconLarge(new ImageRef("images/module_icons/address_book.png"));
 		setDefaultQuickLaunch(true);		
 	}
 

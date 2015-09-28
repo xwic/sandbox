@@ -37,7 +37,7 @@ public class PeopleSubmodule extends SandboxSubModule {
 
 		setFullTitle("People");
 		setDescription("View all employees registered in Sandbox App. You may edit person attributes, settings and roles.");
-		setIconLarge(new ImageRef("images/module_icons/people.jpg"));
+		setIconLarge(new ImageRef("images/module_icons/people.png"));
 		setDefaultQuickLaunch(true);
 	}
 
