@@ -53,17 +53,7 @@ public class PeopleView extends EntityListView {
 		tg.addSpacer();
 		
 		if (ConfigurationUtil.hasAccess(SandboxModelConfig.MOD_SYSTEM)) {
-			Button btnUpdateEmployees = tg.addButton();
-			btnUpdateEmployees.setTitle("Synchronize with CED");
-			btnUpdateEmployees.setTooltip("Read employee data from CED and update in Pulse");
-			btnUpdateEmployees.setIconEnabled(SandboxImageLibrary.IMAGE_REFRESH_SMALL);
-			btnUpdateEmployees.addSelectionListener(new SelectionListener() {
-				
-				@Override
-				public void objectSelected(SelectionEvent event) {
 
-				}
-			});
 		}
 	}
 }
