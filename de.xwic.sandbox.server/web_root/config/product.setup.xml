@@ -29,12 +29,11 @@
 			<entity class="de.xwic.appkit.core.model.entities.IPicklistText" />
 			<entity
 				class="de.xwic.appkit.core.model.entities.IServerConfigProperty" />
-			<entity class="de.xwic.appkit.core.model.entities.ISyncState" file="common/entities/syncState.xml"/>							
+			<entity class="de.xwic.appkit.core.model.entities.ISyncState" />							
 			<entity class="de.xwic.appkit.core.model.entities.IReportTemplate" 
 				file="common/entities/reportTemplate.xml">							
 				
-			</entity>
-			<entity class="de.xwic.appkit.core.model.entities.IReportFolder" file="common/entities/reportFolder.xml"/>										
+			</entity>										
 			<entity class="de.xwic.appkit.core.model.entities.IMonitoringElement" />
 			<entity class="de.xwic.appkit.core.model.entities.IEntityComment" />			
 			<entity class="de.xwic.appkit.core.model.entities.IAnhang" />			

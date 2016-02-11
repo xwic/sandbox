@@ -201,7 +201,7 @@
 
     <properties>
 
-		<mvnDependencyVersionxWicjWic>5.2.8</mvnDependencyVersionxWicjWic>
+		<mvnDependencyVersionxWicjWic>5.3.0</mvnDependencyVersionxWicjWic>
 		<mvnDependencyVersionxWicCube>5.2.1</mvnDependencyVersionxWicCube>
 		<mvnDependencyVersionxWicAppKit>5.2.26</mvnDependencyVersionxWicAppKit>
 		<mvnDependencyVersionxWicETLGine>5.2.11</mvnDependencyVersionxWicETLGine>
@@ -344,6 +344,11 @@
 			<dependency>
 				<groupId>de.xwic.jwic</groupId>
 				<artifactId>jwic-controls</artifactId>
+				<version>${mvnDependencyVersionxWicjWic}</version>
+			</dependency>
+			<dependency>
+				<groupId>de.xwic.jwic</groupId>
+				<artifactId>jwic-web</artifactId>
 				<version>${mvnDependencyVersionxWicjWic}</version>
 			</dependency>
 			<dependency>
