@@ -28,6 +28,8 @@ public class Settings {
 	private String jdbcConnectionURL = null;
 
 	private String configDir = null;
+	
+	private String defaultSchema = null;
 
 	/**
 	 * @return the configDir
@@ -115,6 +117,20 @@ public class Settings {
 				.append("Username:       " + jdbcUserName + "\n").append("Password:       " + jdbcPassword + "\n")
 				.append("ConfigDir:      " + configDir);
 		return sb.toString();
+	}
+
+	/**
+	 * @return the defaultSchema
+	 */
+	public String getDefaultSchema() {
+		return defaultSchema;
+	}
+
+	/**
+	 * @param defaultSchema the defaultSchema to set
+	 */
+	public void setDefaultSchema(String defaultSchema) {
+		this.defaultSchema = defaultSchema;
 	}
 
 }

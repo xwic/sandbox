@@ -117,7 +117,7 @@ public class PeopleSecurityEditor extends ControlContainer implements IEditorMod
 	 */
 	private void loadRoles() {
 		boolean allowAllRoles = DAOSystem.getSecurityManager().hasRight(IRole.class.getName(), ApplicationData.SECURITY_ACTION_CREATE);
-		Set<IEntity> usrRoles = new HashSet<IEntity>();
+		Set<IRole> usrRoles = new HashSet<IRole>();
 		if (!allowAllRoles) {
 			// if the person is not the admin, allow him to only set the roles he has
 			IUser usr = DAOSystem.getSecurityManager().getCurrentUser();
@@ -151,7 +151,7 @@ public class PeopleSecurityEditor extends ControlContainer implements IEditorMod
 	 * @param roleId
 	 * @return
 	 */
-	private boolean hasRole(Set<IEntity> roles, int roleId) {
+	private boolean hasRole(Set<IRole> roles, int roleId) {
 		for (IEntity entity : roles) {
 			if (entity.getId() == roleId) {
 				return true;
@@ -170,7 +170,7 @@ public class PeopleSecurityEditor extends ControlContainer implements IEditorMod
 		// load user roles.
 		if (user != null) {
 			StringBuffer sb = new StringBuffer();
-			Set<IEntity> userRoles = user.getRoles();
+			Set<IRole> userRoles = user.getRoles();
 
 			for (IEntity role : userRoles) {
 				if (chkRoles.getContentProvider().getObjectFromKey(String.valueOf(role.getId())) != null) {

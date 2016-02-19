@@ -70,6 +70,8 @@ public class InstallationManager {
 	private static final String HBN_CONNECTION_PASSWORD = "hibernate.connection.password";
 	private static final String HBN_CONNECTION_URL = "hibernate.connection.url";
 	private static final String HBN_CONNECTION_DRIVER_CLASS = "hibernate.connection.driver_class";
+	private static final String HBN_CONNECTION_DEFAULT_SCHEMA = "hibernate.default_schema";
+	
 	// these are all the possible locations where config files can be found
 	private static final String[] LOCATIONS = { "", String.format("..%s", File.separator),
 			String.format("..%s..%sconfig%s", File.separator, File.separator, File.separator), String.format("config%s", File.separator),
@@ -127,6 +129,8 @@ public class InstallationManager {
 							found = true;
 						} else if (HBN_CONNECTION_DRIVER_CLASS.equals(propName)) {
 							settings.setJdbcDriverClass(propValue);
+						} else if (HBN_CONNECTION_DEFAULT_SCHEMA.equals(propName)) {
+							settings.setDefaultSchema(propValue);
 						}
 					}
 				}
@@ -150,9 +154,10 @@ public class InstallationManager {
 					inStream = new FileInputStream(file);
 					prop.load(inStream);
 					settings.setJdbcUserName(prop.getProperty(HBN_CONNECTION_USERNAME, settings.getJdbcUserName()));
-					settings.setJdbcPassword(prop.getProperty(HBN_CONNECTION_PASSWORD, settings.getJdbcUserName()));
-					settings.setJdbcConnectionURL(prop.getProperty(HBN_CONNECTION_URL, settings.getJdbcUserName()));
-					settings.setJdbcDriverClass(prop.getProperty(HBN_CONNECTION_DRIVER_CLASS, settings.getJdbcUserName()));
+					settings.setJdbcPassword(prop.getProperty(HBN_CONNECTION_PASSWORD, settings.getJdbcPassword()));
+					settings.setJdbcConnectionURL(prop.getProperty(HBN_CONNECTION_URL, settings.getJdbcConnectionURL()));
+					settings.setJdbcDriverClass(prop.getProperty(HBN_CONNECTION_DRIVER_CLASS, settings.getJdbcDriverClass()));
+					settings.setDefaultSchema(prop.getProperty(HBN_CONNECTION_DEFAULT_SCHEMA, settings.getDefaultSchema()));
 				} catch (IOException e) {
 					log.error("Error reading hibernate.properties: ", e);
 				} finally {

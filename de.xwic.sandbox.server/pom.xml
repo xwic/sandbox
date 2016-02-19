@@ -99,6 +99,11 @@
 	</profiles>
 
 	<dependencies>
+			<dependency>
+				<groupId>com.oracle</groupId>
+				<artifactId>ojdbc6</artifactId>
+				<version>11.2.0.4</version>
+			</dependency>
 		<dependency>
 			<groupId>de.xwic.sandbox</groupId>
 			<artifactId>demoapp-ui</artifactId>
@@ -182,6 +187,14 @@
         <groupId>org.codehaus.groovy</groupId>
         <artifactId>groovy-all</artifactId>
     </dependency>
+
+			<dependency>
+				<groupId>org.hibernate</groupId>
+				<artifactId>hibernate-ehcache</artifactId>
+				<version>4.3.11.Final</version>
+			</dependency>
+
+
 			
 		<!-- JUST TEST -->
 		<dependency>
