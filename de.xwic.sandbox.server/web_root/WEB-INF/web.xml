@@ -98,6 +98,16 @@
 	  </init-param>
 	</servlet>
 
+	<servlet>
+	  <servlet-name>ConfigDump</servlet-name>
+	  <servlet-class>de.xwic.appkit.webbase.config.ConfigDumpServlet</servlet-class>
+	</servlet>
+	
+	<servlet-mapping>
+	  <servlet-name>ConfigDump</servlet-name>
+	  <url-pattern>/cfgDump</url-pattern>
+	</servlet-mapping>
+
 	<!-- map the servlet to all files ending with .wic -->
 	<servlet-mapping>
 		<servlet-name>jwic</servlet-name>
@@ -117,7 +127,7 @@
 
 	<welcome-file-list>
 		<welcome-file>
-			sandbox.xwic
+			index.html
 		</welcome-file>
 	</welcome-file-list>
 </web-app>
