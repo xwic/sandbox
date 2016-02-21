@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<profile>
+
+	<feature id="some_feature" enabled="true"/>
+
+	<domain id="common.entities">
+		<entities>
+			<entity
+				class="de.xwic.appkit.core.model.entities.IMitarbeiter"
+				file="common/entities/mitarbeiter.xml">
+				<list file="resources/listsetup/mitarbeiter.xml" />
+				<editor file="common/editors/mitarbeiter-editor.xml" />
+			</entity>
+		</entities>
+		<defaults>
+			<preference key="something">The Preference Default Value</preference>
+		</defaults>
+	</domain>
+
+	<domain id="demoapp">
+		<entities>
+  			<entity class="de.xwic.sandbox.start.model.entities.IAddressBook" file="demoapp/entities/AddressBook.xml">
+  				<list file="demoapp/listsetup/address_book.xml" />
+  				<editor file="demoapp/editors/addressbook-editor.xml" />
+  			</entity>
+		</entities>
+	</domain>
+	
+</profile>

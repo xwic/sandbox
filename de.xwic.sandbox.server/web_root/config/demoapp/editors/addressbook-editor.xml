@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<editor>
+	<id>default</id>
+	<entity>de.xwic.sandbox.demoapp.model.entities.IAddressBook</entity>
+	<script>
+		<!-- Global Script goes here -->
+	</script>
+	
+	<templates>
+		<style id="styleId">
+			border:2;
+			color:green;
+		</style>
+	</templates>
+	
+	<!-- The layout-->
+	<layout>
+		<!-- The root node of an editor is always a tab... -->
+		<tab title="General">
+			<group title="Basics" layout="grid" cols="2">
+				<label property="firstName"/>
+				<text property = "firstName"/>
+				
+				<label property="middleName"/>
+				<text property = "middleName"/>
+
+				<label property="lastName"/>
+				<text property = "lastName"/>
+				
+			</group>
+		</tab>
+	</layout>
+
+</editor>

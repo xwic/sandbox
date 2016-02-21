@@ -52,7 +52,7 @@
 	
 	<domain id="demoapp">
 		<entities>
-  			<entity class="de.xwic.sandbox.start.model.entities.IAddressBook" file="demoapp/entities/AddressBook.xml">
+  			<entity class="de.xwic.sandbox.demoapp.model.entities.IAddressBook" file="demoapp/entities/AddressBook.xml">
   				<list file="demoapp/listsetup/address_book.xml" />
   			</entity>
 			
@@ -71,6 +71,11 @@
      	</entities>
   		<bundle basename="start/bundles/start.entities.resources"/>
     </domain>
+    
+    
+    <profiles>
+    	<profile name="default" file="profiles/default-profile.xml"/>
+    </profiles>
     
  	<properties>
  		<property key="extra.access.scopes">
