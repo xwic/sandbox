@@ -18,6 +18,10 @@
 		<tab title="General">
 			<composite layout="grid" cols="2" style="padding: 2">
 				<group title="Basics" layout="grid" cols="2" template="form">
+					
+					<label property="title"/>
+					<label title="Not Implemented Yet"/>
+					
 					<label property="firstName"/>
 					<text property = "firstName"/>
 					
@@ -38,6 +42,9 @@
 	
 					<label property="addressCity"/>
 					<text property = "addressCity"/>
+
+					<label property="addressCountry"/>
+					<text property = "addressCountry"/>
 					
 				</group>
 
@@ -48,14 +55,23 @@
 					<label property="phone2"/>
 					<text property = "phone2"/>
 	
+					<label property="fax"/>
+					<text property = "fax"/>
+
 					<label property="email1"/>
 					<text property = "email1"/>
 
 					<label property="email2"/>
 					<text property = "email2"/>
+
+					<label property="webSite"/>
+					<text property = "webSite"/>
 					
 				</group>
-				
+
+				<group title="Notes" layout="grid" cols="1" template="form">
+					<text property="note" multiline="true"/>
+				</group>				
 			</composite>
 		</tab>
 	</layout>
