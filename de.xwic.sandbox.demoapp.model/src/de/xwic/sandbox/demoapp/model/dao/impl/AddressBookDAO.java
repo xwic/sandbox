@@ -16,6 +16,8 @@
 package de.xwic.sandbox.demoapp.model.dao.impl;
 
 import de.xwic.appkit.core.dao.AbstractDAO;
+import de.xwic.appkit.core.dao.IEntity;
+import de.xwic.appkit.core.dao.ValidationResult;
 import de.xwic.sandbox.demoapp.model.dao.IAddressBookDAO;
 import de.xwic.sandbox.demoapp.model.entities.IAddressBook;
 import de.xwic.sandbox.demoapp.model.entities.impl.AddressBook;
@@ -33,4 +35,20 @@ public class AddressBookDAO extends AbstractDAO<IAddressBook, AddressBook> imple
 		super(IAddressBook.class, AddressBook.class);
 	}
 
+	/* (non-Javadoc)
+	 * @see de.xwic.appkit.core.dao.AbstractDAO#validateEntity(de.xwic.appkit.core.dao.IEntity)
+	 */
+	@Override
+	public ValidationResult validateEntity(IEntity entity) {
+		ValidationResult result = super.validateEntity(entity);
+		
+		IAddressBook ab = (IAddressBook)entity;
+		
+		if (ab.getEmail1() == null || ab.getEmail1().trim().isEmpty()) {
+			result.addWarning(entity.type().getName() + "." + "email1", "entity.validate.warn.email.missing");
+		}
+		
+		return result;
+	}
+	
 }

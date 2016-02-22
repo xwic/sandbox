@@ -52,3 +52,36 @@ div.xwic-notify-info {
 .de_xwic_appkit_webbase_controls_input_doubleInputBoxControl {
 	text-align:right;
 }
+
+
+/** GenericEditorStyles **/
+
+.xwic-ed-lbl-required {
+	color: #0070df;
+	font-weight: bold;
+} 
+
+.xwic-ed-msg {
+	
+}
+.xwic-ed-msg ul {
+	padding: 2px;
+	margin: 0px;
+}
+.xwic-ed-msg li {
+	padding: 2px;
+	list-style: none;
+}
+
+.xwic-ed-msg-error {
+	background-color: #ff0000;
+	color: #ffffff;
+}
+.xwic-ed-msg-warn {
+	background-color: #FFF0AD;
+	color: #000000;
+}
+.xwic-ed-msg-info {
+	background-color: #A8D9FF;
+	color: #000000;
+}
