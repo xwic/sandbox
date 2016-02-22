@@ -4,7 +4,7 @@
 		<title>${title} ${firstName} ${middleName} ${lastName}</title>
 		
 		<property name="firstName" maxLength="50" required="true" />
-		<property name="middleName" maxLength="10" required="true" />
+		<property name="middleName" maxLength="10" required="false" />
 		<property name="lastName" maxLength="50" required="true" />
 
 		<property name="title" picklistId="addressbook.title">

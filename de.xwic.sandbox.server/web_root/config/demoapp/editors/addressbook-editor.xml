@@ -7,9 +7,8 @@
 	</script>
 	
 	<templates>
-		<style id="styleId">
-			border:2;
-			color:green;
+		<style id="form">
+			padding: 5;
 		</style>
 	</templates>
 	
@@ -17,17 +16,47 @@
 	<layout>
 		<!-- The root node of an editor is always a tab... -->
 		<tab title="General">
-			<group title="Basics" layout="grid" cols="2">
-				<label property="firstName"/>
-				<text property = "firstName"/>
-				
-				<label property="middleName"/>
-				<text property = "middleName"/>
+			<composite layout="grid" cols="2" style="padding: 2">
+				<group title="Basics" layout="grid" cols="2" template="form">
+					<label property="firstName"/>
+					<text property = "firstName"/>
+					
+					<label property="middleName"/>
+					<text property = "middleName"/>
+	
+					<label property="lastName"/>
+					<text property = "lastName"/>
+					
+				</group>
 
-				<label property="lastName"/>
-				<text property = "lastName"/>
+				<group title="Address" layout="grid" cols="2" template="form">
+					<label property="addressStreet"/>
+					<text property = "addressStreet"/>
+					
+					<label property="addressZip"/>
+					<text property = "addressZip"/>
+	
+					<label property="addressCity"/>
+					<text property = "addressCity"/>
+					
+				</group>
+
+				<group title="Contact" layout="grid" cols="2" template="form">
+					<label property="phone1"/>
+					<text property = "phone1"/>
+					
+					<label property="phone2"/>
+					<text property = "phone2"/>
+	
+					<label property="email1"/>
+					<text property = "email1"/>
+
+					<label property="email2"/>
+					<text property = "email2"/>
+					
+				</group>
 				
-			</group>
+			</composite>
 		</tab>
 	</layout>
 

@@ -3,19 +3,20 @@
 		<!--
 			ENTITY EDITORS 
 		 -->
-		 <!-- 
+		 
+		<!--
 		<extension extensionPointId="entityEditors" id="addressBookEditor"
 			className="de.xwic.sandbox.demoapp.ui.addressbook.editor.AddressBookEditorCreator"
 			priority="0">
 			<attribute key="editedEntity">de.xwic.sandbox.demoapp.model.entities.IAddressBook</attribute>
 		</extension>		
- 		-->
+		--> 		
  		
 		<extension extensionPointId="entityEditors" id="addressBookEditor"
 			className="de.xwic.sandbox.demoapp.ui.addressbook.experimental.ExpEditorCreator"
 			priority="0">
 			<attribute key="editedEntity">de.xwic.sandbox.demoapp.model.entities.IAddressBook</attribute>
 		</extension>		
-
+		
 	</extensions>
 </config>
