@@ -48,6 +48,8 @@ public class ExperimentalEditorPage extends InnerPage {
 	private IAction actionSave;
 	private IAction actionSaveClose;
 	private IAction actionClose;
+	
+	private IAction actionEdit;
 
 	/**
 	 * @param container
@@ -101,6 +103,27 @@ public class ExperimentalEditorPage extends InnerPage {
 		actionClose.setIconEnabled(ImageLibrary.ICON_CLOSED);
 		actionClose.setIconDisabled(ImageLibrary.ICON_CLOSED_INACTIVE);
 
+		actionEdit = new Action() {
+			@Override
+			public void run() {
+				editEntity();
+			}
+		};
+		actionEdit.setTitle("Edit");
+		actionEdit.setIconEnabled(ImageLibrary.ICON_EDIT_ACTIVE);
+		actionEdit.setIconDisabled(ImageLibrary.ICON_EDIT_INACTIVE);
+		
+	}
+
+	/**
+	 * 
+	 */
+	protected void editEntity() {
+		context.setAllEditable(true);
+		actionSave.setEnabled(true);
+		actionSaveClose.setEnabled(true);
+		actionEdit.setEnabled(false);
+
 	}
 
 	/**
@@ -149,6 +172,7 @@ public class ExperimentalEditorPage extends InnerPage {
 		grpDefault.addAction(actionClose);
 		grpDefault.addAction(actionSaveClose);
 		grpDefault.addAction(actionSave);
+		grpDefault.addAction(actionEdit);
 		
 		
 	}
@@ -167,6 +191,15 @@ public class ExperimentalEditorPage extends InnerPage {
 			editor = new GenericEntityEditor(this, "editor", input);
 			context = editor.getContext();
 		
+			// start with all fields non-editable
+			if (!editorModel.isNewEntity()) {
+				context.setAllEditable(false);
+				actionSave.setEnabled(false);
+				actionSaveClose.setEnabled(false);
+			} else {
+				actionEdit.setEnabled(false);
+			}
+			
 		} catch (Exception e) {
 			log.error("Error creating editor", e);
 			getSessionContext().notifyMessage("Error: " + e.toString());

@@ -7,6 +7,9 @@
 		<property name="middleName" maxLength="10" required="false" />
 		<property name="lastName" maxLength="50" required="true" />
 
+		<property name="phone1" maxLength="15" required="true" />
+		<property name="phone2" maxLength="15"/>
+
 		<property name="title" picklistId="addressbook.title">
 		     <picklistentry key="Mr" index="10">
 		         <name lang="en">Mr</name>
