@@ -54,6 +54,7 @@
 		<entities>
   			<entity class="de.xwic.sandbox.demoapp.model.entities.IAddressBook" file="demoapp/entities/AddressBook.xml">
   				<list file="demoapp/listsetup/address_book.xml" />
+   				<editor file="demoapp/editors/addressbook-editor.xml" />
   			</entity>
 			
 		</entities>
