@@ -53,7 +53,7 @@
 					<plCombo property = "segment" template="field"/>
 					 
 					<label property="relationship"/>
-					<plCheck property = "relationship" template="field"/>
+					<plCheck property = "relationship" cols="3" template="field"/>
 					 
 				</group>
  			</composite>
