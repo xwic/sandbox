@@ -13,7 +13,7 @@
 			padding: 5;
 		</style>
 		<style id="field">
-			width: 250;
+			width: 350;
 		</style>
 	</templates>
 	
@@ -39,6 +39,10 @@
 					
 				</group>
 
+ 			</composite>
+		</tab>
+		<tab title="Address">
+			<composite layout="grid" cols="2" style="padding: 2">
 				<group title="Address" layout="grid" cols="2" template="form" colWidth="150;-1">
 					<label property="addressStreet"/>
 					<text property = "addressStreet" template="field"/>

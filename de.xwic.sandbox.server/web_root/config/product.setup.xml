@@ -75,7 +75,7 @@
     
     
     <profiles>
-    	<profile name="default" file="profiles/default-profile.xml"/>
+    	<profile name="sales" file="profiles/default-profile.xml"/>
     </profiles>
     
  	<properties>
