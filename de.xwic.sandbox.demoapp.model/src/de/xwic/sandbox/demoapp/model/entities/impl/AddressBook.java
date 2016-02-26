@@ -18,6 +18,7 @@ package de.xwic.sandbox.demoapp.model.entities.impl;
 import de.xwic.appkit.core.dao.Entity;
 import de.xwic.appkit.core.model.entities.IPicklistEntry;
 import de.xwic.sandbox.demoapp.model.entities.IAddressBook;
+import de.xwic.sandbox.demoapp.model.entities.ICompany;
 
 /**
  * @author WebEnd
@@ -42,7 +43,9 @@ public class AddressBook extends Entity implements IAddressBook {
 	private String addressZip = null;
 	private String addressStreet = null;
 	private String note = null;
-	
+	private Boolean displayName;
+	private ICompany company;
+
 	/* (non-Javadoc)
 	 * @see de.xwic.sandbox.demoapp.model.entities.impl.IAddressBook#getTitle()
 	 */
@@ -295,9 +298,26 @@ public class AddressBook extends Entity implements IAddressBook {
 	public void setNote(String note) {
 		this.note = note;
 	}
-	
 
 
-	
-	
+	@Override
+	public ICompany getCompany() {
+		return company;
+	}
+
+	@Override
+	public void setCompany(ICompany company) {
+		this.company = company;
+	}
+
+
+    @Override
+    public Boolean getDisplayName() {
+        return displayName;
+    }
+
+    @Override
+    public void setDisplayName(Boolean displayName) {
+        this.displayName = displayName;
+    }
 }

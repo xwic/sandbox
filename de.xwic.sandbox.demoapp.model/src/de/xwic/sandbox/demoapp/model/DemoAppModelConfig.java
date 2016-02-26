@@ -17,7 +17,9 @@ package de.xwic.sandbox.demoapp.model;
 
 import de.xwic.appkit.core.dao.DAOFactory;
 import de.xwic.appkit.core.dao.DAOSystem;
+import de.xwic.sandbox.demoapp.model.dao.ICompanyDAO;
 import de.xwic.sandbox.demoapp.model.dao.IAddressBookDAO;
+import de.xwic.sandbox.demoapp.model.dao.impl.CompanyDAO;
 import de.xwic.sandbox.demoapp.model.dao.impl.AddressBookDAO;
 
 /**
@@ -30,12 +32,17 @@ public class DemoAppModelConfig {
 	 */
 	public static void register(DAOFactory factory) {
 		factory.registerDao(IAddressBookDAO.class, new AddressBookDAO());
+		factory.registerDao(ICompanyDAO.class, new CompanyDAO());
 	}
 	
 	/**
 	 * @return
 	 */
 	public static IAddressBookDAO getAddressBookDAO() {
-		return (IAddressBookDAO) DAOSystem.getDAO(IAddressBookDAO.class);
+		return DAOSystem.getDAO(IAddressBookDAO.class);
+	}
+
+	public static ICompanyDAO getCompanyDAO() {
+		return DAOSystem.getDAO(ICompanyDAO.class);
 	}
 }

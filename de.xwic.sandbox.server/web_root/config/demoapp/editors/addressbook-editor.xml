@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<editor>
+<editor xsi:noNamespaceSchemaLocation="editor.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
 	<id>default</id>
 	<entity>de.xwic.sandbox.demoapp.model.entities.IAddressBook</entity>
 	<script>
@@ -80,7 +80,11 @@
 
 					<label property="webSite"/>
 					<text property = "webSite" template="field"/>
-					
+
+					<label property="displayName"/>
+					<yesNoRadio property="displayName" template="field"/>
+
+
 				</group>
 
 				<group title="Notes" layout="grid" cols="1" template="form">
