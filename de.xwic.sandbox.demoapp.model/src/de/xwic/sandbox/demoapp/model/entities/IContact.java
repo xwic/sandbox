@@ -19,12 +19,11 @@ import de.xwic.appkit.core.dao.IEntity;
 import de.xwic.appkit.core.model.entities.IPicklistEntry;
 
 /**
- * @author WebEnd
- *
+ * A person working in a company we do business with (or know about).
  */
-public interface IContact extends IEntity {
+public interface IContact extends IEntity, IAddress {
 	
-	public static final String PL_ADDRESS_BOOK_TITLE = "addressbook.title";
+	public static final String PL_CONTACT_TITLE = "addressbook.title";
 	
 	/**
 	 * @return address book entry title
@@ -147,64 +146,14 @@ public interface IContact extends IEntity {
 	void setEmail2(String email2);
 
 	/**
-	 * @return address book entry addressCountry
-	 */
-	String getAddressCountry();
-
-	/**
-	 * @param addressCountry
-	 */
-	void setAddressCountry(String addressCountry);
-
-	/**
-	 * @return address book entry addressState
-	 */
-	String getAddressState();
-
-	/**
-	 * @param addressState
-	 */
-	void setAddressState(String addressState);
-
-	/**
-	 * @return address book entry addressCity
-	 */
-	String getAddressCity();
-
-	/**
-	 * @param addressCity
-	 */
-	void setAddressCity(String addressCity);
-
-	/**
-	 * @return address book entry addressZip
-	 */
-	String getAddressZip();
-
-	/**
-	 * @param addressZip
-	 */
-	void setAddressZip(String addressZip);
-
-	/**
-	 * @return address book entry addressStreet
-	 */
-	String getAddressStreet();
-
-	/**
-	 * @param addressStreet
-	 */
-	void setAddressStreet(String addressStreet);
-
-	/**
 	 * @return address book entry note
 	 */
-	String getNote();
+	String getNotes();
 
 	/**
 	 * @param note
 	 */
-	void setNote(String note);
+	void setNotes(String note);
 
 	ICompany getCompany();
 

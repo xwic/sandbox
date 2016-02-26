@@ -1,40 +1,121 @@
-/*******************************************************************************
- * Copyright 2015 xWic group (http://www.xwic.de)
- *
- * Licensed under the Apache License, Version 2.0 (the "License").
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- *  		http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software 
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and 
- * limitations under the License.
- *******************************************************************************/
+/**
+ * 
+ */
 package de.xwic.sandbox.demoapp.model.entities;
+
+import java.util.Set;
 
 import de.xwic.appkit.core.dao.IEntity;
 import de.xwic.appkit.core.model.entities.IPicklistEntry;
 
 /**
- * @author WebEnd
- *
+ * A group of more than one persons to carry out an enterprise and so a form of business organization.
+ * 
+ * @author lippisch
  */
-public interface ICompany extends IEntity {
-	
-	public static final String PL_ADDRESS_BOOK_COPMANY_TITLE = "company.type";
+public interface ICompany extends IEntity, IAddress {
 
-	IPicklistEntry getCompanyType();
+	public static final String PL_COMPANY_TYPE = "company.type";
+	public static final String PL_COMPANY_RELATIONSHIP = "company.relationship";
 
-	void setCompanyType(IPicklistEntry companyType);
+	/**
+	 * @return the type
+	 */
+	public abstract IPicklistEntry getType();
 
-	String getCompanyName();
+	/**
+	 * @param type the type to set
+	 */
+	public abstract void setType(IPicklistEntry type);
 
-	void setCompanyName(String companyName);
+	/**
+	 * @return the name
+	 */
+	public abstract String getName();
 
-	String getNotes();
+	/**
+	 * @param name the name to set
+	 */
+	public abstract void setName(String name);
 
-	void setNotes(String notes);
+	/**
+	 * @return the relationship
+	 */
+	public abstract Set<IPicklistEntry> getRelationship();
+
+	/**
+	 * @param relationship the relationship to set
+	 */
+	public abstract void setRelationship(Set<IPicklistEntry> relationship);
+
+	/**
+	 * @return the phone1
+	 */
+	public abstract String getPhone1();
+
+	/**
+	 * @param phone1 the phone1 to set
+	 */
+	public abstract void setPhone1(String phone1);
+
+	/**
+	 * @return the fax
+	 */
+	public abstract String getFax();
+
+	/**
+	 * @param fax the fax to set
+	 */
+	public abstract void setFax(String fax);
+
+	/**
+	 * @return the webSite
+	 */
+	public abstract String getWebSite();
+
+	/**
+	 * @param webSite the webSite to set
+	 */
+	public abstract void setWebSite(String webSite);
+
+	/**
+	 * @return the email1
+	 */
+	public abstract String getEmail1();
+
+	/**
+	 * @param email1 the email1 to set
+	 */
+	public abstract void setEmail1(String email1);
+
+	/**
+	 * @return the email2
+	 */
+	public abstract String getEmail2();
+
+	/**
+	 * @param email2 the email2 to set
+	 */
+	public abstract void setEmail2(String email2);
+
+	/**
+	 * @return the notes
+	 */
+	public abstract String getNotes();
+
+	/**
+	 * @param notes the notes to set
+	 */
+	public abstract void setNotes(String notes);
+
+	/**
+	 * @return the segment
+	 */
+	public abstract IPicklistEntry getSegment();
+
+	/**
+	 * @param segment the segment to set
+	 */
+	public abstract void setSegment(IPicklistEntry segment);
+
 }

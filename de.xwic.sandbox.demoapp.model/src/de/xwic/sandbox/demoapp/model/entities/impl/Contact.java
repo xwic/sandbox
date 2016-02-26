@@ -37,12 +37,15 @@ public class Contact extends Entity implements IContact {
 	private String webSite = null;
 	private String email1 = null;
 	private String email2 = null;
-	private String addressCountry = null;
-	private String addressState = null;
-	private String addressCity = null;
-	private String addressZip = null;
-	private String addressStreet = null;
-	private String note = null;
+
+	private IPicklistEntry country = null;
+	private String state = null;
+	private String city = null;
+	private String zip = null;
+	private String address1 = null;
+	private String address2 = null;
+	
+	private String notes = null;
 	private Boolean displayName;
 	private ICompany company;
 
@@ -214,89 +217,20 @@ public class Contact extends Entity implements IContact {
 	public void setEmail2(String email2) {
 		this.email2 = email2;
 	}
+
 	/* (non-Javadoc)
-	 * @see de.xwic.sandbox.demoapp.model.entities.impl.IAddressBook#getAddressCountry()
+	 * @see de.xwic.sandbox.demoapp.model.entities.impl.IAddressBook#getNotes()
 	 */
 	@Override
-	public String getAddressCountry() {
-		return addressCountry;
+	public String getNotes() {
+		return notes;
 	}
 	/* (non-Javadoc)
-	 * @see de.xwic.sandbox.demoapp.model.entities.impl.IAddressBook#setAddressCountry(java.lang.String)
+	 * @see de.xwic.sandbox.demoapp.model.entities.impl.IAddressBook#setNotes(java.lang.String)
 	 */
 	@Override
-	public void setAddressCountry(String addressCountry) {
-		this.addressCountry = addressCountry;
-	}
-	/* (non-Javadoc)
-	 * @see de.xwic.sandbox.demoapp.model.entities.impl.IAddressBook#getAddressState()
-	 */
-	@Override
-	public String getAddressState() {
-		return addressState;
-	}
-	/* (non-Javadoc)
-	 * @see de.xwic.sandbox.demoapp.model.entities.impl.IAddressBook#setAddressState(java.lang.String)
-	 */
-	@Override
-	public void setAddressState(String addressState) {
-		this.addressState = addressState;
-	}
-	/* (non-Javadoc)
-	 * @see de.xwic.sandbox.demoapp.model.entities.impl.IAddressBook#getAddressCity()
-	 */
-	@Override
-	public String getAddressCity() {
-		return addressCity;
-	}
-	/* (non-Javadoc)
-	 * @see de.xwic.sandbox.demoapp.model.entities.impl.IAddressBook#setAddressCity(java.lang.String)
-	 */
-	@Override
-	public void setAddressCity(String addressCity) {
-		this.addressCity = addressCity;
-	}
-	/* (non-Javadoc)
-	 * @see de.xwic.sandbox.demoapp.model.entities.impl.IAddressBook#getAddressZip()
-	 */
-	@Override
-	public String getAddressZip() {
-		return addressZip;
-	}
-	/* (non-Javadoc)
-	 * @see de.xwic.sandbox.demoapp.model.entities.impl.IAddressBook#setAddressZip(java.lang.String)
-	 */
-	@Override
-	public void setAddressZip(String addressZip) {
-		this.addressZip = addressZip;
-	}
-	/* (non-Javadoc)
-	 * @see de.xwic.sandbox.demoapp.model.entities.impl.IAddressBook#getAddressStreet()
-	 */
-	@Override
-	public String getAddressStreet() {
-		return addressStreet;
-	}
-	/* (non-Javadoc)
-	 * @see de.xwic.sandbox.demoapp.model.entities.impl.IAddressBook#setAddressStreet(java.lang.String)
-	 */
-	@Override
-	public void setAddressStreet(String addressStreet) {
-		this.addressStreet = addressStreet;
-	}
-	/* (non-Javadoc)
-	 * @see de.xwic.sandbox.demoapp.model.entities.impl.IAddressBook#getNote()
-	 */
-	@Override
-	public String getNote() {
-		return note;
-	}
-	/* (non-Javadoc)
-	 * @see de.xwic.sandbox.demoapp.model.entities.impl.IAddressBook#setNote(java.lang.String)
-	 */
-	@Override
-	public void setNote(String note) {
-		this.note = note;
+	public void setNotes(String note) {
+		this.notes = note;
 	}
 
 
@@ -320,4 +254,78 @@ public class Contact extends Entity implements IContact {
     public void setDisplayName(Boolean displayName) {
         this.displayName = displayName;
     }
+	/**
+	 * @return the country
+	 */
+	public IPicklistEntry getCountry() {
+		return country;
+	}
+	/**
+	 * @param country the country to set
+	 */
+	public void setCountry(IPicklistEntry country) {
+		this.country = country;
+	}
+	/**
+	 * @return the state
+	 */
+	public String getState() {
+		return state;
+	}
+	/**
+	 * @param state the state to set
+	 */
+	public void setState(String state) {
+		this.state = state;
+	}
+	/**
+	 * @return the city
+	 */
+	public String getCity() {
+		return city;
+	}
+	/**
+	 * @param city the city to set
+	 */
+	public void setCity(String city) {
+		this.city = city;
+	}
+	/**
+	 * @return the zip
+	 */
+	public String getZip() {
+		return zip;
+	}
+	/**
+	 * @param zip the zip to set
+	 */
+	public void setZip(String zip) {
+		this.zip = zip;
+	}
+	/**
+	 * @return the address1
+	 */
+	public String getAddress1() {
+		return address1;
+	}
+	/**
+	 * @param address1 the address1 to set
+	 */
+	public void setAddress1(String address1) {
+		this.address1 = address1;
+	}
+	/**
+	 * @return the address2
+	 */
+	public String getAddress2() {
+		return address2;
+	}
+	/**
+	 * @param address2 the address2 to set
+	 */
+	public void setAddress2(String address2) {
+		this.address2 = address2;
+	}
+    
+    
 }

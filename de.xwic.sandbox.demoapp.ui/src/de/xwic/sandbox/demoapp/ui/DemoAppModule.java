@@ -23,7 +23,8 @@ import de.xwic.appkit.webbase.toolkit.app.Site;
 import de.xwic.appkit.webbase.toolkit.app.SubModule;
 import de.xwic.sandbox.base.model.SandboxModelConfig;
 import de.xwic.sandbox.base.model.util.ConfigurationUtil;
-import de.xwic.sandbox.demoapp.ui.addressbook.AddressBookSubmodule;
+import de.xwic.sandbox.demoapp.ui.addressbook.CompanySubmodule;
+import de.xwic.sandbox.demoapp.ui.addressbook.ContactsSubmodule;
 
 /**
  * @author WebEnd
@@ -35,7 +36,7 @@ public class DemoAppModule extends Module {
 	 */
 	public DemoAppModule(Site site) {
 		super(site);
-		setTitle("Demo App");
+		setTitle("Customer Management");
 		setKey(getModuleKey());
 	}
 
@@ -47,7 +48,8 @@ public class DemoAppModule extends Module {
 		List<SubModule> subModules = new ArrayList<SubModule>();
 		
 		if (ConfigurationUtil.hasAccess(SandboxModelConfig.SMOD_DEMO_APP_ADDRESS_BOOK)) {		
-			subModules.add(new AddressBookSubmodule(site));
+			subModules.add(new CompanySubmodule(site));
+			subModules.add(new ContactsSubmodule(site));
 		}
 
 		return subModules;

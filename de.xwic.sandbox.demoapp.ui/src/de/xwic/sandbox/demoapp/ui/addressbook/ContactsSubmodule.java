@@ -25,16 +25,16 @@ import de.xwic.sandbox.basegui.SandboxSubModule;
  * @author WebEnd
  *
  */
-public class AddressBookSubmodule extends SandboxSubModule {
+public class ContactsSubmodule extends SandboxSubModule {
 
 	/**
 	 * @param site
 	 */
-	public AddressBookSubmodule(Site site) {
+	public ContactsSubmodule(Site site) {
 		super(site);
-		setTitle("Address Book");
+		setTitle("Contacts");
 
-		setFullTitle("Address Book");
+		setFullTitle("Contact Overview");
 		setDescription("View all Address Book entries. You may edit details for each entry in the address book.");
 		setIconLarge(new ImageRef("images/module_icons/address_book.png"));
 		setDefaultQuickLaunch(true);		
@@ -45,7 +45,7 @@ public class AddressBookSubmodule extends SandboxSubModule {
 	 */
 	@Override
 	public IControl createControls(IControlContainer container) {
-		return new AddressBookPage(container, "addressBookPage");
+		return new ContactsPage(container, "addressBookPage");
 	}
 
 	/* (non-Javadoc)

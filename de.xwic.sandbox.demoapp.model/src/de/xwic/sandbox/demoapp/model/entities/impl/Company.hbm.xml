@@ -5,7 +5,7 @@
 
 <hibernate-mapping>
 
-	<class name="de.xwic.sandbox.demoapp.model.entities.impl.Company" table="DEMOAPP_COMPANY">
+	<class name="de.xwic.sandbox.demoapp.model.entities.impl.Company" table="DA_COMPANY">
 
 		 <id name="id" type="int">
             <column name="COMPANY_ID" not-null="true"/>
@@ -39,16 +39,66 @@
 		</property>
 		<!-- Entity fields -->
       
-        <many-to-one name="companyType" class="de.xwic.appkit.core.model.entities.impl.PicklistEntry" column="TYPE" not-null="false"
+        <many-to-one name="type" class="de.xwic.appkit.core.model.entities.impl.PicklistEntry" column="TYPE_ID" not-null="false"
                      lazy="false"/>
 
-		<property name="companyName">
-			<column name="COMPANY_NAME" length="50" />
+		<property name="name">
+			<column name="NAME" length="100" />
 		</property>
 
-		<property name="notes">
-			<column name="NOTES" length="250" />
+		<property name="phone1">
+			<column name="PHONE1" length="30" />
 		</property>
+
+		<property name="fax">
+			<column name="FAX" length="30" />
+		</property>
+
+		<property name="webSite">
+			<column name="WEB_SITE" length="255" />
+		</property>
+
+		<property name="email1">
+			<column name="EMAIL1" length="255" />
+		</property>
+
+		<property name="email2">
+			<column name="EMAIL2" length="255" />
+		</property>
+
+        <many-to-one name="country" class="de.xwic.appkit.core.model.entities.impl.PicklistEntry" column="COUNTRY_ID" not-null="false"
+                     lazy="false"/>
+
+		<property name="state">
+			<column name="STATE" length="255" />
+		</property>
+
+		<property name="city">
+			<column name="CITY" length="255" />
+		</property>
+
+		<property name="zip">
+			<column name="ZIP" length="20" />
+		</property>
+		
+		<property name="address1">
+			<column name="ADDRESS1" length="255" />
+		</property>
+
+		<property name="address2">
+			<column name="ADDRESS2" length="255" />
+		</property>
+
+
+		<property name="notes" column="NOTES" type="materialized_clob"/>
+
+        <many-to-one name="segment" class="de.xwic.appkit.core.model.entities.impl.PicklistEntry" column="SEGMENT_ID" not-null="false" lazy="false"/>
+
+		<set name="relationship" table="DA_COMPANY_RELATIONSHIP">
+			<key column="COMPANY_ID"/>
+			<many-to-many class="de.xwic.appkit.core.model.entities.impl.PicklistEntry" column="RELATIONSHIP_ID"/>
+		</set>		
+	
 
 		<!-- End entity fields -->
 		

@@ -5,7 +5,7 @@
 
 <hibernate-mapping>
 
-	<class name="de.xwic.sandbox.demoapp.model.entities.impl.Contact" table="DEMOAPP_CONTACT">
+	<class name="de.xwic.sandbox.demoapp.model.entities.impl.Contact" table="DA_CONTACT">
 
 		 <id name="id" type="int">
             <column name="CONTACT_ID" not-null="true"/>
@@ -55,11 +55,11 @@
 		</property>
 
 		<property name="phone1">
-			<column name="PHONE1" length="20" />
+			<column name="PHONE1" length="30" />
 		</property>
 
 		<property name="phone2">
-			<column name="PHONE2" length="20" />
+			<column name="PHONE2" length="30" />
 		</property>
 
 		<property name="fax">
@@ -86,29 +86,30 @@
 			<column name="EMAIL2" length="255" />
 		</property>
 
-		<property name="addressCountry">
-			<column name="ADDRESS_COUNTRY" length="255" />
+        <many-to-one name="country" class="de.xwic.appkit.core.model.entities.impl.PicklistEntry" column="COUNTRY_ID" not-null="false"
+                     lazy="false"/>
+
+		<property name="state">
+			<column name="STATE" length="255" />
 		</property>
 
-		<property name="addressState">
-			<column name="ADDRESS_STATE" length="255" />
+		<property name="city">
+			<column name="CITY" length="255" />
 		</property>
 
-		<property name="addressCity">
-			<column name="ADDRESS_CITY" length="255" />
-		</property>
-
-		<property name="addressZip">
-			<column name="ADDRESS_ZIP" length="255" />
+		<property name="zip">
+			<column name="ZIP" length="20" />
 		</property>
 		
-		<property name="addressStreet">
-			<column name="ADDRESS_STREET" length="255" />
+		<property name="address1">
+			<column name="ADDRESS1" length="255" />
+		</property>
+
+		<property name="address2">
+			<column name="ADDRESS2" length="255" />
 		</property>
 		
-		<property name="note">
-			<column name="NOTE" length="2048" />
-		</property>
+		<property name="notes" column="NOTES" type="materialized_clob"/>
 
 		<property name="displayName">
 			<column name="DISPLAY_NAME" />

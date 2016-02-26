@@ -1,11 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <editor xsi:noNamespaceSchemaLocation="editor.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
 	<id>default</id>
-	<entity>de.xwic.sandbox.demoapp.model.entities.IContact</entity>
+	<entity>de.xwic.sandbox.demoapp.model.entities.ICompany</entity>
 	<script>
-		function hasMiddlenName() {
-			return entity.title == null;
-		}
+		
+		
 	</script>
 	
 	<templates>
@@ -22,24 +21,11 @@
 		<!-- The root node of an editor is always a tab... -->
 		<tab title="General">
 			<composite layout="grid" cols="2" style="padding: 2">
-				<group title="Basics" layout="grid" cols="2" template="form" colWidth="150;-1">
+				<group title="General" layout="grid" cols="2" template="form" colWidth="150;-1">
 					
-					<label property="title"/>
-					<plRadio property="title" cols="5"/> 
-					<!-- <plCombo property="title"/> -->
-					
-					<label property="firstName"/>
-					<text property = "firstName" template="field"/>
-					
-					<label property="middleName" hideWhen="title == null"/>
-					<text property = "middleName" template="field"/>
-	
-					<label property="lastName"/>
-					<text property = "lastName" template="field"/>
-					
-				</group>
+					<label property="name"/>
+					<text property = "name" template="field"/>
 
-				<group title="Address" layout="grid" cols="2" template="form" colWidth="150;-1">
 					<label property="address1"/>
 					<text property = "address1" template="field"/>
 
@@ -54,20 +40,28 @@
 
 					<label property="country"/>
 					<plCombo property = "country" template="field"/>
+					
+					
+				</group>
+
+				<group title="Attributes" layout="grid" cols="2" template="form" colWidth="150;-1">
+
+					<label property="type"/>
+					<plCombo property = "type" template="field"/>
+
+					<label property="segment"/>
+					<plCombo property = "segment" template="field"/>
 					 
 				</group>
  			</composite>
 		</tab>
-		<tab title="More">
-			<composite layout="grid" cols="2" style="padding: 2">
+		<tab title="Contact">
+			<composite layout="grid" cols="1" style="padding: 2">
 
 				<group title="Contact" layout="grid" cols="2" template="form" colWidth="150;-1;">
 					<label property="phone1"/>
 					<text property = "phone1" template="field"/>
 					
-					<label property="phone2"/>
-					<text property = "phone2" template="field"/>
-	
 					<label property="fax"/>
 					<text property = "fax" template="field"/>
 
@@ -80,15 +74,14 @@
 					<label property="webSite"/>
 					<text property = "webSite" template="field"/>
 
-					<label property="displayName"/>
-					<yesNoRadio property="displayName" template="field"/>
-
 
 				</group>
 
-				<group title="Notes" layout="grid" cols="1" template="form">
-					<text property="notes" multiline="true" style="width: 415; height: 177"/>
-				</group>				
+ 			</composite>
+		</tab>
+		<tab title="Notes">
+			<composite layout="grid" cols="1" style="padding: 2">
+				<text property="notes" multiline="true" style="width: 600; height: 177"/>
 			</composite>
 		</tab>
 	</layout>

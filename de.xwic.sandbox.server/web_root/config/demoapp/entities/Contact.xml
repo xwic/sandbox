@@ -7,10 +7,18 @@
 		<property name="middleName" maxLength="10" required="false" />
 		<property name="lastName" maxLength="50" required="true" />
 
-		<property name="phone1" maxLength="20" required="true" />
-		<property name="phone2" maxLength="20"/>
+		<property name="phone1" maxLength="30" required="false" />
+		<property name="phone2" maxLength="30"/>
 		<property name="company" required="false"/>
 		<property name="displayName" />
+
+		<!-- Entries for Country are defined in Company.xml! -->
+		<property name="address1" maxLength="255"/>
+		<property name="address2" maxLength="255"/>
+		<property name="city" maxLength="255"/>
+		<property name="zip" maxLength="20"/>
+		<property name="state" maxLength="255"/>
+		<property name="country" picklistId="address.country"/>
 
 		<property name="title" picklistId="addressbook.title">
 		     <picklistentry key="Mr" index="10">

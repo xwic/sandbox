@@ -56,6 +56,11 @@
   				<list file="demoapp/listsetup/contacts.xml" />
    				<editor file="demoapp/editors/contact-editor.xml" />
   			</entity>
+
+  			<entity class="de.xwic.sandbox.demoapp.model.entities.ICompany" file="demoapp/entities/Company.xml">
+  				<list file="demoapp/listsetup/Company-default.xml" />
+  				<editor file="demoapp/editors/company-editor.xml" />
+  			</entity>
 			
 		</entities>
   		<bundle basename="demoapp/bundles/demoapp.entities.resources"/>

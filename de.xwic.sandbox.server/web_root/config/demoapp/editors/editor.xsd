@@ -18,6 +18,7 @@
       </xs:element>
       <xs:element type="textType" name="text"/>
       <xs:element type="yesNoRadio" name="yesNoRadio"/>
+      <xs:element type="plCombo" name="plCombo"/>
     </xs:choice>
     <xs:attribute type="xs:string" name="title" use="optional"/>
     <xs:attribute type="xs:string" name="layout" use="optional"/>
@@ -97,10 +98,20 @@
       </xs:extension>
     </xs:simpleContent>
   </xs:complexType>
+  <xs:complexType name="plCombo">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute type="xs:string" name="property" use="optional"/>
+        <xs:attribute type="xs:string" name="hideWhen" use="optional"/>
+		<xs:attribute type="xs:string" name="template" use="optional"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
   <xs:complexType name="compositeType">
-    <xs:sequence>
+    <xs:choice maxOccurs="unbounded" minOccurs="0">
       <xs:element type="groupType" name="group" maxOccurs="unbounded" minOccurs="0"/>
-    </xs:sequence>
+      <xs:element type="textType" name="text"/>
+    </xs:choice>
     <xs:attribute type="xs:string" name="layout" use="optional"/>
     <xs:attribute type="xs:string" name="cols" use="optional"/>
     <xs:attribute type="xs:string" name="style" use="optional"/>

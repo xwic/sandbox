@@ -25,14 +25,14 @@ import de.xwic.appkit.webbase.entityviewer.EntityListViewConfiguration;
  *
  */
 @SuppressWarnings({ "rawtypes", "serial" })
-public class AddressBookView extends EntityListView {
+public class ContactsView extends EntityListView {
 
 	/**
 	 * @param container
 	 * @param configuration
 	 * @throws ConfigurationException
 	 */
-	public AddressBookView(IControlContainer container, EntityListViewConfiguration configuration)
+	public ContactsView(IControlContainer container, EntityListViewConfiguration configuration)
 			throws ConfigurationException {
 		super(container, configuration);
 

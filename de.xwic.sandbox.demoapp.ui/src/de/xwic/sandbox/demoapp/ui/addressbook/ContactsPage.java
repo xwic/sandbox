@@ -27,17 +27,17 @@ import de.xwic.sandbox.demoapp.model.entities.IContact;
  *
  */
 @SuppressWarnings("serial")
-public class AddressBookPage extends InnerPage {
+public class ContactsPage extends InnerPage {
 
 	/**
 	 * @param container
 	 * @param name
 	 */
-	public AddressBookPage(IControlContainer container, String name) {
+	public ContactsPage(IControlContainer container, String name) {
 		super(container, name);
 
-		setTitle("Address Book");
-		setSubtitle("Address Book Management");
+		setTitle("Contacts");
+		setSubtitle("Manage individual contacts.");
 
 		PropertyQuery baseQuery = new PropertyQuery();
 
@@ -51,7 +51,7 @@ public class AddressBookPage extends InnerPage {
 		config.setDefaultFilter(defaultQuery);
 		
 		try {
-			new AddressBookView(this,config);
+			new ContactsView(this,config);
 		} catch (ConfigurationException e) {
 			throw new RuntimeException("Can not create EntityTable: " + e, e);
 		}

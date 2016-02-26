@@ -63,7 +63,7 @@ public class AddressBookEditorControl extends ControlContainer implements IEdito
 	private void createControls() {
 		
 	
-		toolkit.createControl(PicklistEntryControl.class, this, "title", IContact.PL_ADDRESS_BOOK_TITLE);
+		toolkit.createControl(PicklistEntryControl.class, this, "title", IContact.PL_CONTACT_TITLE);
 
 		toolkit.createControl(InputBox.class, this, "firstName");
 		toolkit.createControl(InputBox.class, this, "middleName");
