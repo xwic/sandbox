@@ -52,6 +52,9 @@
 					<label property="segment"/>
 					<plCombo property = "segment" template="field"/>
 					 
+					<label property="relationship"/>
+					<plCheck property = "relationship" template="field"/>
+					 
 				</group>
  			</composite>
 		</tab>
