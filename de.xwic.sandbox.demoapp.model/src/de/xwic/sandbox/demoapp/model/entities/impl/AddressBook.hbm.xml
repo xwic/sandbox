@@ -109,8 +109,9 @@
 		<property name="note">
 			<column name="NOTE" length="2048" />
 		</property>
-		
-		<!-- End entity fields -->
+
+        <many-to-one name="company" class="de.xwic.sandbox.demoapp.model.entities.impl.Company" column="COMPANY"/>
+        <!-- End entity fields -->
 		
 	</class>
 </hibernate-mapping>

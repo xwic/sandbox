@@ -205,4 +205,8 @@ public interface IAddressBook extends IEntity {
 	 * @param note
 	 */
 	void setNote(String note);
+
+	ICompany getCompany();
+
+	void setCompany(ICompany company);
 }

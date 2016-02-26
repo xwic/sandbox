@@ -35,6 +35,7 @@
 	
 	<!-- Demo App Components -->
 		<mapping resource="de/xwic/sandbox/demoapp/model/entities/impl/AddressBook.hbm.xml" />
-		
+		<mapping resource="de/xwic/sandbox/demoapp/model/entities/impl/Company.hbm.xml" />
+
     </session-factory>
 </hibernate-configuration>

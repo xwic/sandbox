@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entities>
+	<entity class="de.xwic.sandbox.demoapp.model.entities.ICompany" autoLoadProperties="true" history="false" defaultDisplayProperty="companyName">
+		<title>${companyType}</title>
+		
+		<property name="companyName" maxLength="50" required="true" />
+		<property name="notes" maxLength="250" required="true" />
+
+		<property name="companyType" picklistId="company.type">
+		     <picklistentry key="private" index="10">
+		         <name lang="en">Private</name>
+		     </picklistentry>
+			<picklistentry key="government" index="20">
+		         <name lang="en">Government</name>
+		    </picklistentry>
+			<picklistentry key="government" index="30">
+				 <name lang="en">Action company</name>
+			</picklistentry>
+		</property>
+	</entity>
+</entities>
