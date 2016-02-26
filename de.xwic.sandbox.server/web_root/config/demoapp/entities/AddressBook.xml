@@ -9,6 +9,8 @@
 
 		<property name="phone1" maxLength="15" required="true" />
 		<property name="phone2" maxLength="15"/>
+		<property name="company" required="false"/>
+		<property name="displayName" />
 
 		<property name="title" picklistId="addressbook.title">
 		     <picklistentry key="Mr" index="10">

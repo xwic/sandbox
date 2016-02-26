@@ -209,4 +209,8 @@ public interface IAddressBook extends IEntity {
 	ICompany getCompany();
 
 	void setCompany(ICompany company);
+
+	Boolean getDisplayName();
+
+	void setDisplayName(Boolean displayName);
 }

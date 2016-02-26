@@ -43,6 +43,7 @@ public class AddressBook extends Entity implements IAddressBook {
 	private String addressZip = null;
 	private String addressStreet = null;
 	private String note = null;
+	private Boolean displayName;
 	private ICompany company;
 
 	/* (non-Javadoc)
@@ -308,4 +309,15 @@ public class AddressBook extends Entity implements IAddressBook {
 	public void setCompany(ICompany company) {
 		this.company = company;
 	}
+
+
+    @Override
+    public Boolean getDisplayName() {
+        return displayName;
+    }
+
+    @Override
+    public void setDisplayName(Boolean displayName) {
+        this.displayName = displayName;
+    }
 }

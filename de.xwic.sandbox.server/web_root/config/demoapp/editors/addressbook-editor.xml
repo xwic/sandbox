@@ -76,7 +76,11 @@
 
 					<label property="webSite"/>
 					<text property = "webSite" template="field"/>
-					
+
+					<label property="displayName"/>
+					<yesNoRadio property="displayName" template="field"/>
+
+
 				</group>
 
 				<group title="Notes" layout="grid" cols="1" template="form">

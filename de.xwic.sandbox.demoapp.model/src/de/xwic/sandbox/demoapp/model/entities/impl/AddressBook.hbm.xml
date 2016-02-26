@@ -110,6 +110,10 @@
 			<column name="NOTE" length="2048" />
 		</property>
 
+		<property name="displayName">
+			<column name="DISPLAY_NAME" />
+		</property>
+
         <many-to-one name="company" class="de.xwic.sandbox.demoapp.model.entities.impl.Company" column="COMPANY"/>
         <!-- End entity fields -->
 		

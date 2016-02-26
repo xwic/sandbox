@@ -26,8 +26,8 @@ import de.xwic.appkit.core.config.editor.EditorConfiguration;
 import de.xwic.appkit.core.dao.ValidationResult;
 import de.xwic.appkit.core.model.EntityModelException;
 import de.xwic.appkit.webbase.editors.EditorContext;
+import de.xwic.appkit.webbase.editors.EntityEditor;
 import de.xwic.appkit.webbase.editors.GenericEditorInput;
-import de.xwic.appkit.webbase.editors.GenericEntityEditor;
 import de.xwic.appkit.webbase.editors.ValidationException;
 import de.xwic.appkit.webbase.editors.mappers.MappingException;
 import de.xwic.appkit.webbase.toolkit.app.ExtendedApplication;
@@ -42,7 +42,7 @@ import de.xwic.appkit.webbase.toolkit.util.ImageLibrary;
  */
 public class ExperimentalEditorPage extends InnerPage {
 
-	private GenericEntityEditor editor;
+	private EntityEditor editor;
 	private EditorContext context;
 
 	private IAction actionSave;
@@ -188,7 +188,7 @@ public class ExperimentalEditorPage extends InnerPage {
 			EditorConfiguration editorConfig = profile.getEditorConfiguration(editorModel.getEntity().type().getName());
 			
 			GenericEditorInput input = new GenericEditorInput(editorModel.getEntity(), editorConfig);
-			editor = new GenericEntityEditor(this, "editor", input);
+			editor = new EntityEditor(this, "editor", input);
 			context = editor.getContext();
 		
 			// start with all fields non-editable

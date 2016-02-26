@@ -17,6 +17,7 @@
         </xs:annotation>
       </xs:element>
       <xs:element type="textType" name="text"/>
+      <xs:element type="yesNoRadio" name="text"/>
     </xs:choice>
     <xs:attribute type="xs:string" name="title" use="optional"/>
     <xs:attribute type="xs:string" name="layout" use="optional"/>
@@ -54,6 +55,16 @@
         <xs:attribute type="xs:string" name="template" use="optional"/>
         <xs:attribute type="xs:string" name="hideWhen" use="optional"/>
         <xs:attribute type="xs:string" name="multiline" use="optional"/>
+        <xs:attribute type="xs:string" name="style" use="optional"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="yesNoRadio">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute type="xs:string" name="property" use="optional"/>
+        <xs:attribute type="xs:string" name="template" use="optional"/>
+        <xs:attribute type="xs:string" name="hideWhen" use="optional"/>
         <xs:attribute type="xs:string" name="style" use="optional"/>
       </xs:extension>
     </xs:simpleContent>
