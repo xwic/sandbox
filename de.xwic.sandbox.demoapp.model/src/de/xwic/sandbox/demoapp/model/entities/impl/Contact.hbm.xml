@@ -5,10 +5,10 @@
 
 <hibernate-mapping>
 
-	<class name="de.xwic.sandbox.demoapp.model.entities.impl.AddressBook" table="DEMOAPP_ADDRESS_BOOK">
+	<class name="de.xwic.sandbox.demoapp.model.entities.impl.Contact" table="DEMOAPP_CONTACT">
 
 		 <id name="id" type="int">
-            <column name="ADDRESS_BOOK_ID" not-null="true"/>
+            <column name="CONTACT_ID" not-null="true"/>
             <generator class="native"/>
         </id>
 
@@ -55,23 +55,23 @@
 		</property>
 
 		<property name="phone1">
-			<column name="PHONE1" length="15" />
+			<column name="PHONE1" length="20" />
 		</property>
 
 		<property name="phone2">
-			<column name="PHONE2" length="15" />
+			<column name="PHONE2" length="20" />
 		</property>
 
 		<property name="fax">
-			<column name="FAX" length="15" />
+			<column name="FAX" length="20" />
 		</property>
 
 		<property name="mobile1">
-			<column name="MOBILE1" length="15" />
+			<column name="MOBILE1" length="20" />
 		</property>
 
 		<property name="mobile2">
-			<column name="MOBILE2" length="15" />
+			<column name="MOBILE2" length="20" />
 		</property>
 
 		<property name="webSite">

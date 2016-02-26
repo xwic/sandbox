@@ -18,21 +18,21 @@ package de.xwic.sandbox.demoapp.model.dao.impl;
 import de.xwic.appkit.core.dao.AbstractDAO;
 import de.xwic.appkit.core.dao.IEntity;
 import de.xwic.appkit.core.dao.ValidationResult;
-import de.xwic.sandbox.demoapp.model.dao.IAddressBookDAO;
-import de.xwic.sandbox.demoapp.model.entities.IAddressBook;
-import de.xwic.sandbox.demoapp.model.entities.impl.AddressBook;
+import de.xwic.sandbox.demoapp.model.dao.IContactDAO;
+import de.xwic.sandbox.demoapp.model.entities.IContact;
+import de.xwic.sandbox.demoapp.model.entities.impl.Contact;
 
 /**
  * @author WebEnd
  *
  */
-public class AddressBookDAO extends AbstractDAO<IAddressBook, AddressBook> implements IAddressBookDAO {
+public class ContactDAO extends AbstractDAO<IContact, Contact> implements IContactDAO {
 
 	/**
 	 * 
 	 */
-	public AddressBookDAO() {
-		super(IAddressBook.class, AddressBook.class);
+	public ContactDAO() {
+		super(IContact.class, Contact.class);
 	}
 
 	/* (non-Javadoc)
@@ -42,7 +42,7 @@ public class AddressBookDAO extends AbstractDAO<IAddressBook, AddressBook> imple
 	public ValidationResult validateEntity(IEntity entity) {
 		ValidationResult result = super.validateEntity(entity);
 		
-		IAddressBook ab = (IAddressBook)entity;
+		IContact ab = (IContact)entity;
 		
 		if (ab.getEmail1() == null || ab.getEmail1().trim().isEmpty()) {
 			result.addWarning(entity.type().getName() + "." + "email1", "entity.validate.warn.email.missing");

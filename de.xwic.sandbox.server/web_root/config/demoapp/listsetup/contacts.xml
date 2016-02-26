@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="iso-8859-1"?>
-<table type="de.xwic.sandbox.demoapp.model.entities.IAddressBook" id="default" default-sort="server" queryEntities="false">
+<table type="de.xwic.sandbox.demoapp.model.entities.IContact" id="default" default-sort="server" queryEntities="false">
 
 	<action>CREATE</action>
 	<action>EDIT</action>

@@ -16,12 +16,12 @@
 package de.xwic.sandbox.demoapp.model.dao;
 
 import de.xwic.appkit.core.dao.DAO;
-import de.xwic.sandbox.demoapp.model.entities.IAddressBook;
+import de.xwic.sandbox.demoapp.model.entities.IContact;
 
 /**
  * @author WebEnd
  *
  */
-public interface IAddressBookDAO extends DAO<IAddressBook> {
+public interface IContactDAO extends DAO<IContact> {
 
 }

@@ -22,7 +22,7 @@ import de.xwic.appkit.core.model.entities.IPicklistEntry;
  * @author WebEnd
  *
  */
-public interface IAddressBook extends IEntity {
+public interface IContact extends IEntity {
 	
 	public static final String PL_ADDRESS_BOOK_TITLE = "addressbook.title";
 	

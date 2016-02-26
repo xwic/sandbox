@@ -2,7 +2,7 @@
 <product>
 	<id>XWIC_SANDBOX</id>
 	<title>xWic Sandbox</title>
-	<version>1.0.0</version>
+	<version>1.0.1.0</version>
 	<languages default="en">
 		<lang id="en" title="English" />
 	</languages>
@@ -52,9 +52,9 @@
 	
 	<domain id="demoapp">
 		<entities>
-  			<entity class="de.xwic.sandbox.demoapp.model.entities.IAddressBook" file="demoapp/entities/AddressBook.xml">
-  				<list file="demoapp/listsetup/address_book.xml" />
-   				<editor file="demoapp/editors/addressbook-editor.xml" />
+  			<entity class="de.xwic.sandbox.demoapp.model.entities.IContact" file="demoapp/entities/Contact.xml">
+  				<list file="demoapp/listsetup/contacts.xml" />
+   				<editor file="demoapp/editors/contact-editor.xml" />
   			</entity>
 			
 		</entities>

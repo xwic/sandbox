@@ -23,7 +23,7 @@ import de.xwic.appkit.webbase.toolkit.editor.EditorModel;
 import de.xwic.appkit.webbase.toolkit.editor.EditorModelEvent;
 import de.xwic.appkit.webbase.toolkit.editor.IEditorModelListener;
 import de.xwic.appkit.webbase.utils.picklist.PicklistEntryControl;
-import de.xwic.sandbox.demoapp.model.entities.IAddressBook;
+import de.xwic.sandbox.demoapp.model.entities.IContact;
 
 /**
  * @author WebEnd
@@ -63,7 +63,7 @@ public class AddressBookEditorControl extends ControlContainer implements IEdito
 	private void createControls() {
 		
 	
-		toolkit.createControl(PicklistEntryControl.class, this, "title", IAddressBook.PL_ADDRESS_BOOK_TITLE);
+		toolkit.createControl(PicklistEntryControl.class, this, "title", IContact.PL_ADDRESS_BOOK_TITLE);
 
 		toolkit.createControl(InputBox.class, this, "firstName");
 		toolkit.createControl(InputBox.class, this, "middleName");

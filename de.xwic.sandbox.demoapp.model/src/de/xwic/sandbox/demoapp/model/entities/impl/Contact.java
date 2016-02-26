@@ -17,14 +17,14 @@ package de.xwic.sandbox.demoapp.model.entities.impl;
 
 import de.xwic.appkit.core.dao.Entity;
 import de.xwic.appkit.core.model.entities.IPicklistEntry;
-import de.xwic.sandbox.demoapp.model.entities.IAddressBook;
+import de.xwic.sandbox.demoapp.model.entities.IContact;
 import de.xwic.sandbox.demoapp.model.entities.ICompany;
 
 /**
  * @author WebEnd
  *
  */
-public class AddressBook extends Entity implements IAddressBook {
+public class Contact extends Entity implements IContact {
 	private IPicklistEntry title;
 	private String firstName = null;
 	private String middleName = null;

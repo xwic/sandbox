@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <editor xsi:noNamespaceSchemaLocation="editor.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
 	<id>default</id>
-	<entity>de.xwic.sandbox.demoapp.model.entities.IAddressBook</entity>
+	<entity>de.xwic.sandbox.demoapp.model.entities.IContact</entity>
 	<script>
 		function hasMiddlenName() {
 			return entity.title == null;
@@ -75,7 +75,7 @@
 					<label property="email1"/>
 					<text property = "email1" template="field"/>
 
-					<label property="email2"/>
+					<label property="email2"/> 
 					<text property = "email2" template="field"/>
 
 					<label property="webSite"/>

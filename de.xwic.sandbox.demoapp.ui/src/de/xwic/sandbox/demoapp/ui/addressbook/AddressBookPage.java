@@ -20,7 +20,7 @@ import de.xwic.appkit.core.config.ConfigurationException;
 import de.xwic.appkit.core.model.queries.PropertyQuery;
 import de.xwic.appkit.webbase.entityviewer.EntityListViewConfiguration;
 import de.xwic.appkit.webbase.toolkit.app.InnerPage;
-import de.xwic.sandbox.demoapp.model.entities.IAddressBook;
+import de.xwic.sandbox.demoapp.model.entities.IContact;
 
 /**
  * @author WebEnd
@@ -46,7 +46,7 @@ public class AddressBookPage extends InnerPage {
 		defaultQuery.setSortDirection(PropertyQuery.SORT_DIRECTION_UP);
 		
 		
-		EntityListViewConfiguration config = new EntityListViewConfiguration(IAddressBook.class);
+		EntityListViewConfiguration config = new EntityListViewConfiguration(IContact.class);
 		config.setBaseFilter(baseQuery);
 		config.setDefaultFilter(defaultQuery);
 		
