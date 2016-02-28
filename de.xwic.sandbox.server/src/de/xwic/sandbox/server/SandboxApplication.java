@@ -101,6 +101,17 @@ public class SandboxApplication extends ExtendedApplication{
 		flipStyle.setTitle("Switch Theme");
 		flipStyle.addSelectionListener(createThemeToggler());
 		
+		final AnchorLink reloadConfig = new AnchorLink(site, "reloadConfig");
+		reloadConfig.setTitle("Reload Config");
+		reloadConfig.addSelectionListener(new SelectionListener() {
+			@Override
+			public void objectSelected(SelectionEvent arg0) {
+				ConfigurationUtil.reloadConfiguration();
+				getSessionContext().notifyMessage("Configuration Reloaded");
+			}
+		});
+		
+		
 	}
 
 	/**
