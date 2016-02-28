@@ -2,10 +2,17 @@
 <editor xsi:noNamespaceSchemaLocation="editor.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
 	<id>default</id>
 	<entity>de.xwic.sandbox.demoapp.model.entities.ICompany</entity>
-	<script>
+	<script><![CDATA[
 		
+		function isUSA() {
+			if (entity.getCountry() != null) {
+				//log.info("Country is " + entity.getCountry().getKey());
+				return entity.getCountry().getKey().equals('usa');
+			}
+			return false; 
+		}
 		
-	</script>
+	]]></script>
 	
 	<templates>
 		<style id="form">
@@ -41,10 +48,12 @@
 					<label property="country"/>
 					<plCombo property = "country" template="field"/>
 					
+					<label property="state" hideWhen="!isUSA()"/>
+					<text property = "state" template="field" hideWhen="!isUSA()"/>
 					
 				</group>
 
-				<group title="Attributes" layout="grid" cols="2" template="form" colWidth="150;-1">
+				<group title="Attributes" layout="grid" cols="2" template="form" colWidth="150;-1"> 
 
 					<label property="type"/>
 					<plCombo property = "type" template="field"/>
