@@ -101,6 +101,20 @@ public class SandboxApplication extends ExtendedApplication{
 		flipStyle.setTitle("Switch Theme");
 		flipStyle.addSelectionListener(createThemeToggler());
 		
+		// Adding a link to reload the config. This is convenient for developers in the Sandbox.
+		// In a productive application, you would want this link to be somewhere in an administration
+		// section, not on every page...
+		final AnchorLink reloadConfig = new AnchorLink(site, "reloadConfig");
+		reloadConfig.setTitle("Reload Config");
+		reloadConfig.addSelectionListener(new SelectionListener() {
+			@Override
+			public void objectSelected(SelectionEvent arg0) {
+				ConfigurationUtil.reloadConfiguration();
+				getSessionContext().notifyMessage("Configuration Reloaded");
+			}
+		});
+		
+		
 	}
 
 	/**
