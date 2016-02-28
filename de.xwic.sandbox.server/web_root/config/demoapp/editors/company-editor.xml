@@ -7,7 +7,7 @@
 		function isUSA() {
 			if (entity.getCountry() != null) {
 				//log.info("Country is " + entity.getCountry().getKey());
-				return entity.getCountry().getKey().equals('usa');
+				return entity.getCountry().getKey() == 'usa';
 			}
 			return false; 
 		}

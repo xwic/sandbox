@@ -396,10 +396,10 @@ public class InstallationManager {
 		}
 
 		XmlImport imp = new XmlImport();
-		imp.importFile(new File(dumpDir, "isis_picklists.xml"));
-		imp.importFile(new File(dumpDir, "isis_security.xml"));
-		imp.importFile(new File(dumpDir, "isis_config.xml"));
-		imp.importFile(new File(dumpDir, "isis_mitarbeiter.xml"));
+		imp.importFile(new File(dumpDir, "picklists.xml"));
+		imp.importFile(new File(dumpDir, "security.xml"));
+		imp.importFile(new File(dumpDir, "config.xml"));
+		imp.importFile(new File(dumpDir, "mitarbeiter.xml"));
 	}
 
 	/**

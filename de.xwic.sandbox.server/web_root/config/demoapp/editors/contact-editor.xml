@@ -2,11 +2,17 @@
 <editor xsi:noNamespaceSchemaLocation="editor.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
 	<id>default</id>
 	<entity>de.xwic.sandbox.demoapp.model.entities.IContact</entity>
-	<script>
-		function hasMiddlenName() {
-			return entity.title == null;
+	<script><![CDATA[
+		
+		function isUSA() {
+			if (entity.getCountry() != null) {
+				//log.info("Country is " + entity.getCountry().getKey());
+				return entity.getCountry().getKey() == 'usa';
+			}
+			return false; 
 		}
-	</script>
+		
+	]]></script>
 	
 	<templates>
 		<style id="form">
@@ -31,8 +37,8 @@
 					<label property="firstName"/>
 					<text property = "firstName" template="field"/>
 					
-					<label property="middleName" hideWhen="title == null"/>
-					<text property = "middleName" template="field"/>
+					<label property="middleName" hideWhen="entity.getTitle() == null"/>
+					<text property = "middleName" template="field" hideWhen="entity.getTitle() == null"/>
 	
 					<label property="lastName"/>
 					<text property = "lastName" template="field"/>
@@ -54,6 +60,9 @@
 
 					<label property="country"/>
 					<plCombo property = "country" template="field"/>
+					
+					<label property="state" hideWhen="!isUSA()"/>
+					<text property = "state" template="field" hideWhen="!isUSA()"/>
 					 
 				</group>
  			</composite>
