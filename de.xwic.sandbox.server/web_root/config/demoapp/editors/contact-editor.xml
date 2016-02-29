@@ -31,8 +31,8 @@
 				<group title="Basics" layout="grid" cols="2" template="form" colWidth="150;-1">
 					
 					<label property="title"/>
-					<plRadio property="title" cols="5"/> 
-					<!-- <plCombo property="title"/> -->
+					<!-- <plRadio property="title" cols="5"/> --> 
+					<plCombo property="title"/>
 					
 					<label property="firstName"/>
 					<text property = "firstName" template="field"/>

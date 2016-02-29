@@ -2,7 +2,7 @@
 <product>
 	<id>XWIC_SANDBOX</id>
 	<title>xWic Sandbox</title>
-	<version>1.0.1.0</version>
+	<version>1.0.1.2</version>
 	<languages default="en">
 		<lang id="en" title="English" />
 	</languages>
