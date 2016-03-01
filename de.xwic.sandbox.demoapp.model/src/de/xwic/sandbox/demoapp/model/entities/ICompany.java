@@ -3,6 +3,7 @@
  */
 package de.xwic.sandbox.demoapp.model.entities;
 
+import java.math.BigDecimal;
 import java.util.Set;
 
 import de.xwic.appkit.core.dao.IEntity;
@@ -118,4 +119,11 @@ public interface ICompany extends IEntity, IAddress {
 	 */
 	public abstract void setSegment(IPicklistEntry segment);
 
+	BigDecimal getAnnualRevenue();
+
+	void setAnnualRevenue(BigDecimal annualRevenue);
+
+	Integer getNumberOfEmployees();
+
+	void setNumberOfEmployees(Integer numberOfEmployees);
 }

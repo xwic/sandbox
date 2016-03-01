@@ -97,8 +97,10 @@
 		<set name="relationship" table="DA_COMPANY_RELATIONSHIP">
 			<key column="COMPANY_ID"/>
 			<many-to-many class="de.xwic.appkit.core.model.entities.impl.PicklistEntry" column="RELATIONSHIP_ID"/>
-		</set>		
-	
+		</set>
+
+		<property name="annualRevenue" column="ANNUAL_REVENUE" />
+		<property name="numberOfEmployees" column="NO_EMPLOYEES" />
 
 		<!-- End entity fields -->
 		

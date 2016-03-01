@@ -15,6 +15,7 @@
  *******************************************************************************/
 package de.xwic.sandbox.demoapp.model.entities.impl;
 
+import java.math.BigDecimal;
 import java.util.Set;
 
 import de.xwic.appkit.core.dao.Entity;
@@ -48,6 +49,10 @@ public class Company extends Entity implements ICompany  {
 	private String notes = null;
 
 	private IPicklistEntry segment = null;
+
+	private BigDecimal annualRevenue;
+
+	private Integer numberOfEmployees;
 
 	/* (non-Javadoc)
 	 * @see de.xwic.sandbox.demoapp.model.entities.impl.ICompany#getType()
@@ -305,7 +310,23 @@ public class Company extends Entity implements ICompany  {
 		this.segment = segment;
 	}
 
+	@Override
+	public BigDecimal getAnnualRevenue() {
+		return annualRevenue;
+	}
 
-	
-	
+	@Override
+	public void setAnnualRevenue(BigDecimal annualRevenue) {
+		this.annualRevenue = annualRevenue;
+	}
+
+	@Override
+	public Integer getNumberOfEmployees() {
+		return numberOfEmployees;
+	}
+
+	@Override
+	public void setNumberOfEmployees(Integer numberOfEmployees) {
+		this.numberOfEmployees = numberOfEmployees;
+	}
 }

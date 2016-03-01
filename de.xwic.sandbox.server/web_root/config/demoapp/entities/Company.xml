@@ -41,6 +41,9 @@
 		
 		<property name="notes" required="false" />
 
+		<property name="annualRevenue" required="false" />
+		<property name="numberOfEmployees" required="false" />
+
 		<property name="type" picklistId="company.type">
 		     <picklistentry key="private" index="10">
 		         <name lang="en">Private</name>
