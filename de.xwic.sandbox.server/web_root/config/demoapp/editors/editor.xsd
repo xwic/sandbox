@@ -82,7 +82,7 @@
     <xs:sequence>
       <xs:element type="xs:string" name="id"/>
       <xs:element type="xs:string" name="entity"/>
-      <xs:element type="xs:string" name="script"/>
+      <xs:element type="xs:string" name="script" minOccurs="0"/>
       <xs:element type="templatesType" name="templates"/>
       <xs:element type="layoutType" name="layout">
         <xs:annotation>

@@ -2,18 +2,7 @@
 <editor xsi:noNamespaceSchemaLocation="editor.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
 	<id>default</id>
 	<entity>de.xwic.sandbox.demoapp.model.entities.ICampaign</entity>
-	<script><![CDATA[
-		
-		function isUSA() {
-			if (entity.getCountry() != null) {
-				//log.info("Country is " + entity.getCountry().getKey());
-				return entity.getCountry().getKey() == 'usa';
-			}
-			return false; 
-		}
-		
-	]]></script>
-	
+
 	<templates>
 		<style id="form">
 			padding: 5;
