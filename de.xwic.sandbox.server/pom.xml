@@ -13,6 +13,7 @@
 
 	<properties>
 		<server-dist>${project.build.directory}/${deployProfileFinalName}</server-dist>
+		<hibernate.version>4.3.11.Final</hibernate.version>
 	</properties>
 	
 	<build>
@@ -150,6 +151,10 @@
 		    <artifactId>mysql-connector-java</artifactId>
 		</dependency>
 		<dependency>
+			<groupId>org.mariadb.jdbc</groupId>
+			<artifactId>mariadb-java-client</artifactId>
+		</dependency>
+		<dependency>
 			<groupId>javax.mail</groupId>
 			<artifactId>mail</artifactId>
 		</dependency>
@@ -186,10 +191,14 @@
 			<dependency>
 				<groupId>org.hibernate</groupId>
 				<artifactId>hibernate-ehcache</artifactId>
-				<version>4.3.11.Final</version>
+				<version>${hibernate.version}</version>
 			</dependency>
 
-
+		<dependency>
+			<groupId>org.hibernate</groupId>
+			<artifactId>hibernate-entitymanager</artifactId>
+			<version>${hibernate.version}</version>
+		</dependency>
 			
 		<!-- JUST TEST -->
 		<dependency>

@@ -17,8 +17,10 @@ package de.xwic.sandbox.demoapp.model;
 
 import de.xwic.appkit.core.dao.DAOFactory;
 import de.xwic.appkit.core.dao.DAOSystem;
+import de.xwic.sandbox.demoapp.model.dao.ICampaignDAO;
 import de.xwic.sandbox.demoapp.model.dao.ICompanyDAO;
 import de.xwic.sandbox.demoapp.model.dao.IContactDAO;
+import de.xwic.sandbox.demoapp.model.dao.impl.CampaignDAO;
 import de.xwic.sandbox.demoapp.model.dao.impl.CompanyDAO;
 import de.xwic.sandbox.demoapp.model.dao.impl.ContactDAO;
 
@@ -33,6 +35,7 @@ public class DemoAppModelConfig {
 	public static void register(DAOFactory factory) {
 		factory.registerDao(IContactDAO.class, new ContactDAO());
 		factory.registerDao(ICompanyDAO.class, new CompanyDAO());
+		factory.registerDao(ICampaignDAO.class, new CampaignDAO());
 	}
 	
 	/**

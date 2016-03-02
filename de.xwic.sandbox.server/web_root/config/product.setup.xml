@@ -61,7 +61,12 @@
   				<list file="demoapp/listsetup/Company-default.xml" />
   				<editor file="demoapp/editors/company-editor.xml" />
   			</entity>
-			
+
+			<entity class="de.xwic.sandbox.demoapp.model.entities.ICampaign" file="demoapp/entities/Campaign.xml">
+  				<list file="demoapp/listsetup/Campaign-default.xml" />
+  				<editor file="demoapp/editors/campaign-editor.xml" />
+  			</entity>
+
 		</entities>
   		<bundle basename="demoapp/bundles/demoapp.entities.resources"/>
 	</domain>
