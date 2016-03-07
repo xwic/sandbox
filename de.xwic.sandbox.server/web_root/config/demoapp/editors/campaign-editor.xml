@@ -28,7 +28,7 @@
 					<date property="startDate"/>
 
 					<label property="endDate"/>
-					<date property="endDate" mode="DATETIME"/>
+					<date property="endDate" />
 				</group>
  			</composite>
 		</tab>
