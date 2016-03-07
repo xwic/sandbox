@@ -23,6 +23,12 @@
 
 					<label property="type"/>
 					<plCombo property="type"/>
+
+					<label property="startDate"/>
+					<date property="startDate"/>
+
+					<label property="endDate"/>
+					<date property="endDate" mode="DATETIME"/>
 				</group>
  			</composite>
 		</tab>
