@@ -58,13 +58,17 @@
   			</entity>
 
   			<entity class="de.xwic.sandbox.demoapp.model.entities.ICompany" file="demoapp/entities/Company.xml">
-  				<list file="demoapp/listsetup/Company-default.xml" />
+  				<list file="demoapp/listsetup/company-default.xml" />
   				<editor file="demoapp/editors/company-editor.xml" />
   			</entity>
 
 			<entity class="de.xwic.sandbox.demoapp.model.entities.ICampaign" file="demoapp/entities/Campaign.xml">
-  				<list file="demoapp/listsetup/Campaign-default.xml" />
+  				<list file="demoapp/listsetup/campaign-default.xml" />
   				<editor file="demoapp/editors/campaign-editor.xml" />
+  			</entity>
+			<entity class="de.xwic.sandbox.demoapp.model.entities.ICampaignParticipant" file="demoapp/entities/CampaignParticipant.xml">
+				<list file="demoapp/listsetup/campaign-participant-default.xml" />
+				<editor file="demoapp/editors/campaign-participant-editor.xml" />
   			</entity>
 
 		</entities>

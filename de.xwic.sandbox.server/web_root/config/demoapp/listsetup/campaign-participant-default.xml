@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<table type="de.xwic.sandbox.demoapp.model.entities.ICampaignParticipant" id="default" default-sort="server" queryEntities="false">
+
+	<action>CREATE</action>
+	<action>EDIT</action>
+	<action>DELETE</action>
+
+	<column id="campaign" default="1" width="300"/>
+</table>

@@ -7,6 +7,7 @@ import de.xwic.appkit.core.dao.IEntity;
 import de.xwic.appkit.core.model.entities.IPicklistEntry;
 
 import java.util.Date;
+import java.util.Set;
 
 /**
  * A group of more than one persons to carry out an enterprise and so a form of business organization.
@@ -15,19 +16,15 @@ import java.util.Date;
  */
 public interface ICampaignParticipant extends IEntity {
 
-    String getName();
+    ICampaign getCampaign();
 
-    void setName(String name);
+    void setCampaign(ICampaign campaign);
 
-    Date getStartDate();
+    ICompany getCompany();
 
-    void setStartDate(Date startDate);
+    void setCompany(ICompany company);
 
-    Date getEndDate();
+    IContact getContact();
 
-    void setEndDate(Date endDate);
-
-    IPicklistEntry getType();
-
-    void setType(IPicklistEntry type);
+    void setContact(IContact contact);
 }

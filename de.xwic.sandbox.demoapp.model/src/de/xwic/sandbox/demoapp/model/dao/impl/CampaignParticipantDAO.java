@@ -13,16 +13,27 @@
  * See the License for the specific language governing permissions and 
  * limitations under the License.
  *******************************************************************************/
-package de.xwic.sandbox.demoapp.model.dao;
+package de.xwic.sandbox.demoapp.model.dao.impl;
 
-import de.xwic.appkit.core.dao.DAO;
+import de.xwic.appkit.core.dao.AbstractDAO;
+import de.xwic.sandbox.demoapp.model.dao.ICampaignDAO;
+import de.xwic.sandbox.demoapp.model.dao.ICampaignParticipantDAO;
 import de.xwic.sandbox.demoapp.model.entities.ICampaign;
 import de.xwic.sandbox.demoapp.model.entities.ICampaignParticipant;
+import de.xwic.sandbox.demoapp.model.entities.impl.Campaign;
+import de.xwic.sandbox.demoapp.model.entities.impl.CampaignParticipant;
 
 /**
  * @author WebEnd
  *
  */
-public interface ICampaignParticipantDAO extends DAO<ICampaignParticipant> {
+public class CampaignParticipantDAO extends AbstractDAO<ICampaignParticipant, CampaignParticipant> implements ICampaignParticipantDAO {
+
+	/**
+	 *
+	 */
+	public CampaignParticipantDAO() {
+		super(ICampaignParticipant.class, CampaignParticipant.class);
+	}
 
 }

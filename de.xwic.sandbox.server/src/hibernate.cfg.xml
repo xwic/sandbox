@@ -37,5 +37,6 @@
 		<mapping resource="de/xwic/sandbox/demoapp/model/entities/impl/Contact.hbm.xml" />
 		<mapping resource="de/xwic/sandbox/demoapp/model/entities/impl/Company.hbm.xml" />
 		<mapping class="de.xwic.sandbox.demoapp.model.entities.impl.Campaign"/>
+		<mapping class="de.xwic.sandbox.demoapp.model.entities.impl.CampaignParticipant"/>
     </session-factory>
 </hibernate-configuration>
