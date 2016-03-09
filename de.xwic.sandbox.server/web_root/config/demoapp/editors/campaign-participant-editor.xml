@@ -20,6 +20,10 @@
 				<group title="General" layout="grid" cols="2" template="form" colWidth="150;-1">
 					<label property="campaign"/>
 					<entity property="campaign"/>
+					<label property="company"/>
+					<entity property="company"/>
+					<label property="contact"/>
+					<entity property="contact"/>
 				</group>
  			</composite>
 		</tab>

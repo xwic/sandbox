@@ -6,4 +6,6 @@
 	<action>DELETE</action>
 
 	<column id="campaign" default="1" width="300"/>
+	<column id="company" default="1" width="300"/>
+	<column id="contact" default="1" width="300"/>
 </table>

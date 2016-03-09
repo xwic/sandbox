@@ -23,6 +23,7 @@ import de.xwic.appkit.webbase.toolkit.app.Site;
 import de.xwic.appkit.webbase.toolkit.app.SubModule;
 import de.xwic.sandbox.base.model.SandboxModelConfig;
 import de.xwic.sandbox.base.model.util.ConfigurationUtil;
+import de.xwic.sandbox.demoapp.ui.addressbook.CampaignParticipantSubmodule;
 import de.xwic.sandbox.demoapp.ui.addressbook.CampaignSubmodule;
 import de.xwic.sandbox.demoapp.ui.addressbook.CompanySubmodule;
 import de.xwic.sandbox.demoapp.ui.addressbook.ContactsSubmodule;
@@ -51,6 +52,7 @@ public class DemoAppModule extends Module {
 		if (ConfigurationUtil.hasAccess(SandboxModelConfig.SMOD_DEMO_APP_ADDRESS_BOOK)) {		
 			subModules.add(new CompanySubmodule(site));
 			subModules.add(new CampaignSubmodule(site));
+			subModules.add(new CampaignParticipantSubmodule(site));
 			subModules.add(new ContactsSubmodule(site));
 		}
 
