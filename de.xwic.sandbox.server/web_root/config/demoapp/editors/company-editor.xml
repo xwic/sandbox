@@ -88,7 +88,11 @@
 					<label property="webSite"/>
 					<text property = "webSite" template="field"/>
 
+                 	<label property="numberOfEmployees"/>
+					<number property = "numberOfEmployees" format="integer"/>
 
+					<label property="annualRevenue"/>
+					<number property = "annualRevenue" format="double" currencySymbolPlacement="LEFT" currencySymbol="&#36;"/>
 				</group>
 
  			</composite>

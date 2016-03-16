@@ -96,7 +96,7 @@
 				</group>
 
 				<group title="Notes" layout="grid" cols="1" template="form">
-					<text property="notes" multiline="true" style="width: 415; height: 177"/>
+					<htmleditor property="notes" style="width: 415; height: 177"/>
 				</group>				
 			</composite>
 		</tab>
