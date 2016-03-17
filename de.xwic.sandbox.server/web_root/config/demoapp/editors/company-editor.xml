@@ -4,6 +4,8 @@
 	<entity>de.xwic.sandbox.demoapp.model.entities.ICompany</entity>
 	<script><![CDATA[
 		
+		log.info("Global Script for Entity Editor");
+		
 		function isUSA() {
 			if (entity.getCountry() != null) {
 				//log.info("Country is " + entity.getCountry().getKey());
