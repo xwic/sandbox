@@ -3,11 +3,13 @@
  */
 package de.xwic.sandbox.demoapp.ui.editext.companies;
 
+import de.jwic.base.JavaScriptSupport;
 import de.jwic.controls.Button;
 import de.jwic.controls.ToolBar;
 import de.jwic.controls.ToolBarGroup;
 import de.jwic.events.SelectionEvent;
 import de.jwic.events.SelectionListener;
+import de.xwic.appkit.core.dao.DAOSystem;
 import de.xwic.appkit.webbase.actions.AbstractEntityAction;
 import de.xwic.appkit.webbase.actions.ICustomEntityActionCreator;
 import de.xwic.appkit.webbase.actions.IEntityAction;
@@ -40,9 +42,8 @@ public class CompanyUrlActionExtension implements ICustomEntityActionCreator {
 	public CompanyUrlActionExtension() {
 	}
 
-
 	@Override
-	public IEntityAction createAction(Site site) {
+	public IEntityAction createAction(Site site, String entityType, String id) {
 		IEntityAction entityAction = new AbstractEntityAction() {
 			@Override
 			public void run() {
@@ -54,6 +55,8 @@ public class CompanyUrlActionExtension implements ICustomEntityActionCreator {
 		entityAction.setSite(site);
 		entityAction.setIconEnabled(ImageLibrary.ICON_EDIT_ACTIVE);
 		entityAction.setIconDisabled(ImageLibrary.ICON_EDIT_INACTIVE);
-        return entityAction;
+		entityAction.setId(id);
+		entityAction.setEntityDao(DAOSystem.findDAOforEntity(entityType));
+		return entityAction;
 	}
 }
