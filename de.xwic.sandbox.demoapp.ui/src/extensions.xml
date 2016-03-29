@@ -24,7 +24,13 @@
 			className="de.xwic.sandbox.demoapp.ui.editext.companies.CompanyEditorExtension"
 			priority="0">
 			<attribute key="forEntity">de.xwic.sandbox.demoapp.model.entities.ICompany</attribute>
-		</extension>		
+		</extension>
+
+		<extension extensionPointId="entityEditorActions" id="companyPreviewAction"
+			className="de.xwic.sandbox.demoapp.ui.editext.companies.CompanyUrlActionExtension"
+			priority="0">
+			<attribute key="forEntity">de.xwic.sandbox.demoapp.model.entities.ICompany</attribute>
+		</extension>
 		 
 		<extension extensionPointId="entityEditorControl" id="phoneDialInput"
 			className="de.xwic.sandbox.demoapp.ui.editext.companies.CompanyEditorExtension"
