@@ -5,11 +5,13 @@ package de.xwic.sandbox.demoapp.ui.editext.companies;
 
 import de.jwic.base.JavaScriptSupport;
 import de.jwic.controls.Button;
+import de.jwic.controls.Label;
 import de.jwic.controls.ToolBar;
 import de.jwic.controls.ToolBarGroup;
 import de.jwic.events.SelectionEvent;
 import de.jwic.events.SelectionListener;
 import de.xwic.appkit.core.dao.DAOSystem;
+import de.xwic.appkit.core.dao.IEntity;
 import de.xwic.appkit.webbase.actions.AbstractEntityAction;
 import de.xwic.appkit.webbase.actions.ICustomEntityActionCreator;
 import de.xwic.appkit.webbase.actions.IEntityAction;
@@ -22,6 +24,8 @@ import de.xwic.appkit.webbase.editors.events.EditorEvent;
 import de.xwic.appkit.webbase.editors.events.EditorListener;
 import de.xwic.appkit.webbase.toolkit.app.Site;
 import de.xwic.appkit.webbase.toolkit.util.ImageLibrary;
+import de.xwic.sandbox.demoapp.model.entities.ICompany;
+import de.xwic.sandbox.demoapp.model.entities.impl.Company;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 
@@ -47,8 +51,10 @@ public class CompanyUrlActionExtension implements ICustomEntityActionCreator {
 		IEntityAction entityAction = new AbstractEntityAction() {
 			@Override
 			public void run() {
-				CenteredWindow centeredWindow = new CenteredWindow(site);
-				centeredWindow.show();
+				Company company = (Company) entityDao.getEntity(Integer.parseInt(id));
+				String js =
+						"window.open('" + company.getWebSite() + "','_blank' );";
+				site.getSessionContext().queueScriptCall(js);
 			}
 		};
 		entityAction.setTitle("Show company URL");
