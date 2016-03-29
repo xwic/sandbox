@@ -12,7 +12,6 @@ import de.xwic.appkit.core.config.model.Property;
 import de.xwic.appkit.webbase.editors.FieldChangeListener;
 import de.xwic.appkit.webbase.editors.IBuilderContext;
 import de.xwic.appkit.webbase.editors.builders.Builder;
-import de.xwic.appkit.webbase.editors.mappers.InputboxMapper;
 
 /**
  * For the sake of the demo, this builder generates a regular input box field with a button that 
@@ -47,8 +46,10 @@ public class CallPhoneInputBuilder extends Builder<ECustom> {
 		if (style.getStyleInt(Style.HEIGHT_HINT) != 0) {
 			inputBox.setHeight(style.getStyleInt(Style.HEIGHT_HINT) );
 		}
+		
+		inputBox.setEmptyInfoText("+## ##### ####");
 
-		context.registerField(element.getProperty(), inputBox, element, InputboxMapper.MAPPER_ID);
+		context.registerField(element.getProperty(), inputBox, element, CallPhoneInputMapper.MAPPER_ID);
 		
 		return inputBox;
 		

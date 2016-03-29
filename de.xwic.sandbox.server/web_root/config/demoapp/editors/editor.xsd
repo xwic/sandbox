@@ -18,15 +18,16 @@
   </xs:complexType>
   <xs:complexType name="groupType">
     <xs:choice maxOccurs="unbounded" minOccurs="0">
-      <xs:element type="labelType" name="label"/>
-      <xs:element type="entityType" name="entity"/>
-      <xs:element type="textType" name="text"/>
-      <xs:element type="plComboType" name="plCombo"/>
-      <xs:element type="dateType" name="date"/>
-      <xs:element type="plCheckType" name="plCheck"/>
-      <xs:element type="numberType" name="number"/>
-      <xs:element type="yesNoRadioType" name="yesNoRadio"/>
-      <xs:element type="htmleditorType" name="htmleditor"/>
+    	<xs:element type="labelType" name="label" />
+    	<xs:element type="entityType" name="entity" />
+    	<xs:element type="textType" name="text" />
+    	<xs:element type="plComboType" name="plCombo" />
+    	<xs:element type="dateType" name="date" />
+    	<xs:element type="plCheckType" name="plCheck" />
+    	<xs:element type="numberType" name="number" />
+    	<xs:element type="yesNoRadioType" name="yesNoRadio" />
+    	<xs:element type="htmleditorType" name="htmleditor" />
+    	<xs:element name="custom" type="customType"></xs:element>
     </xs:choice>
     <xs:attribute type="xs:string" name="title" use="optional"/>
     <xs:attribute type="xs:string" name="layout" use="optional"/>
@@ -153,4 +154,12 @@
     <xs:attribute type="xs:string" name="cols" use="optional"/>
     <xs:attribute type="xs:string" name="style" use="optional"/>
   </xs:complexType>
+
+    <xs:complexType name="customType">
+		<xs:attribute type="xs:string" name="extension" use="required"/>
+		<xs:attribute type="xs:string" name="property" use="optional"/>
+		<xs:attribute type="xs:string" name="template" use="optional"/>
+		<xs:attribute type="xs:string" name="hideWhen" use="optional"/>
+		<xs:attribute type="xs:string" name="style" use="optional"/>
+    </xs:complexType>
 </xs:schema>

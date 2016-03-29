@@ -37,6 +37,10 @@
 			priority="0">
 		</extension>		
 		 
+		<extension extensionPointId="entityEditorMapper" id="phoneDialMapper"
+			className="de.xwic.sandbox.demoapp.ui.editext.phone.CallPhoneInputMapper" 
+			priority="0">
+		</extension>		
 		 
 	</extensions>
 </config>

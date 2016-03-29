@@ -74,7 +74,7 @@
 
 				<group title="Contact" layout="grid" cols="2" template="form" colWidth="150;-1;">
 					<label property="phone1"/>
-					<text property = "phone1" template="field"/>
+					<custom extension="phoneDialInput" property = "phone1" template="field"/>
 					
 					<label property="fax"/>
 					<text property = "fax" template="field"/>
