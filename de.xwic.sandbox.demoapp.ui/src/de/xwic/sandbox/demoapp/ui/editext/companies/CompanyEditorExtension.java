@@ -11,12 +11,14 @@ import de.jwic.controls.ToolBar;
 import de.jwic.controls.ToolBarGroup;
 import de.jwic.events.SelectionEvent;
 import de.jwic.events.SelectionListener;
+import de.xwic.appkit.core.ucexec.GetServerDateUseCase;
 import de.xwic.appkit.webbase.editors.AbstractEntityEditorExtension;
 import de.xwic.appkit.webbase.editors.EditorContext;
 import de.xwic.appkit.webbase.editors.EntityEditor;
 import de.xwic.appkit.webbase.editors.IEntityEditorExtension;
 import de.xwic.appkit.webbase.editors.events.EditorEvent;
 import de.xwic.appkit.webbase.editors.events.EditorListener;
+import de.xwic.appkit.webbase.toolkit.components.Dialog;
 
 /**
  * This extension demonstrates how a generic entity editor can be extended. The
@@ -72,6 +74,8 @@ public class CompanyEditorExtension extends AbstractEntityEditorExtension implem
 	protected void startCampaign() {
 		
 		// start a campaign!
+		
+		editor.getSessionContext().notifyMessage("Start the Campaign..");
 		
 	}
 
