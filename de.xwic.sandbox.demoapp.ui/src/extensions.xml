@@ -31,7 +31,13 @@
 			priority="0">
 			<attribute key="forEntity">de.xwic.sandbox.demoapp.model.entities.ICompany</attribute>
 		</extension>
-		 
+
+		<extension extensionPointId="editorListener" id="companyBeforeSaveListener"
+			className="de.xwic.sandbox.demoapp.ui.editext.companies.CompanyBeforeSaveListenerExtension"
+			priority="0">
+			<attribute key="forEntity">de.xwic.sandbox.demoapp.model.entities.ICompany</attribute>
+		</extension>
+
 		 
 		 
 	</extensions>
