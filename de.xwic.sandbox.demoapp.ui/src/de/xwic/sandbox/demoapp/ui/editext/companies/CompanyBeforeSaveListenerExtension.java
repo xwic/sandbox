@@ -3,6 +3,7 @@
  */
 package de.xwic.sandbox.demoapp.ui.editext.companies;
 
+import de.xwic.appkit.core.dao.ValidationCallContext;
 import de.xwic.appkit.core.dao.ValidationResult;
 import de.xwic.appkit.core.model.IEntityModel;
 import de.xwic.appkit.webbase.editors.EditorContext;
@@ -46,9 +47,7 @@ public class CompanyBeforeSaveListenerExtension implements IEditorListenerFactor
                         throw new RuntimeException(e.getMessage(), e);
                     }
                     if (!website.startsWith("http")) {
-                        ValidationResult result = new ValidationResult(editorContext.getEntityDescriptor().getClassname());
-                        result.addError("webSite", "websiteshould start with http");
-                        editorContext.displayValidationResults(result);
+                        ValidationCallContext.getInstance().addError("de.xwic.sandbox.demoapp.model.entities.ICompany.webSite", "de.xwic.sandbox.demoapp.model.entities.ICompany.webSite.httpStart");
                     }
                 }
             }
