@@ -3,8 +3,6 @@
  */
 package de.xwic.sandbox.demoapp.ui.editext.companies;
 
-import de.xwic.appkit.core.dao.ValidationCallContext;
-import de.xwic.appkit.core.dao.ValidationResult;
 import de.xwic.appkit.core.model.IEntityModel;
 import de.xwic.appkit.webbase.editors.EditorContext;
 import de.xwic.appkit.webbase.editors.events.EditorAdapter;
@@ -13,6 +11,9 @@ import de.xwic.appkit.webbase.editors.events.EditorListener;
 import de.xwic.appkit.webbase.editors.events.IEditorListenerFactory;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
+
+import java.net.InetAddress;
+import java.net.UnknownHostException;
 
 /**
  * This extension demonstrates how a generic entity editor can be extended. The
@@ -46,8 +47,12 @@ public class CompanyBeforeSaveListenerExtension implements IEditorListenerFactor
                         log.error("Failed to read property " + e.getMessage(), e);
                         throw new RuntimeException(e.getMessage(), e);
                     }
-                    if (!website.startsWith("http")) {
-                        ValidationCallContext.getInstance().addError("de.xwic.sandbox.demoapp.model.entities.ICompany.webSite", "de.xwic.sandbox.demoapp.model.entities.ICompany.webSite.httpStart");
+
+                    try {
+                        InetAddress inetAddress = InetAddress.getByName(website);
+                        assert inetAddress != null;
+                    } catch (UnknownHostException e) {
+                        throw new RuntimeException("Host " + website + " does not exists");
                     }
                 }
             }
