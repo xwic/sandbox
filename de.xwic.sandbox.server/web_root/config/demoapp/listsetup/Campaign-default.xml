@@ -5,6 +5,15 @@
 	<action>EDIT</action>
 	<action>DELETE</action>
 
+	<!-- 
+	<quicksearch>
+		<composite>
+			<label property="name"/>
+			<text property="name"/>
+		</composite>
+	</quicksearch>
+	 -->
+
 	<column id="name" default="1" width="300"/>
 	<column id="type" default="1" width="130"/>
 </table>
