@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <editor xsi:noNamespaceSchemaLocation="editor.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-	<id>default</id>
-	<entity>de.xwic.sandbox.demoapp.model.entities.ICompany</entity>
-	<script><![CDATA[
+    <id>default</id>
+    <entity>de.xwic.sandbox.demoapp.model.entities.ICompany</entity>
+    <script><![CDATA[
 		
 		log.info("Global Script for Entity Editor");
 		
@@ -15,93 +15,102 @@
 		}
 		
 	]]></script>
-	
-	<templates>
-		<style id="form">
-			padding: 5;
-		</style>
-		<style id="field">
-			width: 350;
-		</style>
-	</templates>
-	
-	<!-- The layout-->
-	<layout>
-		<!-- The root node of an editor is always a tab... -->
-		<tab title="General">
-			<composite layout="grid" cols="2" style="padding: 2">
-				<group title="General" layout="grid" cols="2" template="form" colWidth="150;-1">
-					
-					<label property="name"/>
-					<text property = "name" template="field"/>
 
-					<label property="address1"/>
-					<text property = "address1" template="field"/>
+    <templates>
+        <style id="form">
+            padding: 5;
+        </style>
+        <style id="field">
+            width: 350;
+        </style>
+    </templates>
 
-					<label property="address2"/>
-					<text property = "address2" template="field"/>
-					
-					<label property="zip"/>
-					<text property = "zip" template="field"/>
-	
-					<label property="city"/>
-					<text property = "city" template="field"/>
+    <!-- The layout-->
+    <layout>
+        <!-- The root node of an editor is always a tab... -->
+        <tab title="General">
+            <composite layout="grid" cols="2" style="padding: 2">
+                <group title="General" layout="grid" cols="2" template="form" colWidth="150;-1">
 
-					<label property="country"/>
-					<plCombo property = "country" template="field"/>
-					
-					<label property="state" hideWhen="!isUSA()"/>
-					<text property = "state" template="field" hideWhen="!isUSA()"/>
-					
-				</group>
+                    <label property="name"/>
+                    <text property="name" template="field"/>
 
-				<group title="Attributes" layout="grid" cols="2" template="form" colWidth="150;-1"> 
+                    <label property="address1"/>
+                    <text property="address1" template="field"/>
 
-					<label property="type"/>
-					<plCombo property = "type" template="field"/>
+                    <label property="address2"/>
+                    <text property="address2" template="field"/>
 
-					<label property="segment"/>
-					<plCombo property = "segment" template="field"/>
-					 
-					<label property="relationship"/>
-					<plCheck property = "relationship" cols="3" template="field"/>
-					 
-				</group>
- 			</composite>
-		</tab>
-		<tab title="Contact">
-			<composite layout="grid" cols="1" style="padding: 2">
+                    <label property="zip"/>
+                    <text property="zip" template="field"/>
 
-				<group title="Contact" layout="grid" cols="2" template="form" colWidth="150;-1;">
-					<label property="phone1"/>
-					<text property = "phone1" template="field"/>
-					
-					<label property="fax"/>
-					<text property = "fax" template="field"/>
+                    <label property="city"/>
+                    <text property="city" template="field"/>
 
-					<label property="email1"/>
-					<text property = "email1" template="field"/>
+                    <label property="country"/>
+                    <plCombo property="country" template="field"/>
 
-					<label property="email2"/> 
-					<text property = "email2" template="field"/>
+                    <label property="state" hideWhen="!isUSA()"/>
+                    <text property="state" template="field" hideWhen="!isUSA()"/>
 
-					<label property="webSite"/>
-					<text property = "webSite" template="field"/>
+                </group>
 
-                 	<label property="numberOfEmployees"/>
-					<number property = "numberOfEmployees" format="integer"/>
+                <group title="Attributes" layout="grid" cols="2" template="form" colWidth="150;-1">
 
-					<label property="annualRevenue"/>
-					<number property = "annualRevenue" format="double" currencySymbolPlacement="LEFT" currencySymbol="&#36;"/>
-				</group>
+                    <label property="type"/>
+                    <plCombo property="type" template="field"/>
 
- 			</composite>
-		</tab>
-		<tab title="Notes">
-			<composite layout="grid" cols="1" style="padding: 2">
-				<text property="notes" multiline="true" style="width: 600; height: 177"/>
-			</composite>
-		</tab>
-	</layout>
+                    <label property="segment"/>
+                    <plCombo property="segment" template="field"/>
+
+                    <label property="relationship"/>
+                    <plCheck property="relationship" cols="3" template="field"/>
+
+                </group>
+            </composite>
+        </tab>
+        <tab title="Contact">
+            <composite layout="grid" cols="1" style="padding: 2">
+
+                <group title="Contact" layout="grid" cols="2" template="form" colWidth="150;-1;">
+                    <label property="phone1"/>
+                    <text property="phone1" template="field"/>
+
+                    <label property="fax"/>
+                    <text property="fax" template="field"/>
+
+                    <label property="email1"/>
+                    <text property="email1" template="field"/>
+
+                    <label property="email2"/>
+                    <text property="email2" template="field"/>
+
+                    <label property="webSite"/>
+                    <text property="webSite" template="field"/>
+
+                    <label property="numberOfEmployees"/>
+                    <number property="numberOfEmployees" format="integer"/>
+
+                    <label property="annualRevenue"/>
+                    <number property="annualRevenue" format="double" currencySymbolPlacement="LEFT"
+                            currencySymbol="&#36;"/>
+                </group>
+
+            </composite>
+        </tab>
+        <tab title="Notes">
+            <composite layout="grid" cols="1" style="padding: 2">
+                <text property="notes" multiline="true" style="width: 600; height: 177"/>
+            </composite>
+        </tab>
+        <subTabs>
+            <subTab title="Contacts">
+                <listView type="de.xwic.sandbox.demoapp.model.entities.IContact" filterOn="customer" listProfile="default"/>
+            </subTab>
+            <subTab title="Calculator">
+                <custom extension="CustomContentCreator"/>
+            </subTab>
+        </subTabs>
+    </layout>
 
 </editor>
