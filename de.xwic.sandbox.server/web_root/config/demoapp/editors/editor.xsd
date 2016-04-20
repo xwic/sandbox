@@ -94,6 +94,7 @@
           <xs:documentation>The root node of an editor is always a tab...</xs:documentation>
         </xs:annotation>
       </xs:element>
+      <xs:element type="subTabsType" name="subTabs"/>
     </xs:sequence>
   </xs:complexType>
   <xs:complexType name="plCheckType">
@@ -152,5 +153,33 @@
     <xs:attribute type="xs:string" name="layout" use="optional"/>
     <xs:attribute type="xs:string" name="cols" use="optional"/>
     <xs:attribute type="xs:string" name="style" use="optional"/>
+  </xs:complexType>
+  <xs:complexType name="subTabsType">
+    <xs:sequence>
+      <xs:element type="subTabType" name="subTab" maxOccurs="unbounded" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="subTabType">
+    <xs:sequence>
+      <xs:element type="listViewType" name="listView" minOccurs="0"/>
+      <xs:element type="customType" name="custom" minOccurs="0"/>
+    </xs:sequence>
+    <xs:attribute type="xs:string" name="title" use="optional"/>
+  </xs:complexType>
+  <xs:complexType name="customType">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute type="xs:string" name="extension"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="listViewType">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute type="xs:string" name="type"/>
+        <xs:attribute type="xs:string" name="filterOn"/>
+        <xs:attribute type="xs:string" name="listProfile"/>
+      </xs:extension>
+    </xs:simpleContent>
   </xs:complexType>
 </xs:schema>
