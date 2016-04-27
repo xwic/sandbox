@@ -102,7 +102,7 @@
 		</tab>
 		<tab title="Notes">
 			<composite layout="grid" cols="1" style="padding: 2">
-				<text property="notes" multiline="true" style="width: 600; height: 177"/>
+				<text property="notes" id="notes" multiline="true" style="width: 600; height: 177"/>
 			</composite>
 		</tab>
 

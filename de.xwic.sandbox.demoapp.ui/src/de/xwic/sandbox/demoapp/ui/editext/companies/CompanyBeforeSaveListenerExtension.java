@@ -3,12 +3,17 @@
  */
 package de.xwic.sandbox.demoapp.ui.editext.companies;
 
+import de.jwic.base.IControl;
+import de.jwic.controls.InputBox;
+import de.xwic.appkit.core.dao.DAOSystem;
 import de.xwic.appkit.core.model.IEntityModel;
 import de.xwic.appkit.webbase.editors.EditorContext;
 import de.xwic.appkit.webbase.editors.events.EditorAdapter;
 import de.xwic.appkit.webbase.editors.events.EditorEvent;
 import de.xwic.appkit.webbase.editors.events.EditorListener;
 import de.xwic.appkit.webbase.editors.events.IEditorListenerFactory;
+import de.xwic.sandbox.demoapp.model.entities.ICompany;
+
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 
@@ -39,21 +44,16 @@ public class CompanyBeforeSaveListenerExtension implements IEditorListenerFactor
             public void beforeSave(EditorEvent event) {
                 if (event.getSource() instanceof EditorContext) {
                     EditorContext editorContext = (EditorContext) event.getSource();
-                    IEntityModel model = editorContext.getModel();
-                    String website;
-                    try {
-                        website = String.valueOf(model.getProperty("webSite"));
-                    } catch (Exception e) {
-                        log.error("Failed to read property " + e.getMessage(), e);
-                        throw new RuntimeException(e.getMessage(), e);
-                    }
-
-                    try {
-                        InetAddress inetAddress = InetAddress.getByName(website);
-                        assert inetAddress != null;
-                    } catch (UnknownHostException e) {
-                        throw new RuntimeException("Host " + website + " does not exists");
-                    }
+                    
+                    String userName = DAOSystem.getSecurityManager().getCurrentUser().getLogonName();
+                    
+                    InputBox notesField = (InputBox)editorContext.getControlById("notes");
+                    
+                    notesField.setText("Updated by " + userName + "\n" + notesField.getText());
+                    
+                    
+                    
+                    
                 }
             }
         };
