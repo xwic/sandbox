@@ -46,6 +46,9 @@
 					<label property="lastName"/>
 					<text property = "lastName" template="field"/>
 					
+					<label property="company"/>
+					<entity property="company"/>
+					
 				</group>
 
 				<group title="Address" layout="grid" cols="2" template="form" colWidth="150;-1">
