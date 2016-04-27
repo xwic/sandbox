@@ -36,6 +36,18 @@
 			className="de.xwic.sandbox.demoapp.ui.editext.phone.CallPhoneInputBuilder" 
 			priority="0">
 		</extension>		
+
+		<extension extensionPointId="editorListener" id="companyBeforeSaveListener"
+			className="de.xwic.sandbox.demoapp.ui.editext.companies.CompanyBeforeSaveListenerExtension"
+			priority="0">
+			<attribute key="forEntity">de.xwic.sandbox.demoapp.model.entities.ICompany</attribute>
+		</extension>
+
+		<extension extensionPointId="editorValidator" id="companyBeforeSaveValidator"
+			className="de.xwic.sandbox.demoapp.ui.editext.companies.CompanyBeforeSaveValidatorExtension"
+			priority="0">
+			<attribute key="forEntity">de.xwic.sandbox.demoapp.model.entities.ICompany</attribute>
+		</extension>
 		 
 		<extension extensionPointId="entityEditorMapper" id="phoneDialMapper"
 			className="de.xwic.sandbox.demoapp.ui.editext.phone.CallPhoneInputMapper" 

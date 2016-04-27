@@ -1,8 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<editor xsi:noNamespaceSchemaLocation="editor.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-	<id>default</id>
-	<entity>de.xwic.sandbox.demoapp.model.entities.ICompany</entity>
-	<script><![CDATA[
+<editor xmlns="http://www.xwic.de" 
+		xsi:schemaLocation="http://www.xwic.de editor.xsd"
+		xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+
+    <id>default</id>
+    <entity>de.xwic.sandbox.demoapp.model.entities.ICompany</entity>
+    <script><![CDATA[
 		
 		log.info("Global Script for Entity Editor");
 		
@@ -102,6 +105,13 @@
 				<text property="notes" multiline="true" style="width: 600; height: 177"/>
 			</composite>
 		</tab>
-	</layout>
+
+        <subTabs>
+            <subTab title="Contacts">
+                <listView type="de.xwic.sandbox.demoapp.model.entities.IContact" filterOn="customer" listProfile="default"/>
+            </subTab>
+        </subTabs>
+        
+    </layout>
 
 </editor>
