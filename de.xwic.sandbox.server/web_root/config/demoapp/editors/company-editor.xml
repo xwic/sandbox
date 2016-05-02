@@ -108,7 +108,7 @@
 
         <subTabs>
             <subTab title="Contacts">
-                <listView type="de.xwic.sandbox.demoapp.model.entities.IContact" filterOn="customer" listProfile="default"/>
+                <listView type="de.xwic.sandbox.demoapp.model.entities.IContact" filterOn="company" listProfile="default"/>
             </subTab>
         </subTabs>
         
