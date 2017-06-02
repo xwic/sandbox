@@ -9,7 +9,7 @@
 
 		<property name="phone1" maxLength="30" required="false" />
 		<property name="phone2" maxLength="30"/>
-		<property name="company" required="false"/>
+		<property name="company" required="false" onRefDelete="deny"/>
 		<property name="displayName" />
 
 		<!-- Entries for Country are defined in Company.xml! -->

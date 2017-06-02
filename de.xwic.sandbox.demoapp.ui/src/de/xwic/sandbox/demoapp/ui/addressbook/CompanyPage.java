@@ -15,12 +15,30 @@
  *******************************************************************************/
 package de.xwic.sandbox.demoapp.ui.addressbook;
 
+import java.lang.reflect.InvocationHandler;
+import java.lang.reflect.Method;
+import java.lang.reflect.Proxy;
+
 import de.jwic.base.IControlContainer;
+import de.jwic.controls.Button;
+import de.jwic.events.SelectionEvent;
+import de.jwic.events.SelectionListener;
 import de.xwic.appkit.core.config.ConfigurationException;
+import de.xwic.appkit.core.config.ConfigurationManager;
+import de.xwic.appkit.core.config.Setup;
+import de.xwic.appkit.core.config.model.EntityDescriptor;
+import de.xwic.appkit.core.config.model.Property;
+import de.xwic.appkit.core.dao.DAOProviderAPI;
+import de.xwic.appkit.core.dao.DAOSystem;
+import de.xwic.appkit.core.dao.ISecurityManager;
+import de.xwic.appkit.core.dao.UseCase;
 import de.xwic.appkit.core.model.queries.PropertyQuery;
 import de.xwic.appkit.webbase.entityviewer.EntityListView;
 import de.xwic.appkit.webbase.entityviewer.EntityListViewConfiguration;
 import de.xwic.appkit.webbase.toolkit.app.InnerPage;
+import de.xwic.sandbox.base.model.util.ConfigurationUtil;
+import de.xwic.sandbox.demoapp.model.DemoAppModelConfig;
+import de.xwic.sandbox.demoapp.model.dao.ICompanyDAO;
 import de.xwic.sandbox.demoapp.model.entities.ICompany;
 
 /**
@@ -40,22 +58,73 @@ public class CompanyPage extends InnerPage {
 		setTitle("Companies");
 		setSubtitle("Manage companies you know/do business with.");
 
+		
+		
+		
 		PropertyQuery baseQuery = new PropertyQuery();
+		//baseQuery.addEquals("type.key", "private");
 
 		PropertyQuery defaultQuery = new PropertyQuery();
 		defaultQuery.setSortField("companyName");
 		defaultQuery.setSortDirection(PropertyQuery.SORT_DIRECTION_UP);
-		
+		//defaultQuery.addEquals("city", "Munich");
 		
 		EntityListViewConfiguration config = new EntityListViewConfiguration(ICompany.class);
 		config.setBaseFilter(baseQuery);
 		config.setDefaultFilter(defaultQuery);
 		
 		try {
-			new EntityListView<ICompany>(this,config);
+			EntityListView<ICompany> listView = new EntityListView<ICompany>(this,config);
+			Button button = listView.getToolbar().addGroup().addButton();
+			
+			button.setTitle("Test Me");
+			button.addSelectionListener(new SelectionListener() {
+				
+				@Override
+				public void objectSelected(SelectionEvent event) {
+					doSome();
+				}
+			});
 		} catch (ConfigurationException e) {
 			throw new RuntimeException("Can not create EntityTable: " + e, e);
 		}
+	}
+
+	/**
+	 * 
+	 */
+	protected void doSome() {
+
+		try {
+
+			
+			System.out.println(ConfigurationUtil.hasAccess("MY_TEST_SCOPE"));
+			
+			
+			
+//			InvocationHandler ih = new InvocationHandler() {
+//				@Override
+//				public Object invoke(Object proxy, Method method, Object[] args) throws Throwable {
+//					System.out.println("Called '" + method.getName() + "' with args: " + args[0]);
+//					return null;
+//				}
+//			};
+//			
+//			ICompany comp = (ICompany)Proxy.newProxyInstance(
+//					getClass().getClassLoader(), 
+//					new Class<?>[] {ICompany.class}, 
+//					ih);
+//			
+//			comp.setAddress1("bla");
+			
+			//getSessionContext().notifyMessage("P: maxLength: " + p.getMaxLength());
+			
+		} catch (Exception e) {
+			getSessionContext().notifyMessage("Ups: " + e);
+		}
+		
+		
+		
 	}
 
 }

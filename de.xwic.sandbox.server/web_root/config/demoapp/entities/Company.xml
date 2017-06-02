@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <entities>
 	<entity class="de.xwic.sandbox.demoapp.model.entities.ICompany" autoLoadProperties="true" history="false" defaultDisplayProperty="name">
-		<title>${name}</title>
+		<title>${name} (${city})</title>
 		
 		<property name="name" maxLength="100" required="true" />
 
