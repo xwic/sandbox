@@ -141,7 +141,7 @@ public class EntityComboContentProvider<E extends IEntity> implements IContentPr
 	 */
 	@Override
 	public String getUniqueKey(IEntity entity) {
-		return Integer.toString(entity.getId());
+		return Long.toString(entity.getId());
 	}
 
 	/*

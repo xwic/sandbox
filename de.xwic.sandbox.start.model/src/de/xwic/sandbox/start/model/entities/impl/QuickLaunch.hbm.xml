@@ -7,7 +7,7 @@
 
 	<class name="de.xwic.sandbox.start.model.entities.impl.QuickLaunch" table="START_QUICK_LAUNCH">
 
-		 <id name="id" type="int">
+		 <id name="id" type="long">
             <column name="QUICK_LAUNCH_ID" not-null="true"/>
             <generator class="native"/>
         </id>

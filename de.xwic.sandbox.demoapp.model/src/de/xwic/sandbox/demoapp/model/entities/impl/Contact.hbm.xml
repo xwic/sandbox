@@ -7,7 +7,7 @@
 
 	<class name="de.xwic.sandbox.demoapp.model.entities.impl.Contact" table="DA_CONTACT">
 
-		 <id name="id" type="int">
+		 <id name="id" type="long">
             <column name="CONTACT_ID" not-null="true"/>
             <generator class="native"/>
         </id>

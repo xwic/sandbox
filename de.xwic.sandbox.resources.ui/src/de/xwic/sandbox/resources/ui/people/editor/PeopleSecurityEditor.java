@@ -132,7 +132,7 @@ public class PeopleSecurityEditor extends ControlContainer implements IEditorMod
 
 		List<IRole> roles = roleDAO.getEntities(null, pqRoles);
 		for (IRole role : roles) {
-			int roleId = role.getId();
+			long roleId = role.getId();
 			String key = String.valueOf(roleId);
 			String roleName = role.getName();
 
@@ -151,7 +151,7 @@ public class PeopleSecurityEditor extends ControlContainer implements IEditorMod
 	 * @param roleId
 	 * @return
 	 */
-	private boolean hasRole(Set<IRole> roles, int roleId) {
+	private boolean hasRole(Set<IRole> roles, long roleId) {
 		for (IEntity entity : roles) {
 			if (entity.getId() == roleId) {
 				return true;

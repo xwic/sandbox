@@ -84,10 +84,10 @@ public class Evaluators {
 		}
 	};
 
-	private final static Function<? extends IEntity, Integer> ENTITY_ID = new Function<IEntity, Integer>() {
+	private final static Function<? extends IEntity, Long> ENTITY_ID = new Function<IEntity, Long>() {
 
 		@Override
-		public Integer evaluate(final IEntity obj) {
+		public Long evaluate(final IEntity obj) {
 			return obj.getId();
 		}
 	};
@@ -96,8 +96,8 @@ public class Evaluators {
 	 * @return
 	 */
 	@SuppressWarnings("unchecked")
-	public static <T extends IEntity> Function<T, Integer> entityIdEvaluator() {
-		return (Function<T, Integer>) ENTITY_ID;
+	public static <T extends IEntity> Function<T, Long> entityIdEvaluator() {
+		return (Function<T, Long>) ENTITY_ID;
 	}
 
 	public static <E extends Exception> Function<E, String> exceptionMessageEvaluator() {

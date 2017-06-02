@@ -7,7 +7,7 @@
 
 	<class name="de.xwic.sandbox.demoapp.model.entities.impl.Company" table="DA_COMPANY">
 
-		 <id name="id" type="int">
+		 <id name="id" type="long">
             <column name="COMPANY_ID" not-null="true"/>
             <generator class="native"/>
         </id>

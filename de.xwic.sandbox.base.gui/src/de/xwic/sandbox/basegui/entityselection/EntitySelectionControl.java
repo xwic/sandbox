@@ -121,12 +121,12 @@ public class EntitySelectionControl extends ControlContainer implements IModelLi
 		ibEntityInfo.setText(text);
 	}
 
-	public int getSelectedEntityId() {
+	public long getSelectedEntityId() {
 		return contributor.getSelectionModel().getSelectedEntityId();
 	}
 	
 	public IEntity getSelectedEntity() {
-		int selectedId = getSelectedEntityId();
+		long selectedId = getSelectedEntityId();
 		DAO dao = contributor.getListModel().getDAO();
 		return dao.getEntity(selectedId);
 	}
@@ -135,7 +135,7 @@ public class EntitySelectionControl extends ControlContainer implements IModelLi
 	public void modelContentChanged(ModelEvent event) {
 		if (event.getEventType() == EntitySelectionModel.CLOSE_ENTITY_SELECTION) {
 			EntitySelectionModel customerModel = (EntitySelectionModel) event.getSource();
-			int selectedId = customerModel.getSelectedEntityId();
+			long selectedId = customerModel.getSelectedEntityId();
 
 			// see if something was selected
 			if (selectedId > 0) {
