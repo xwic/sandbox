@@ -77,11 +77,12 @@ public class MYSQLServerDatabaseHandler implements IDatabaseHandler {
 			dbInitialized = false;
 			return null; // early exist.
 		}
-		dbInitialized = true;
-
-		version = new Version();
-
-		version.setMajor(0);
+		
+		String versionString = getConfigValue(ApplicationData.CFG_DB_PRODUCT_VERSION);
+		if (versionString != null) {
+			version = new Version(versionString);
+			dbInitialized = true;
+		}
 
 		return version;
 	}
@@ -297,7 +298,7 @@ public class MYSQLServerDatabaseHandler implements IDatabaseHandler {
 				col.setName(rs.getString("COLUMN_NAME"));
 				col.setDataType(rs.getString("DATA_TYPE"));
 				col.setNullable("YES".equals(rs.getString("IS_NULLABLE")));
-				col.setLength(rs.getInt("CHARACTER_MAXIMUM_LENGTH"));
+				col.setLength(rs.getLong("CHARACTER_MAXIMUM_LENGTH"));
 
 				list.add(col);
 

@@ -22,7 +22,7 @@ public class DbColumn {
 
 	private String name = null;;
 	private boolean nullable = false;
-	private int length = 0;
+	private long length = 0;
 	private String dataType = null;
 
 	/**
@@ -43,7 +43,7 @@ public class DbColumn {
 	/**
 	 * @return the length
 	 */
-	public int getLength() {
+	public long getLength() {
 		return length;
 	}
 
@@ -51,7 +51,7 @@ public class DbColumn {
 	 * @param length
 	 *            the length to set
 	 */
-	public void setLength(int length) {
+	public void setLength(long length) {
 		this.length = length;
 	}
 
