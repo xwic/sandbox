@@ -60,7 +60,7 @@ public class XmlImport {
 
 	private final Log log = LogFactory.getLog(getClass());
 
-	private Map<EntityKey, Integer> importedEntities = new HashMap<EntityKey, Integer>();
+	private Map<EntityKey, Long> importedEntities = new HashMap<EntityKey, Long>();
 
 	/**
 	 * @param file
@@ -179,8 +179,8 @@ public class XmlImport {
 							IPicklistEntry entry = dao.createPickListEntry(pickliste);
 							String oldId = elEntry.attributeValue("id");
 							if (oldId != null) {
-								importedEntities.put(new EntityKey(IPicklistEntry.class.getName(), Integer.parseInt(oldId)),
-										Integer.valueOf(entry.getId()));
+								importedEntities.put(new EntityKey(IPicklistEntry.class.getName(), Long.parseLong(oldId)),
+										Long.valueOf(entry.getId()));
 							}
 							boolean modified = false;
 							if (elEntry.attributeValue("key") != null) {
@@ -246,7 +246,7 @@ public class XmlImport {
 
 			dao.update(entity);
 			if (id != -1) {
-				importedEntities.put(new EntityKey(type, id), Integer.valueOf(entity.getId()));
+				importedEntities.put(new EntityKey(type, id), Long.valueOf(entity.getId()));
 			}
 			//log.info((count++) + " imp " + type + " id: "+ id + " as " + entity.getId());
 			count++;
@@ -303,9 +303,9 @@ public class XmlImport {
 				for (Iterator<?> itSet = elSet.elementIterator(XmlExport.ELM_ELEMENT); itSet.hasNext();) {
 					Element elSetElement = (Element) itSet.next();
 					String typeElement = elSetElement.attributeValue("type");
-					int refId = Integer.parseInt(elSetElement.getText());
+					long refId = Long.parseLong(elSetElement.getText());
 
-					Integer newId = importedEntities.get(new EntityKey(typeElement, refId));
+					Long newId = importedEntities.get(new EntityKey(typeElement, refId));
 					if (newId != null) {
 						// its an imported object
 						refId = newId.intValue();
@@ -318,8 +318,8 @@ public class XmlImport {
 
 			} else if (IEntity.class.isAssignableFrom(type)) {
 				// entity type
-				int refId = Integer.parseInt(elProp.getText());
-				Integer newId = importedEntities.get(new EntityKey(type.getName(), refId));
+				long refId = Long.parseLong(elProp.getText());
+				Long newId = importedEntities.get(new EntityKey(type.getName(), refId));
 				if (newId != null) {
 					// its an imported object
 					refId = newId.intValue();

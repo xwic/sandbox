@@ -34,7 +34,7 @@ public class QuickLaunchUIItem {
 	private String content = null;
 	private ImageRef icon = null;
 	private String reference = null;
-	private int quickLinkId = 0;
+	private long quickLinkId = 0;
 	
 	private int tempId = 0;
 	private boolean mostCommon = false;
@@ -116,13 +116,13 @@ public class QuickLaunchUIItem {
 	/**
 	 * @return the quickLinkId
 	 */
-	public int getQuickLinkId() {
+	public long getQuickLinkId() {
 		return quickLinkId;
 	}
 	/**
 	 * @param quickLinkId the quickLinkId to set
 	 */
-	public void setQuickLinkId(int quickLinkId) {
+	public void setQuickLinkId(long quickLinkId) {
 		this.quickLinkId = quickLinkId;
 	}
 	/**

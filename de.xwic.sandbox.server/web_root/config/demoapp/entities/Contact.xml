@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entities>
+	<entity class="de.xwic.sandbox.demoapp.model.entities.IContact" autoLoadProperties="true" history="false" defaultDisplayProperty="firstName">
+		<title>${title} ${firstName} ${middleName} ${lastName}</title>
+		
+		<property name="firstName" maxLength="50" required="true" />
+		<property name="middleName" maxLength="10" required="false" />
+		<property name="lastName" maxLength="50" required="true" />
+
+		<property name="phone1" maxLength="30" required="false" />
+		<property name="phone2" maxLength="30"/>
+		<property name="company" required="false" onRefDelete="deny"/>
+		<property name="displayName" />
+
+		<!-- Entries for Country are defined in Company.xml! -->
+		<property name="address1" maxLength="255"/>
+		<property name="address2" maxLength="255"/>
+		<property name="city" maxLength="255"/>
+		<property name="zip" maxLength="20"/>
+		<property name="state" maxLength="255"/>
+		<property name="country" picklistId="address.country"/>
+
+		<property name="title" picklistId="addressbook.title">
+		     <picklistentry key="Mr" index="10">
+		         <name lang="en">Mr</name>
+		     </picklistentry>
+		     <picklistentry key="Mrs" index="20">
+		         <name lang="en">Mrs</name>
+		     </picklistentry>
+		     <picklistentry key="Miss" index="30">
+		         <name lang="en">Miss</name>
+		     </picklistentry>
+		     <picklistentry key="Ms" index="40">
+		         <name lang="en">Ms</name>
+		     </picklistentry>
+		     <picklistentry key="Dr" index="50">
+		         <name lang="en">Dr</name>
+		     </picklistentry>
+		     <picklistentry key="Rev" index="60">
+		         <name lang="en">Rev</name>
+		     </picklistentry>
+		     <picklistentry key="Sir" index="70">
+		         <name lang="en">Sir</name>
+		     </picklistentry>
+		     <picklistentry key="Lady" index="80">
+		         <name lang="en">Lady</name>
+		     </picklistentry>
+		     <picklistentry key="Lord" index="90">
+		         <name lang="en">Lord</name>
+		     </picklistentry>
+		     <picklistentry key="Captain" index="100">
+		         <name lang="en">Captain</name>
+		     </picklistentry>
+		     <picklistentry key="Major" index="110">
+		         <name lang="en">Major</name>
+		     </picklistentry>
+		     <picklistentry key="Professor" index="120">
+		         <name lang="en">Professor</name>
+		     </picklistentry>
+		     <picklistentry key="Dame" index="130">
+		         <name lang="en">Dame</name>
+		     </picklistentry>
+		     <picklistentry key="Colonel" index="140">
+		         <name lang="en">Colonel</name>
+		     </picklistentry>
+		</property>
+        	  
+	</entity>
+</entities>

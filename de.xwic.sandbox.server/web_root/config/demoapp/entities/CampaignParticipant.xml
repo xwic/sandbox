@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entities>
+	<entity class="de.xwic.sandbox.demoapp.model.entities.ICampaignParticipant" autoLoadProperties="true" history="false" defaultDisplayProperty="name">
+
+	</entity>
+</entities>

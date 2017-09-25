@@ -1,0 +1,46 @@
+# The hibernate.properties file is excluded from Git, so when you setup a new workspace,
+# you have to create one. You can use this file as a template to get started...
+
+
+hibernate.connection.username=APPKIT_SANDBOX
+hibernate.default_schema=APPKIT_SANDBOX
+hibernate.connection.password=password-goes-here
+
+# Oracle
+#hibernate.connection.url=jdbc:oracle:thin:@localhost:1521:xe
+#hibernate.dialect=org.hibernate.dialect.Oracle10gDialect
+#hibernate.connection.driver_class=oracle.jdbc.driver.OracleDriver
+
+#mariadb
+hibernate.connection.url=jdbc:mariadb://myhost:3306/appkit_sandbox
+hibernate.dialect=org.hibernate.dialect.MySQLDialect
+hibernate.connection.driver_class=org.mariadb.jdbc.Driver
+
+
+hibernate.generate_statistics=true
+hibernate.show_sql=false
+
+
+###############################################
+### Hibernate 4.3.11 ##########################
+###############################################
+
+#
+#hibernate connection pool settings
+#
+#minimum number of connections in the pool 
+hibernate.hikari.minimumIdle=5
+#max number of connections in the pool
+hibernate.hikari.maximumPoolSize=20
+#time to wait when getting a connection from the pool - 1 minute 
+hibernate.hikari.connectionTimeout=60000
+#TTL of idle connections - 10 minutes
+hibernate.hikari.idleTimeout=600000
+
+#
+#hibernate cache config
+#
+hibernate.cache.use_second_level_cache=true
+hibernate.cache.use_query_cache=true
+hibernate.cache.region.factory_class=org.hibernate.cache.ehcache.EhCacheRegionFactory
+net.sf.ehcache.configurationResourceName=ehcache.xml

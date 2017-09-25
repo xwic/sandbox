@@ -40,7 +40,7 @@ public class EntitySelectionCombo<I extends IEntity> extends AbstractEntityCombo
 
 	private ScopeActionKey scopeAction;
 
-	private int selectedId = 0;
+	private long selectedId = 0;
 	private DAO selectedEntityDAO = null;
 
 	private boolean addSelectedEntry;
@@ -294,7 +294,7 @@ public class EntitySelectionCombo<I extends IEntity> extends AbstractEntityCombo
 	public void selectEntry(IEntity entity) {
 		if (null != entity) {
 			if (containsEntity(entity)) {
-				setSelectedKey(Integer.toString(entity.getId()));
+				setSelectedKey(Long.toString(entity.getId()));
 			} else if (addSelectedEntry) {
 				// add the new entity to the list
 				addEntity(entity, true);
@@ -317,7 +317,7 @@ public class EntitySelectionCombo<I extends IEntity> extends AbstractEntityCombo
 	 * @param id
 	 * @return if an id is already inserted in the combo
 	 */
-	public boolean containsId(int id) {
+	public boolean containsId(long id) {
 		return getContentProvider().getObjectFromKey(String.valueOf(id)) != null;
 	}
 

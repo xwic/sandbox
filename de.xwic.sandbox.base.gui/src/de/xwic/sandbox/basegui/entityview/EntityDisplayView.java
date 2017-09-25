@@ -444,7 +444,7 @@ public abstract class EntityDisplayView extends AbstractListContainer implements
 				try {
 					ListSetup listSetup = ConfigurationManager.getUserProfile()
 							.getListSetup(entityClass.getName(), lsInfo.getListSetupId());
-					int profileId = UserListUtil.toUserProfile(listSetup, lsInfo.getDisplayName());
+					long profileId = UserListUtil.toUserProfile(listSetup, lsInfo.getDisplayName());
 					IUserListProfile profile = (IUserListProfile) SandboxModelConfig.getUserListProfileDAO().getEntity(profileId);
 					lbListSetup.addElement(profile.getDescription(), profile.getProfileId());
 

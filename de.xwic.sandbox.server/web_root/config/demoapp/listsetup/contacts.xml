@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<table type="de.xwic.sandbox.demoapp.model.entities.IContact" id="default" default-sort="server" queryEntities="false">
+
+	<action>CREATE</action>
+	<action>EDIT</action>
+	<action>DELETE</action>
+
+	<column id="title" default="1" width="100"/>
+	<column id="firstName" default="1" width="100"/>
+	<column id="middleName" default="1" width="100"/>
+	<column id="lastName" default="1" width="100"/>
+	<column id="phone1" default="1" width="100"/>
+	<column id="email1" default="0" width="150"/>
+	<column id="displayName" default="1" width="30"/>
+	<column id="company" default="1" width="150"/>
+</table>

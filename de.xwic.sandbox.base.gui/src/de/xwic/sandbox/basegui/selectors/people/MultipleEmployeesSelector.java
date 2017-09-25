@@ -112,7 +112,7 @@ public class MultipleEmployeesSelector extends ControlContainer {
 
 			@Override
 			public void objectSelected(SelectionEvent event) {
-				int selectedEntityId = employeeCombo.getSelectedEntityId();
+				long selectedEntityId = employeeCombo.getSelectedEntityId();
 				Map<String, ISelectElement> elements = usersList.buildElementsMap();
 				String stringId = String.valueOf(selectedEntityId); // this is the Employee Flags Id
 				if (selectedEntityId > 0 && !elements.containsKey(stringId)) {

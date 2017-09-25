@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entities>
+	<entity class="de.xwic.sandbox.demoapp.model.entities.ICompany" autoLoadProperties="true" history="false" defaultDisplayProperty="name">
+		<title>${name} (${city})</title>
+		
+		<property name="name" maxLength="100" required="true" />
+
+		<property name="phone1" maxLength="30" required="false" />
+		<property name="fax" maxLength="30" required="false" />
+
+		<property name="webSite" maxLength="255"/>
+		<property name="email1" maxLength="255"/>
+		<property name="email2" maxLength="255"/>
+
+		<property name="address1" maxLength="255"/>
+		<property name="address2" maxLength="255"/>
+		<property name="city" maxLength="255"/>
+		<property name="zip" maxLength="20"/>
+		<property name="state" maxLength="255"/>
+		
+		<property name="country" picklistId="address.country">
+		     <picklistentry key="ger">
+		         <name lang="en">Germany</name>
+		     </picklistentry>
+			<picklistentry key="gbr">
+		         <name lang="en">United Kingdom</name>
+		    </picklistentry>
+			<picklistentry key="usa">
+		         <name lang="en">United States</name>
+		    </picklistentry>
+			<picklistentry key="fr">
+		         <name lang="en">France</name>
+		    </picklistentry>
+			<picklistentry key="ro">
+		         <name lang="en">Romania</name>
+		    </picklistentry>
+			<picklistentry key="aus">
+		         <name lang="en">Austria</name>
+		    </picklistentry>
+		</property>
+		
+		<property name="notes" required="false" />
+
+		<property name="annualRevenue" required="false" />
+		<property name="numberOfEmployees" required="false" />
+
+		<property name="type" picklistId="company.type">
+		     <picklistentry key="private" index="10">
+		         <name lang="en">Private</name>
+		     </picklistentry>
+			<picklistentry key="government" index="20">
+		         <name lang="en">Government</name>
+		    </picklistentry>
+			<picklistentry key="nonProfit" index="30">
+				 <name lang="en">Non Profit</name>
+			</picklistentry>
+		</property>
+
+		<property name="segment" picklistId="company.segment">
+		     <picklistentry key="IT">
+		         <name lang="en">Information Technology (IT)</name>
+		     </picklistentry>
+			<picklistentry key="government">
+		         <name lang="en">Government</name>
+		    </picklistentry>
+			<picklistentry key="bio">
+				 <name lang="en">Biotech</name>
+			</picklistentry>
+			<picklistentry key="hw">
+				 <name lang="en">Hardware</name>
+			</picklistentry>
+			<picklistentry key="ce">
+				 <name lang="en">Consumer Electronics</name>
+			</picklistentry>
+			<picklistentry key="sw">
+				 <name lang="en">Software</name>
+			</picklistentry>
+		</property>
+
+		<property name="relationship" picklistId="company.relationship">
+		     <picklistentry key="customer">
+		         <name lang="en">Customer</name>
+		     </picklistentry>
+			<picklistentry key="supplier">
+		         <name lang="en">Supplier</name>
+		    </picklistentry>
+			<picklistentry key="reseller">
+				 <name lang="en">Reseller</name>
+			</picklistentry>
+			<picklistentry key="partner">
+				 <name lang="en">Channel Partner</name>
+			</picklistentry>
+			<picklistentry key="sp">
+				 <name lang="en">Service Provider</name>
+			</picklistentry>
+		</property>
+
+	</entity>
+</entities>

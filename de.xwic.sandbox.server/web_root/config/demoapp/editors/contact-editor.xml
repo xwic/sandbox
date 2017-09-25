@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<editor xmlns="http://www.xwic.de" 
+		xsi:schemaLocation="http://www.xwic.de editor.xsd"
+		xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+
+	<id>default</id>
+	<entity>de.xwic.sandbox.demoapp.model.entities.IContact</entity>
+	<script><![CDATA[
+		
+		function isUSA() {
+			if (entity.getCountry() != null) {
+				//log.info("Country is " + entity.getCountry().getKey());
+				return entity.getCountry().getKey() == 'usa';
+			}
+			return false; 
+		}
+		
+	]]></script>
+	
+	<templates>
+		<style id="form">
+			padding: 5;
+		</style>
+		<style id="field">
+			width: 350;
+		</style>
+	</templates>
+	
+	<!-- The layout-->
+	<layout>
+		<!-- The root node of an editor is always a tab... -->
+		<tab title="General">
+			<composite layout="grid" cols="2" style="padding: 2">
+				<group title="Basics" layout="grid" cols="2" template="form" colWidth="150;-1">
+					
+					<label property="title"/>
+					<!-- <plRadio property="title" cols="5"/> --> 
+					<plCombo property="title"/>
+					
+					<label property="firstName"/>
+					<text property = "firstName" template="field"/>
+					
+					<label property="middleName" hideWhen="entity.getTitle() == null"/>
+					<text property = "middleName" template="field" hideWhen="entity.getTitle() == null"/>
+	
+					<label property="lastName"/>
+					<text property = "lastName" template="field"/>
+					
+					<label property="company"/>
+					<entity property="company"/>
+					
+				</group>
+
+				<group title="Address" layout="grid" cols="2" template="form" colWidth="150;-1">
+					<label property="address1"/>
+					<text property = "address1" template="field"/>
+
+					<label property="address2"/>
+					<text property = "address2" template="field"/>
+					
+					<label property="zip"/>
+					<text property = "zip" template="field"/>
+	
+					<label property="city"/>
+					<text property = "city" template="field"/>
+
+					<label property="country"/>
+					<plCombo property = "country" template="field"/>
+					
+					<label property="state" hideWhen="!isUSA()"/>
+					<text property = "state" template="field" hideWhen="!isUSA()"/>
+					 
+				</group>
+ 			</composite>
+		</tab>
+		<tab title="More">
+			<composite layout="grid" cols="2" style="padding: 2">
+
+				<group title="Contact" layout="grid" cols="2" template="form" colWidth="150;-1;">
+					<label property="phone1"/>
+					<text property = "phone1" template="field"/>
+					
+					<label property="phone2"/>
+					<text property = "phone2" template="field"/>
+	
+					<label property="fax"/>
+					<text property = "fax" template="field"/>
+
+					<label property="email1"/>
+					<text property = "email1" template="field"/>
+
+					<label property="email2"/> 
+					<text property = "email2" template="field"/>
+
+					<label property="webSite"/>
+					<text property = "webSite" template="field"/>
+
+					<label property="displayName"/>
+					<yesNoRadio property="displayName" template="field"/>
+
+
+				</group>
+
+				<group title="Notes" layout="grid" cols="1" template="form">
+					<htmleditor property="notes" style="width: 415; height: 177"/>
+				</group>				
+			</composite>
+		</tab>
+	</layout>
+
+</editor>

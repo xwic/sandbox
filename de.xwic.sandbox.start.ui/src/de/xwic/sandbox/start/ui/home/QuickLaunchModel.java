@@ -185,14 +185,14 @@ public class QuickLaunchModel {
 		IQuickLaunchDAO qlDAO = StartModelConfig.getQuickLaunchDAO();
 
 		List<IQuickLaunch> items = getQuickLaunchItems();
-		Map<Integer, IQuickLaunch> allItems = new HashMap<Integer, IQuickLaunch>();
+		Map<Long, IQuickLaunch> allItems = new HashMap<Long, IQuickLaunch>();
 		for (IQuickLaunch ql : items) {
 			allItems.put(ql.getId(), ql);
 		}
 		
 		int order = 1; // start with 1
 		for (String s : ids) {
-			Integer id = Integer.parseInt(s);
+			Long id = Long.parseLong(s);
 			IQuickLaunch ql = allItems.get(id);
 			if (ql != null) {
 				if (ql.getOrder() != order) {

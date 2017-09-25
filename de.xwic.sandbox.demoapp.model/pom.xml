@@ -17,10 +17,6 @@
 			<artifactId>appkit-core</artifactId>
 		</dependency>
 		<dependency>
-		  <groupId>com.microsoft.sqlserver</groupId>
-		  <artifactId>sqljdbc4</artifactId>
-		</dependency>
-		<dependency>
 			<groupId>de.xwic.sandbox</groupId>
 			<artifactId>base-model</artifactId>
 			<version>${project.version}</version>

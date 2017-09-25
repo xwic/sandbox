@@ -234,8 +234,8 @@ public class XmlExport {
 				IPicklistEntry entry = (IPicklistEntry) itE.next();
 				if (!entry.isDeleted()) {
 					Element elEntry = elEntries.addElement("entry");
-					elEntry.addAttribute("id", Integer.toString(entry.getId()));
-					elEntry.addAttribute("sortindex", Integer.toString(entry.getSortIndex()));
+					elEntry.addAttribute("id", Long.toString(entry.getId()));
+					elEntry.addAttribute("sortindex", Long.toString(entry.getSortIndex()));
 					if (entry.getKey() != null) {
 						elEntry.addAttribute("key", entry.getKey());
 					}
@@ -292,7 +292,7 @@ public class XmlExport {
 
 		try {
 			Element elm = entities.addElement(ELM_ENTITY);
-			elm.addAttribute("id", Integer.toString(entity.getId()));
+			elm.addAttribute("id", Long.toString(entity.getId()));
 
 			for (Iterator<?> it = descr.getProperties().keySet().iterator(); it.hasNext();) {
 
@@ -349,7 +349,7 @@ public class XmlExport {
 		} else if (value instanceof IEntity) {
 			IEntity entity = (IEntity) value;
 			typeInfo = entity.type().getName();
-			elm.setText(Integer.toString(entity.getId()));
+			elm.setText(Long.toString(entity.getId()));
 
 		} else if (value instanceof Set<?>) {
 			Set<?> set = (Set<?>) value;

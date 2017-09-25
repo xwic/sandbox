@@ -267,16 +267,17 @@ public class ConfigurationUtil {
 		Properties srvProp = new Properties();
 		try {
 			File serverPropertiesFile = new File(SandboxModelConfig.getWebRootDirectory(), "WEB-INF/server.properties");
-			if (!serverPropertiesFile.exists()) {
-				throw new RuntimeException("server.properties not found.");
-			}
-			in = new FileInputStream(serverPropertiesFile);
-			if (in != null) {
-				srvProp.load(in);
-				for (Object prop : srvProp.keySet()) {
-					String key = (String)prop;
-					setup.setProperty(key, srvProp.getProperty(key));
+			if (serverPropertiesFile.exists()) {
+				in = new FileInputStream(serverPropertiesFile);
+				if (in != null) {
+					srvProp.load(in);
+					for (Object prop : srvProp.keySet()) {
+						String key = (String)prop;
+						setup.setProperty(key, srvProp.getProperty(key));
+					}
 				}
+			} else {
+				log.warn("No server.properties file found.");
 			}
 		} catch (Exception e) {
 			log.error("Error loading Server properties", e);

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<profile>
+
+	<feature id="subscription.entities" enabled="false"/>
+
+	<domain id="common.entities">
+		<entities>
+			<entity
+				class="de.xwic.appkit.core.model.entities.IMitarbeiter" file="common/entities/mitarbeiter.xml">
+				<list file="resources/listsetup/mitarbeiter.xml" />
+				<editor file="common/editors/mitarbeiter-editor.xml" />
+			</entity>
+		</entities>
+		<defaults>
+			<preference key="something">The Preference Default Value</preference>
+		</defaults>
+	</domain>
+
+	<domain id="demoapp">
+		<entities>
+  			<entity class="de.xwic.sandbox.start.model.entities.IContact" file="demoapp/entities/Contact.xml">
+  				<list file="demoapp/listsetup/contacts.xml" />
+  				<editor file="demoapp/editors/contact-editor.xml" />
+  			</entity>
+		</entities>
+	</domain>
+	
+</profile>

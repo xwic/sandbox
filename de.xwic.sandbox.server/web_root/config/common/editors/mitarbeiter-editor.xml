@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<editor>
+	<id>default</id>
+	<entity>de.xwic.appkit.core.model.entities.IMitarbeiter</entity>
+	<script>
+		<!-- Global Script goes here -->
+	</script>
+	
+	<templates>
+		<style id="styleId">
+			border:2;
+			color:green;
+		</style>
+	</templates>
+	
+	<!-- The layout-->
+	<layout>
+		<!-- The root node of an editor is always a tab... -->
+		<tab title="General">
+			<group title="Basics" layout="grid" cols="4">
+				<label property="vorname"/>
+				<autofield property = "vorname"/>
+			</group>
+		</tab>
+	</layout>
+
+</editor>
