@@ -201,9 +201,9 @@
 
     <properties>
 
-		<mvnDependencyVersionxWicjWic>5.3.1</mvnDependencyVersionxWicjWic>
+		<mvnDependencyVersionxWicjWic>5.3.18</mvnDependencyVersionxWicjWic>
 		<mvnDependencyVersionxWicCube>5.2.1</mvnDependencyVersionxWicCube>
-		<mvnDependencyVersionxWicAppKit>5.2.26</mvnDependencyVersionxWicAppKit>
+		<mvnDependencyVersionxWicAppKit>5.3.20</mvnDependencyVersionxWicAppKit>
 		<mvnDependencyVersionxWicETLGine>5.2.11</mvnDependencyVersionxWicETLGine>
 		
 		<pathMavenRoot>${project.basedir}/..</pathMavenRoot>

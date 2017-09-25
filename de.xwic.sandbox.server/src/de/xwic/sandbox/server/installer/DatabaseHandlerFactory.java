@@ -17,6 +17,7 @@ package de.xwic.sandbox.server.installer;
 
 import java.sql.SQLException;
 
+import de.xwic.sandbox.server.installer.impl.HanaDatabaseHandler;
 import de.xwic.sandbox.server.installer.impl.MYSQLServerDatabaseHandler;
 import de.xwic.sandbox.server.installer.impl.SQLServerDatabaseHandler;
 
@@ -27,6 +28,7 @@ import de.xwic.sandbox.server.installer.impl.SQLServerDatabaseHandler;
 public class DatabaseHandlerFactory {
 	private static String SUPPORTED_DB_MSSQL_JDBC_DRIVER_CLASS = "com.microsoft.sqlserver.jdbc.SQLServerDriver";
 	private static String SUPPORTED_DB_MYSQL_JDBC_DRIVER_CLASS = "com.mysql.jdbc.Driver";
+	private static String SUPPORTED_DB_HANA_JDBC_DRIVER_CLASS = "com.sap.db.jdbc.Driver";
 	
 	public static IDatabaseHandler getDatabaseHandler(Settings settings) throws SQLException {
 		// rpf: missing getting by config, atm hardcoded
@@ -34,6 +36,8 @@ public class DatabaseHandlerFactory {
 			return new MYSQLServerDatabaseHandler(settings);
 		} else if (SUPPORTED_DB_MSSQL_JDBC_DRIVER_CLASS.equals(settings.getJdbcDriverClass())) {
 			return new SQLServerDatabaseHandler(settings);
+		}else if (SUPPORTED_DB_HANA_JDBC_DRIVER_CLASS.equals(settings.getJdbcDriverClass())) {
+			return new HanaDatabaseHandler(settings);
 		} else {
 			throw new SQLException("Unsuported JDBC Driver class used!");
 		}

@@ -95,7 +95,7 @@ public class CreateAdminUser extends AbstractUpgradeModule {
 			List<IRole> roles = roleDAO.getEntities(null, propertyQueryRole);
 
 			if (!roles.isEmpty()) {
-				user.setRoles(new HashSet<IEntity>(roles));
+				user.setRoles(new HashSet<IRole>(roles));
 			}
 
 			userDAO.update(user);
@@ -116,7 +116,7 @@ public class CreateAdminUser extends AbstractUpgradeModule {
 
 			if (!roles.isEmpty()) {
 
-				Set<IEntity> userRoles = user.getRoles();
+				Set<IRole> userRoles = user.getRoles();
 
 				boolean adminFlag = false;
 				boolean defaultFlag = false;
@@ -129,7 +129,7 @@ public class CreateAdminUser extends AbstractUpgradeModule {
 					}
 				}
 
-				for (IEntity userRole : userRoles) {
+				for (IRole userRole : userRoles) {
 					if (adminRole != null && userRole.getId() == adminRole.getId()) {
 						adminFlag = true;
 					} else if (defaultRole != null && userRole.getId() == defaultRole.getId()) {
