@@ -17,6 +17,7 @@ import java.util.List;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 
+import de.xwic.appkit.core.ApplicationData;
 import de.xwic.appkit.core.config.Version;
 import de.xwic.sandbox.base.model.util.StreamUtil;
 import de.xwic.sandbox.server.installer.DbColumn;

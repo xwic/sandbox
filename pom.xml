@@ -201,10 +201,10 @@
 
     <properties>
 
-		<mvnDependencyVersionxWicjWic>5.3.1</mvnDependencyVersionxWicjWic>
+		<mvnDependencyVersionxWicjWic>5.3.28</mvnDependencyVersionxWicjWic>
 		<mvnDependencyVersionxWicCube>5.2.1</mvnDependencyVersionxWicCube>
-		<mvnDependencyVersionxWicAppKit>5.3.35-SNAPSHOT</mvnDependencyVersionxWicAppKit>
-		<mvnDependencyVersionxWicETLGine>5.2.11</mvnDependencyVersionxWicETLGine>
+		<mvnDependencyVersionxWicAppKit>5.3.34</mvnDependencyVersionxWicAppKit>
+		<mvnDependencyVersionxWicETLGine>5.2.66</mvnDependencyVersionxWicETLGine>
 		
 		<pathMavenRoot>${project.basedir}/..</pathMavenRoot>
 		<pathTargetFolder>${pathMavenRoot}/.target-mvn</pathTargetFolder>
