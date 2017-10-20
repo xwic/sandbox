@@ -33,6 +33,8 @@ import de.xwic.appkit.core.model.daos.IUserListProfileDAO;
 public class SandboxModelConfig {
 
 	private static File webRootDirectory;
+	
+	public static final String DOMAIN_ID = "de.xwic.sandbox";
 
 	public static final String ROLE_ADMIN_ID = "adminID";
 	public static final String ROLE_DEFAULT = "Default";

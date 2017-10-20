@@ -17,8 +17,10 @@ package de.xwic.sandbox.start.ui.home;
 
 import de.jwic.base.IControl;
 import de.jwic.base.IControlContainer;
+import de.xwic.appkit.webbase.home.HomePage;
 import de.xwic.appkit.webbase.toolkit.app.Site;
 import de.xwic.appkit.webbase.toolkit.app.SubModule;
+import de.xwic.sandbox.base.model.SandboxModelConfig;
 
 
 public class HomeSubmodule extends SubModule {
@@ -37,7 +39,7 @@ public class HomeSubmodule extends SubModule {
 	 * @see de.xwic.appkit.webbase.toolkit.app.SubModule#createControls(de.jwic.base.IControlContainer)
 	 */
 	public IControl createControls(IControlContainer container) {
-		return new HomePage(container, "home");
+		return new HomePage(container, "home", SandboxModelConfig.DOMAIN_ID);
 	}
 
 	/*

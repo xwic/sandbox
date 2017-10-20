@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<table type="de.xwic.appkit.core.model.entities.INews" id="default" default-sort="server" queryEntities="false">
+
+<!-- we have custom actions for these 
+	<action>CREATE</action>
+	<action>EDIT</action>
+	<action>DELETE</action>
+ -->
+ 
+	<column id="title" default="1" width="250"/>
+	<column id="author" default="1" width="140"/>
+	<column id="visible" default="1" width="60"/>
+	<column id="publishDate" default="1" width="120"/>
+	<column id="visibleUntil" default="1" width="120"/>
+	<column id="lastModifiedAt" default="1" width="120"/>
+	<column id="lastModifiedFrom" default="1" width="150"/>
+	<column id="createdAt" default="1" width="120"/>
+	<column id="createdFrom" default="1" width="120"/>
+
+</table>
