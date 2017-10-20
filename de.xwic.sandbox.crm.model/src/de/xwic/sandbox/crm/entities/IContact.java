@@ -22,6 +22,16 @@ public interface IContact extends IEntity {
 	public final static String PE_CONTACT_ROLE_OTHER = "other";
 
 	/**
+	 * Returns the value of customer.
+	 */
+	public ICustomer getCustomer();
+	
+	/**
+	 * Set value for customer.
+	 */
+	public void setCustomer(ICustomer customer);
+	
+	/**
 	 * Returns the value of name.
 	 */
 	public String getName();

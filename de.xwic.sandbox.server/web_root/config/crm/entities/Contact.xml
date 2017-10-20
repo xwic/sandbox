@@ -3,6 +3,7 @@
 	<entity class="de.xwic.sandbox.crm.entities.IContact" autoLoadProperties="true" history="false" defaultDisplayProperty="name">
 		<title>${name}</title>
 		
+		<property name="customer"  required="true" />
 		<property name="name" maxLength="100" required="true" />
 		<property name="email" maxLength="150" required="true" />
 		<property name="phone" maxLength="30" />

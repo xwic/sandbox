@@ -13,6 +13,7 @@ import de.xwic.appkit.core.model.entities.IPicklistEntry;
  */
 public class Contact extends Entity implements IContact  {
 
+	private ICustomer customer;
 	private String name;
 	private String email;
 	private String phone;
@@ -26,6 +27,22 @@ public class Contact extends Entity implements IContact  {
 	 */
 	public Contact() {
 	
+	}
+	
+	/**
+	 * Returns the value of customer.
+	 */
+	@Override
+	public ICustomer getCustomer() {
+		return customer;
+	}
+	
+	/**
+	 * Set value for customer.
+	 */
+	@Override
+	public void setCustomer(ICustomer customer) {
+		this.customer = customer;
 	}
 	
 	/**

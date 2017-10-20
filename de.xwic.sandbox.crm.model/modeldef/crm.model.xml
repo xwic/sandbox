@@ -32,6 +32,7 @@
 		</entity>		
 	
 		<entity name="Contact" defaultDisplayProperty="name" table="CRM_CONTACT">
+			<property name="customer" type="Customer" required="true"/>
 			<property name="name" type="String" length="100" required="true"/>
 			<property name="email" type="String" length="150" required="true"/>
 			<property name="phone" type="String" length="30"/>

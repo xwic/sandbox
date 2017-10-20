@@ -43,6 +43,7 @@ import de.xwic.appkit.webbase.toolkit.util.BundleAccessor;
 import de.xwic.sandbox.app.home.StartModule;
 import de.xwic.sandbox.base.model.SandboxModelConfig;
 import de.xwic.sandbox.base.model.util.ConfigurationUtil;
+import de.xwic.sandbox.crm.ui.CrmModule;
 import de.xwic.sandbox.system.ui.SystemModule;
 
 /**
@@ -124,8 +125,8 @@ public class SandboxApplication extends ExtendedApplication{
 		
 		site.addModule(new StartModule(site));
 
-		if (ConfigurationUtil.hasAccess(SandboxModelConfig.MOD_DEMO_APP)) {
-//			site.addModule(new DemoAppModule(site));
+		if (ConfigurationUtil.hasAccess(CrmModule.SCOPE_MOD_CRM)) {
+			site.addModule(new CrmModule(site));
 		}
 
 		if (ConfigurationUtil.hasAccess(SandboxModelConfig.MOD_RESOURCES)) {

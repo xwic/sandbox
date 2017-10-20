@@ -25,6 +25,9 @@
 			<composite layout="grid" cols="2" style="padding: 2">
 				<group title="General" layout="grid" cols="2" template="form" colWidth="150;-1">
 					
+					<label property="customer"/>
+					<entity property="customer" template="field"/>
+
 					<label property="name"/>
 					<text property = "name" template="field"/>
 

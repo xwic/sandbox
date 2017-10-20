@@ -52,13 +52,12 @@
  			</composite>
 		</tab>
 
-	<!-- Place sub-tabs here -
         <subTabs>
-            <subTab title="Title">
-                <listView type="entity-class" filterOn="property" listProfile="default"/>
+            <subTab title="Contacts">
+                <listView type="de.xwic.sandbox.crm.entities.IContact" filterOn="customer" listProfile="default"/>
             </subTab>
         </subTabs>
-    -->
+
     </layout>
 
 </editor>

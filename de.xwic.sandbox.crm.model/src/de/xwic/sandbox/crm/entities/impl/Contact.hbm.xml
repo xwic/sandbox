@@ -38,6 +38,7 @@
 		
 		<!-- Entity fields -->
       
+	    <many-to-one name="customer" class="de.xwic.sandbox.crm.entities.impl.Customer" column="CUSTOMER" not-null="false" lazy="proxy" />
 		<property name="name" column="NAME"   length="100" />
 		<property name="email" column="EMAIL"   length="150" />
 		<property name="phone" column="PHONE"   length="30" />
