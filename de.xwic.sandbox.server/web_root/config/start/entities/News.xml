@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entities>
+	<entity class="de.xwic.appkit.core.model.entities.INews" autoLoadProperties="true" history="false">
+		<property name="title" required="true"/>
+		<property name="body" required="true"/>
+	
+	</entity>
+</entities>

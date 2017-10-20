@@ -6,6 +6,12 @@
 	<languages default="en">
 		<lang id="en" title="English" />
 	</languages>
+	
+	<apps>
+		<app id="de.xwic.sandbox">
+			<title>Sandbox</title>
+		</app>
+	</apps>
 
 	<domain id="common.entities">
 	<entities>
@@ -81,7 +87,10 @@
 	
 	<domain id="start">
   	   <entities>
-  			<entity class="de.xwic.sandbox.start.model.entities.IQuickLaunch" file="start/entities/QuickLaunch.xml" />
+  			<entity class="de.xwic.appkit.core.model.entities.INews" file="start/entities/News.xml">
+	  			<list file="start/listsetup/News.xml" />
+	  		</entity>
+  			<entity class="de.xwic.appkit.core.model.entities.IQuickLaunch" file="start/entities/QuickLaunch.xml" />
      	</entities>
   		<bundle basename="start/bundles/start.entities.resources"/>
     </domain>

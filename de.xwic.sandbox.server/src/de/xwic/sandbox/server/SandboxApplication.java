@@ -30,6 +30,7 @@ import de.xwic.appkit.core.config.ConfigurationManager;
 import de.xwic.appkit.core.config.Setup;
 import de.xwic.appkit.core.dao.DAOSystem;
 import de.xwic.appkit.core.security.IUser;
+import de.xwic.appkit.core.util.DateFormatter;
 import de.xwic.appkit.webbase.core.Platform;
 import de.xwic.appkit.webbase.prefstore.IPreferenceStore;
 import de.xwic.appkit.webbase.toolkit.app.ExtendedApplication;
@@ -45,7 +46,6 @@ import de.xwic.sandbox.demoapp.ui.DemoAppModule;
 import de.xwic.sandbox.resources.ui.ResourcesModule;
 import de.xwic.sandbox.start.ui.StartModule;
 import de.xwic.sandbox.system.ui.SystemModule;
-import de.xwic.sandbox.util.model.DateFormatter;
 
 /**
  * @author Claudiu Mateias
