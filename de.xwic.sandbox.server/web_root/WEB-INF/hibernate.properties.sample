@@ -2,19 +2,19 @@
 # you have to create one. You can use this file as a template to get started...
 
 
-hibernate.connection.username=APPKIT_SANDBOX
-hibernate.default_schema=APPKIT_SANDBOX
-hibernate.connection.password=password-goes-here
+# Local Oracle
+hibernate.connection.username=test
+hibernate.connection.password=test
 
 # Oracle
-#hibernate.connection.url=jdbc:oracle:thin:@localhost:1521:xe
-#hibernate.dialect=org.hibernate.dialect.Oracle10gDialect
-#hibernate.connection.driver_class=oracle.jdbc.driver.OracleDriver
+hibernate.connection.url=jdbc:oracle:thin:@localhost:1521:sandbox
+hibernate.dialect=org.hibernate.dialect.Oracle10gDialect
+hibernate.connection.driver_class=oracle.jdbc.driver.OracleDriver
 
 #mariadb
-hibernate.connection.url=jdbc:mariadb://myhost:3306/appkit_sandbox
-hibernate.dialect=org.hibernate.dialect.MySQLDialect
-hibernate.connection.driver_class=org.mariadb.jdbc.Driver
+#hibernate.connection.url=jdbc:mariadb://myhost:3306/appkit_sandbox
+#hibernate.dialect=org.hibernate.dialect.MySQLDialect
+#hibernate.connection.driver_class=org.mariadb.jdbc.Driver
 
 
 hibernate.generate_statistics=true

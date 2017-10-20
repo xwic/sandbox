@@ -30,12 +30,14 @@ import de.xwic.appkit.core.config.model.EntityDescriptor;
 import de.xwic.appkit.core.config.model.Property;
 import de.xwic.appkit.core.dao.DAOProviderAPI;
 import de.xwic.appkit.core.dao.DAOSystem;
+import de.xwic.appkit.core.dao.EntityQuery;
 import de.xwic.appkit.core.dao.ISecurityManager;
 import de.xwic.appkit.core.dao.UseCase;
 import de.xwic.appkit.core.model.queries.PropertyQuery;
 import de.xwic.appkit.webbase.entityviewer.EntityListView;
 import de.xwic.appkit.webbase.entityviewer.EntityListViewConfiguration;
 import de.xwic.appkit.webbase.toolkit.app.InnerPage;
+import de.xwic.sandbox.base.model.SandboxModelConfig;
 import de.xwic.sandbox.base.model.util.ConfigurationUtil;
 import de.xwic.sandbox.demoapp.model.DemoAppModelConfig;
 import de.xwic.sandbox.demoapp.model.dao.ICompanyDAO;
@@ -57,11 +59,10 @@ public class CompanyPage extends InnerPage {
 
 		setTitle("Companies");
 		setSubtitle("Manage companies you know/do business with.");
-
-		
-		
-		
+	
 		PropertyQuery baseQuery = new PropertyQuery();
+		
+		
 		//baseQuery.addEquals("type.key", "private");
 
 		PropertyQuery defaultQuery = new PropertyQuery();
