@@ -75,7 +75,6 @@ import de.xwic.sandbox.basegui.util.IEditorCreator;
 import de.xwic.sandbox.basegui.util.IQuickSearchPanel;
 import de.xwic.sandbox.basegui.util.ListSetupInfo;
 import de.xwic.sandbox.basegui.util.ListSetupInfoList;
-import de.xwic.sandbox.util.ui.SandboxImageLibrary;
 
 
 /**
@@ -357,7 +356,7 @@ public abstract class EntityDisplayView extends AbstractListContainer implements
 
 		btnOpenSelector = tg.addButton();
 		btnOpenSelector.setTitle("View");
-		btnOpenSelector.setIconEnabled(SandboxImageLibrary.IMAGE_COLUMN_SELECTOR);
+		btnOpenSelector.setIconEnabled(ImageLibrary.IMAGE_COLUMN_SELECTOR);
 		btnOpenSelector.setTooltip("Configure table settings");
 		btnOpenSelector.addSelectionListener(new SelectionListener() {
 

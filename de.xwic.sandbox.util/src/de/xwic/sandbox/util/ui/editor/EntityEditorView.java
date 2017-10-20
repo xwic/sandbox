@@ -35,7 +35,6 @@ import de.xwic.appkit.webbase.toolkit.editor.EditorModel;
 import de.xwic.appkit.webbase.toolkit.editor.EditorModelEvent;
 import de.xwic.appkit.webbase.toolkit.editor.IEditorModelListener;
 import de.xwic.appkit.webbase.toolkit.util.ImageLibrary;
-import de.xwic.sandbox.util.ui.SandboxImageLibrary;
 
 
 public abstract class EntityEditorView extends BaseView implements IEditorModelListener {
@@ -60,7 +59,7 @@ public abstract class EntityEditorView extends BaseView implements IEditorModelL
 	public EntityEditorView(IControlContainer container, String name, EditorModel model) {
 		super(container, name);
 
-		toolkit = new EditorToolkit(model, getSessionContext().getLocale().getLanguage());
+		toolkit = new EditorToolkit(model);
 		this.model = model;
 
 		model.addModelListener(this);
@@ -81,8 +80,8 @@ public abstract class EntityEditorView extends BaseView implements IEditorModelL
 
 		btSave = tg.addButton();
 		btSave.setTitle(EDITOR_ACTION_SAVE);
-		btSave.setIconEnabled(SandboxImageLibrary.IMAGE_SAVE_ACTIVE_SMALL);
-		btSave.setIconDisabled(SandboxImageLibrary.IMAGE_SAVE_INACTIVE_SMALL);
+		btSave.setIconEnabled(ImageLibrary.IMAGE_SAVE_ACTIVE_SMALL);
+		btSave.setIconDisabled(ImageLibrary.IMAGE_SAVE_INACTIVE_SMALL);
 		btSave.addSelectionListener(new SelectionListener() {
 
 			public void objectSelected(SelectionEvent event) {

@@ -29,7 +29,6 @@ import de.xwic.appkit.webbase.toolkit.util.ImageLibrary;
 import de.xwic.sandbox.basegui.entityview.EntityDisplayView;
 import de.xwic.sandbox.basegui.util.IEditorCreator;
 import de.xwic.sandbox.basegui.util.IQuickSearchPanel;
-import de.xwic.sandbox.util.ui.SandboxImageLibrary;
 
 
 /**
@@ -82,8 +81,8 @@ public class EntitySelectionView extends EntityDisplayView {
 			}
 
 		});
-		btSelect.setIconEnabled(SandboxImageLibrary.IMAGE_TICK_ACTIVE);
-		btSelect.setIconDisabled(SandboxImageLibrary.IMAGE_TICK_INACTIVE);
+		btSelect.setIconEnabled(ImageLibrary.IMAGE_TICK_ACTIVE);
+		btSelect.setIconDisabled(ImageLibrary.IMAGE_TICK_INACTIVE);
 
 		btAbort = tg.addButton();
 		btAbort.setTitle("Cancel");

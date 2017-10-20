@@ -27,7 +27,6 @@ import de.jwic.events.SelectionEvent;
 import de.jwic.events.SelectionListener;
 import de.xwic.appkit.webbase.toolkit.components.BaseView;
 import de.xwic.appkit.webbase.toolkit.util.ImageLibrary;
-import de.xwic.sandbox.util.ui.SandboxImageLibrary;
 import de.xwic.system.model.roles.editor.model.OtherControlId;
 import de.xwic.system.model.roles.editor.model.RolesEditorModel;
 
@@ -62,8 +61,8 @@ public class RolesEditorView extends BaseView {
 
 		btSave = tg.addButton();
 		btSave.setTitle("Save");
-		btSave.setIconEnabled(SandboxImageLibrary.IMAGE_SAVE_ACTIVE_SMALL);
-		btSave.setIconDisabled(SandboxImageLibrary.IMAGE_SAVE_INACTIVE_SMALL);
+		btSave.setIconEnabled(ImageLibrary.IMAGE_SAVE_ACTIVE_SMALL);
+		btSave.setIconDisabled(ImageLibrary.IMAGE_SAVE_INACTIVE_SMALL);
 		btSave.addSelectionListener(new SelectionListener() {
 
 			@Override

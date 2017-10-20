@@ -16,16 +16,12 @@
 package de.xwic.sandbox.resources.ui.people;
 
 import de.jwic.base.IControlContainer;
-import de.jwic.controls.Button;
 import de.jwic.controls.ToolBarGroup;
-import de.jwic.events.SelectionEvent;
-import de.jwic.events.SelectionListener;
 import de.xwic.appkit.core.config.ConfigurationException;
 import de.xwic.appkit.webbase.entityviewer.EntityListView;
 import de.xwic.appkit.webbase.entityviewer.EntityListViewConfiguration;
 import de.xwic.sandbox.base.model.SandboxModelConfig;
 import de.xwic.sandbox.base.model.util.ConfigurationUtil;
-import de.xwic.sandbox.util.ui.SandboxImageLibrary;
 
 /**
  * @author Dogot Nicu
