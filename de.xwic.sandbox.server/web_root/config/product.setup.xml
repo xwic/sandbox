@@ -74,6 +74,25 @@
   		<bundle basename="demoapp/bundles/demoapp.entities.resources"/>
 	</domain>
 	
+	<domain id="crm">
+		<entities>
+   			<entity class="de.xwic.sandbox.crm.entities.ICustomer" file="crm/entities/Customer.xml">
+  				<list file="crm/listsetup/Customer-default.list.xml" />
+  				<editor file="crm/editors/Customer-default.editor.xml" />
+  			</entity>
+  			<entity class="de.xwic.sandbox.crm.entities.IContact" file="crm/entities/Contact.xml">
+  				<list file="crm/listsetup/Contact-default.list.xml" />
+  				<editor file="crm/editors/Contact-default.editor.xml" />
+  			</entity>
+  			<entity class="de.xwic.sandbox.crm.entities.ISupportCase" file="crm/entities/SupportCase.xml">
+  				<list file="crm/listsetup/SupportCase-default.list.xml" />
+  				<editor file="crm/editors/SupportCase-default.editor.xml" />
+  			</entity>
+			
+		</entities>
+  		<bundle basename="crm/bundles/crm.entities.resources"/>
+	</domain>
+	
 	<domain id="core">
 		<bundle basename="core/bundles/core.resources" />
 		<bundle basename="core/bundles/core.entities.resources" />

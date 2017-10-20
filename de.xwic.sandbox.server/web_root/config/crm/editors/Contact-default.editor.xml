@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<editor xmlns="http://www.xwic.de" 
+		xsi:schemaLocation="http://www.xwic.de editor.xsd"
+		xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+
+    <id>default</id>
+    <entity>de.xwic.sandbox.crm.entities.IContact</entity>
+    <script><![CDATA[
+		
+	]]></script>
+	
+	<templates>
+		<style id="form">
+			padding: 5;
+		</style>
+		<style id="field">
+			width: 350;
+		</style>
+	</templates>
+	
+	<!-- The layout-->
+	<layout>
+		<!-- The root node of an editor is always a tab... -->
+		<tab title="General">
+			<composite layout="grid" cols="2" style="padding: 2">
+				<group title="General" layout="grid" cols="2" template="form" colWidth="150;-1">
+					
+					<label property="name"/>
+					<text property = "name" template="field"/>
+
+					<label property="email"/>
+					<text property = "email" template="field"/>
+
+					<label property="phone"/>
+					<text property = "phone" template="field"/>
+
+					<label property="mobile"/>
+					<text property = "mobile" template="field"/>
+
+					<label property="fax"/>
+					<text property = "fax" template="field"/>
+
+					<label property="role"/>
+					<plCombo property="role" template="field"/>
+
+
+				</group>
+
+ 			</composite>
+		</tab>
+
+	<!-- Place sub-tabs here -
+        <subTabs>
+            <subTab title="Title">
+                <listView type="entity-class" filterOn="property" listProfile="default"/>
+            </subTab>
+        </subTabs>
+    -->
+    </layout>
+
+</editor>

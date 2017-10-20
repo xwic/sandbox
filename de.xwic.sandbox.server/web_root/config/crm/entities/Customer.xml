@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entities>
+	<entity class="de.xwic.sandbox.crm.entities.ICustomer" autoLoadProperties="true" history="false" defaultDisplayProperty="name">
+		<title>${name}</title>
+		
+		<property name="name" maxLength="100" required="true" />
+		<property name="address1" maxLength="100" />
+		<property name="address2" maxLength="100" />
+		<property name="zipCode" maxLength="20" />
+		<property name="city" maxLength="100" />
+		<property name="country" maxLength="100" />
+		<property name="webSite" maxLength="200" />
+
+	</entity>
+</entities>

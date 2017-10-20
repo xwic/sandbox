@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entities>
+	<entity class="de.xwic.sandbox.crm.entities.IContact" autoLoadProperties="true" history="false" defaultDisplayProperty="name">
+		<title>${name}</title>
+		
+		<property name="name" maxLength="100" required="true" />
+		<property name="email" maxLength="150" required="true" />
+		<property name="phone" maxLength="30" />
+		<property name="mobile" maxLength="30" />
+		<property name="fax" maxLength="30" />
+		<property name="role" picklistId="Contact.role" >
+		     <picklistentry  key="ceo"  >
+		         <name lang="en">CEO</name>
+		     </picklistentry>
+		     <picklistentry  key="cio"  >
+		         <name lang="en">CIO</name>
+		     </picklistentry>
+		     <picklistentry  key="unknown"  >
+		         <name lang="en">Unknown</name>
+		     </picklistentry>
+		     <picklistentry  key="salesRep"  >
+		         <name lang="en">Sales Rep</name>
+		     </picklistentry>
+		     <picklistentry  key="itManager"  >
+		         <name lang="en">IT Manager</name>
+		     </picklistentry>
+		     <picklistentry  key="cfo"  >
+		         <name lang="en">CFO</name>
+		     </picklistentry>
+		     <picklistentry  key="other"  >
+		         <name lang="en">Other</name>
+		     </picklistentry>
+		</property>
+
+	</entity>
+</entities>

@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE model SYSTEM "model.dtd">
+<model>
+	 
+	<!-- This file defines the model for the 'Demo' CRM, a simple
+	  -  Customer database.
+	 -->
+	
+	<domain>crm</domain>
+ 	<project>de.xwic.sandbox.crm.model</project>
+ 	<package>de.xwic.sandbox.crm</package>
+	
+	<entities>
+
+	<!-- Template for new entity: 
+		<entity name="" defaultDisplayProperty="name">
+			<property name="name" type="String" length="100" required="true"/>
+			<property name="" type="IPicklistEntry">
+				<picklistEntry key="" defaultTitle=""/>
+			</property>
+		</entity>		
+	-->
+
+		<entity name="Customer" defaultDisplayProperty="name" table="CRM_CUSTOMER">
+			<property name="name" type="String" length="100" required="true"/>
+			<property name="address1" type="String" length="100"/>
+			<property name="address2" type="String" length="100"/>
+			<property name="zipCode" type="String" length="20"/>
+			<property name="city" type="String" length="100"/>
+			<property name="country" type="String" length="100"/>
+			<property name="webSite" type="String" length="200"/>
+		</entity>		
+	
+		<entity name="Contact" defaultDisplayProperty="name" table="CRM_CONTACT">
+			<property name="name" type="String" length="100" required="true"/>
+			<property name="email" type="String" length="150" required="true"/>
+			<property name="phone" type="String" length="30"/>
+			<property name="mobile" type="String" length="30"/>
+			<property name="fax" type="String" length="30"/>
+			<property name="role" type="IPicklistEntry">
+				<picklistEntry key="ceo" defaultTitle="CEO"/>
+				<picklistEntry key="cio" defaultTitle="CIO"/>
+				<picklistEntry key="unknown" defaultTitle="Unknown"/>
+				<picklistEntry key="salesRep" defaultTitle="Sales Rep"/>
+				<picklistEntry key="itManager" defaultTitle="IT Manager"/>
+				<picklistEntry key="cfo" defaultTitle="CFO"/>
+				<picklistEntry key="other" defaultTitle="Other"/>
+			</property>
+		</entity>
+		
+		<entity name="SupportCase" defaultDisplayProperty="caseNumber" table="CRM_SUPPORT_CASE">
+			<property name="caseNumber" type="String" length="20"/>
+			<property name="shortDescription" type="String" length="200" required="true"/>
+			<property name="customer" type="Customer" required="true"/>
+			<property name="reportedBy" type="Contact"/>
+			<property name="description" type="String" length="max"/>
+			<property name="severity" type="IPicklistEntry">
+				<picklistEntry key="p1" defaultTitle="P1"/>
+				<picklistEntry key="p2" defaultTitle="P2"/>
+				<picklistEntry key="p3" defaultTitle="P3"/>
+				<picklistEntry key="p4" defaultTitle="P4"/>
+			</property>
+		</entity>
+	
+	</entities>
+	
+</model>

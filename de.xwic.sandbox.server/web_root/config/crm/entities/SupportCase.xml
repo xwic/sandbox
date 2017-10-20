@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entities>
+	<entity class="de.xwic.sandbox.crm.entities.ISupportCase" autoLoadProperties="true" history="false" defaultDisplayProperty="caseNumber">
+		<title>${caseNumber}</title>
+		
+		<property name="caseNumber" maxLength="20" />
+		<property name="shortDescription" maxLength="200" required="true" />
+		<property name="customer"  required="true" />
+		<property name="reportedBy"  />
+		<property name="description"  />
+		<property name="severity" picklistId="SupportCase.severity" >
+		     <picklistentry  key="p1"  >
+		         <name lang="en">P1</name>
+		     </picklistentry>
+		     <picklistentry  key="p2"  >
+		         <name lang="en">P2</name>
+		     </picklistentry>
+		     <picklistentry  key="p3"  >
+		         <name lang="en">P3</name>
+		     </picklistentry>
+		     <picklistentry  key="p4"  >
+		         <name lang="en">P4</name>
+		     </picklistentry>
+		</property>
+
+	</entity>
+</entities>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<table type="de.xwic.sandbox.crm.entities.ICustomer" id="default" default-sort="server" queryEntities="false">
+
+	<action>CREATE</action>
+	<action>EDIT</action>
+	<action>DELETE</action>
+
+	<column id="name" default="1" width="150"/>
+	<column id="address1" default="1" width="150"/>
+	<column id="address2" default="1" width="150"/>
+	<column id="zipCode" default="1" width="150"/>
+	<column id="city" default="1" width="150"/>
+	<column id="country" default="1" width="150"/>
+	<column id="webSite" default="1" width="150"/>
+
+	<column id="createdAt" default="0" width="120" />
+	<column id="createdFrom" default="0" width="120" />
+	<column id="lastModifiedAt" default="0" width="120" />
+	<column id="lastModifiedFrom" default="0" width="120" />
+	
+</table>

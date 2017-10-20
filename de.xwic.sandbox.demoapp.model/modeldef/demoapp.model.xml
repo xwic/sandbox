@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<model xmlns="http://www.xwic.de" 
+		xsi:schemaLocation="http://www.xwic.de model.xsd"
+		xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	
+	<domain>demoapp</domain>
+ 	<project>DemoApp</project>
+ 	<package>de.xwic.sandbox.demoapp</package>
+	
+	<entities>
+	
+		<!-- Technologies -->
+		<entity name="Company" table="DA_COMPANY" defaultDisplayProperty="name" idColumn="COMPANY_ID">
+			<property name="name" type="String" length="100" required="true"/>
+			<property name="phone1" type="String" length="100" required="true"/>
+			<property name="fax" type="String" length="100" required="true"/>
+			<property name="webSite" type="String" length="100" required="true"/>
+			<property name="email1" type="String" length="100" required="true"/>
+			<property name="email2" type="String" length="100" required="true"/>
+			<property name="country" type="String" length="100" required="true"/>
+			<property name="name" type="String" length="100" required="true"/>
+		</entity>
+		
+
+	</entities>
+	
+</model>
