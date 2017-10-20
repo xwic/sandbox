@@ -30,8 +30,7 @@
 			<entity
 				class="de.xwic.appkit.core.model.entities.IServerConfigProperty" />
 			<entity class="de.xwic.appkit.core.model.entities.ISyncState" />							
-			<entity class="de.xwic.appkit.core.model.entities.IReportTemplate" 
-				file="common/entities/reportTemplate.xml">							
+			<entity class="de.xwic.appkit.core.model.entities.IReportTemplate">							
 				
 			</entity>										
 			<entity class="de.xwic.appkit.core.model.entities.IMonitoringElement" />
