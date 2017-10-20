@@ -224,8 +224,9 @@
 	</properties>
 
 	<modules>
-		<module>de.xwic.sandbox.start.ui</module>
-		<module>de.xwic.sandbox.start.model</module>
+		<module>de.xwic.sandbox.app</module>
+		
+		
 		<module>de.xwic.sandbox.server</module>
 		<module>de.xwic.sandbox.model</module>
 		<module>de.xwic.sandbox.resources.model</module>

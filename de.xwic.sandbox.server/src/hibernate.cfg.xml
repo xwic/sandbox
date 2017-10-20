@@ -9,7 +9,7 @@
 	   - file in the WEB-INF folder.
 	   -->
 
-	<!-- CRM COMMON entities -->
+	<!-- COMMON entities -->
 	    <mapping resource="de/xwic/appkit/core/file/impl/hbn/HbnFile.hbm.xml"/>
         <mapping resource="de/xwic/appkit/core/dao/impl/hbn/AH.hbm.xml"/>
         <mapping resource="de/xwic/appkit/core/dao/impl/hbn/configproperty.hbm.xml"/>
@@ -28,16 +28,18 @@
 		<mapping resource="de/xwic/appkit/core/dao/impl/hbn/UserListProfile.hbm.xml"/>
 		<mapping resource="de/xwic/appkit/core/dao/impl/hbn/UserViewConfiguration.hbm.xml"/>
 		<mapping resource="de/xwic/appkit/core/dao/impl/hbn/SystemTraceStatistic.hbm.xml"/>             
-	<!-- /CRM COMMON entities -->
+	<!-- /COMMON entities -->
+	
+	<!-- CRM entities -->
+		<mapping resource="de/xwic/sandbox/crm/entities/impl/Customer.hbm.xml"/>
+		<mapping resource="de/xwic/sandbox/crm/entities/impl/Contact.hbm.xml"/>
+		<mapping resource="de/xwic/sandbox/crm/entities/impl/SupportCase.hbm.xml"/>
+		
+	<!-- /CRM entities -->
 	
 	<!-- start component -->
 		<mapping resource="de/xwic/appkit/core/dao/impl/hbn/QuickLaunch.hbm.xml" /> 
 		<mapping resource="de/xwic/appkit/core/dao/impl/hbn/News.hbm.xml" />
 	
-	<!-- Demo App Components -->
-		<mapping resource="de/xwic/sandbox/demoapp/model/entities/impl/Contact.hbm.xml" />
-		<mapping resource="de/xwic/sandbox/demoapp/model/entities/impl/Company.hbm.xml" />
-		<mapping class="de.xwic.sandbox.demoapp.model.entities.impl.Campaign"/>
-		<mapping class="de.xwic.sandbox.demoapp.model.entities.impl.CampaignParticipant"/>
     </session-factory>
 </hibernate-configuration>

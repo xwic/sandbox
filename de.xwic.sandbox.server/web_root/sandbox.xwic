@@ -3,7 +3,7 @@
 <application>
 
 	<name>xWic Sandbox Application</name>
-	<class>de.xwic.sandbox.server.SandboxApplication</class>
+	<class>de.xwic.sandbox.app.SandboxApplication</class>
 	<serializable>false</serializable>
 	<singlesession>true</singlesession>
 	<requireauth>false</requireauth>

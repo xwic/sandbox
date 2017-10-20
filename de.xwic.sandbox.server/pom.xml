@@ -102,12 +102,7 @@
 	<dependencies>
 		<dependency>
 			<groupId>de.xwic.sandbox</groupId>
-			<artifactId>demoapp-ui</artifactId>
-			<version>${project.version}</version>
-		</dependency>
-		<dependency>
-			<groupId>de.xwic.sandbox</groupId>
-			<artifactId>util</artifactId>
+			<artifactId>sandbox-app</artifactId>
 			<version>${project.version}</version>
 		</dependency>
 		<dependency>
@@ -155,24 +150,6 @@
 		<dependency>
 			<groupId>javax.mail</groupId>
 			<artifactId>mail</artifactId>
-		</dependency>
-		
-		<dependency>
-			<groupId>de.xwic.sandbox</groupId>
-			<artifactId>resources-ui</artifactId>
-			<version>${project.version}</version>
-		</dependency>
-		
-		<dependency>
-			<groupId>de.xwic.sandbox</groupId>
-			<artifactId>start-ui</artifactId>
-			<version>${project.version}</version>
-		</dependency>
-		
-		<dependency>
-			<groupId>de.xwic.sandbox</groupId>
-			<artifactId>system-ui</artifactId>
-			<version>${project.version}</version>
 		</dependency>
 
 		<dependency>

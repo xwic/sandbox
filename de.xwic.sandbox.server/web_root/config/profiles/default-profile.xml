@@ -15,14 +15,5 @@
 			<preference key="something">The Preference Default Value</preference>
 		</defaults>
 	</domain>
-
-	<domain id="demoapp">
-		<entities>
-  			<entity class="de.xwic.sandbox.start.model.entities.IContact" file="demoapp/entities/Contact.xml">
-  				<list file="demoapp/listsetup/contacts.xml" />
-  				<editor file="demoapp/editors/contact-editor.xml" />
-  			</entity>
-		</entities>
-	</domain>
 	
 </profile>

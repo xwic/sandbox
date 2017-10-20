@@ -41,10 +41,9 @@ import de.xwic.appkit.core.file.impl.hbn.HbnFileOracleFixDAO;
 import de.xwic.appkit.webbase.core.Platform;
 import de.xwic.appkit.webbase.prefstore.impl.StorageProvider;
 import de.xwic.sandbox.base.model.SandboxModelConfig;
-import de.xwic.sandbox.demoapp.model.DemoAppModelConfig;
+import de.xwic.sandbox.crm.CrmModelConfig;
 import de.xwic.sandbox.security.ServerSecurityManager;
 import de.xwic.sandbox.security.UserContextPreferenceProvider;
-import de.xwic.sandbox.start.model.StartModelConfig;
 
 /**
  * @author Claudiu Mateias
@@ -84,9 +83,7 @@ public class ServletLifecycleListener implements ServletContextListener {
 
 		
 		SandboxModelConfig.register(factory);
-		StartModelConfig.register(factory);
-
-		DemoAppModelConfig.register(factory);
+		CrmModelConfig.register(factory);
 		
 		final ServletContext context = event.getServletContext();
 		SandboxModelConfig.setWebRootDirectory(new File(context.getRealPath("/")));
