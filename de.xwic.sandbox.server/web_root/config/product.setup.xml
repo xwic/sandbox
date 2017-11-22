@@ -120,7 +120,7 @@
 		</property>
 		
 		<property key="ExitURL">byebye.html</property>
-		<property key="server.name">XWIC</property>
+		<property key="server.name">Sandbox</property>
 	</properties>
 
 </product>
