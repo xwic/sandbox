@@ -24,10 +24,10 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.util.Properties;
 
-import org.apache.commons.io.IOUtils;
 import org.apache.commons.lang.StringUtils;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
+import org.apache.poi.util.IOUtils;
 
 import de.jwic.base.JWicRuntime;
 import de.xwic.appkit.core.ApplicationData;
@@ -294,43 +294,6 @@ public class ConfigurationUtil {
 
 		ConfigurationManager.setSetup(setup);
         log.info("Configuration loaded: " + setup.getAppTitle() + " version " + setup.getVersion());
-	}
-	
-	/**
-	 * @param domain
-	 * @return
-	 * @throws ConfigurationException
-	 */
-	public static String getResourceAsString(final Domain domain, String resourceId) throws ConfigurationException {
-		if(domain == null){
-			throw new ConfigurationException("Domain should not be null");
-		}
-		
-		final Resource resource = domain.getResource(resourceId);
-		InputStream stream = null;
-		try {
-			stream = resource.getLocation().openStream();
-			final String join = StringUtils.join(IOUtils.readLines(stream), "\n");
-			return join;
-		} catch (IOException e) {
-			throw new ConfigurationException("Error in reading resource file for id "+resourceId, e);
-		}finally  {
-			StreamUtil.close(stream);
-		}
-	}
-	
-	/**
-	 * @param domain
-	 * @param resourceId
-	 * @param orElse - the string that is return of an error is thorwn
-	 * @return
-	 */
-	public static String getResourceAsStringOrElse(final Domain domain, String resourceId, String orElse){
-		try {
-			return getResourceAsString(domain, resourceId);
-		} catch (ConfigurationException e) {
-			return orElse;
-		}
 	}
 
 }

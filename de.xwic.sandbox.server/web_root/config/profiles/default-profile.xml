@@ -5,11 +5,7 @@
 
 	<domain id="common.entities">
 		<entities>
-			<entity
-				class="de.xwic.appkit.core.model.entities.IMitarbeiter" file="common/entities/mitarbeiter.xml">
-				<list file="resources/listsetup/mitarbeiter.xml" />
-				<editor file="common/editors/mitarbeiter-editor.xml" />
-			</entity>
+
 		</entities>
 		<defaults>
 			<preference key="something">The Preference Default Value</preference>

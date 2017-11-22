@@ -13,32 +13,34 @@
  * See the License for the specific language governing permissions and 
  * limitations under the License.
  *******************************************************************************/
-package de.xwic.sandbox.resources.ui.people;
+package de.xwic.sandbox.system.ui;
 
 import de.jwic.base.IControl;
 import de.jwic.base.IControlContainer;
 import de.jwic.base.ImageRef;
+import de.xwic.appkit.core.model.entities.IMitarbeiter;
+import de.xwic.appkit.webbase.listpage.BasicListPage;
 import de.xwic.appkit.webbase.toolkit.app.Site;
-import de.xwic.sandbox.basegui.SandboxSubModule;
+import de.xwic.appkit.webbase.toolkit.app.SubModule;
 
 /**
- * @author Aron Cotrau
- * @author Dogot Nicu
- *
+ * Displays a list of customers.
  */
-public class PeopleSubmodule extends SandboxSubModule {
+public class MitarbeiterListSubmodule extends SubModule {
 
+	public final static String SCOPE_SMOD_SYSTEM_USERS = "SMOD_SYSTEM_USERS";
+	private final static ImageRef MODULE_ICON = new ImageRef("images/module_icons/address_book.png");
+	
 	/**
 	 * @param site
 	 */
-	public PeopleSubmodule(Site site) {
+	public MitarbeiterListSubmodule(Site site) {
 		super(site);
-		setTitle("People");
-
-		setFullTitle("People");
-		setDescription("View all employees registered in Sandbox App. You may edit person attributes, settings and roles.");
-		setIconLarge(new ImageRef("images/module_icons/people.png"));
+		setTitle("Users & Access");
+		setDescription("List of Employees/Users");
 		setDefaultQuickLaunch(true);
+		setFullTitle("User List");
+		setIconLarge(MODULE_ICON);
 	}
 
 	/*
@@ -48,17 +50,7 @@ public class PeopleSubmodule extends SandboxSubModule {
 	 */
 	@Override
 	public IControl createControls(IControlContainer container) {
-		return new PeoplePage(container, "peoplePage");
-	}
-
-	/*
-	 * (non-Javadoc)
-	 * 
-	 * @see de.xwic.appkit.webbase.toolkit.app.SubModule#getKey()
-	 */
-	@Override
-	public String getKey() {
-		return "peopleSubmodule";
+		return new BasicListPage(container, "listPage", IMitarbeiter.class);
 	}
 
 }

@@ -3,6 +3,7 @@
 
 	<action>CREATE</action>
 	<action>EDIT</action>
+	<action>DELETE</action>
 
 	<column id="nachname" default="1" width="100"/>
 	<column id="vorname" default="1" width="100"/>
@@ -12,4 +13,5 @@
 	<column id="email" default="0" width="150"/>
 	<column id="zusatz" default="0" width="120" />
 	<column id="fax" default="0" width="100" />
+	
 </table>

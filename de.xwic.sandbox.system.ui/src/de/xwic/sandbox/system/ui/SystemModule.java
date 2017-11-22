@@ -46,6 +46,10 @@ public class SystemModule extends Module {
 	protected List<SubModule> createSubModules(Site site) {
 		List<SubModule> list = new ArrayList<SubModule>();
 		
+		if (ConfigurationUtil.hasAccess(MitarbeiterListSubmodule.SCOPE_SMOD_SYSTEM_USERS)) {		
+			list.add(new MitarbeiterListSubmodule(site));
+		}
+
 		if (ConfigurationUtil.hasAccess(SandboxModelConfig.SMOD_SYSTEM_ROLES)) {		
 			list.add(new RolesSubmodule(site));
 		}

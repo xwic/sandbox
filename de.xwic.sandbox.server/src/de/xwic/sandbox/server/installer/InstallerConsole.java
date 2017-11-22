@@ -169,6 +169,14 @@ public class InstallerConsole {
 			t.printStackTrace();
 		}
 
+		// The installer does not end automatically as some threads are started that do not stop properly (for some reasons?)
+		try {
+			Thread.sleep(1000);
+		} catch (Throwable t) {
+			// ignore interrupted exceptions
+		}
+		System.exit(0);
+		
 	}
 
 	/**

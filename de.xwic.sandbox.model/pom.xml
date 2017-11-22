@@ -22,11 +22,6 @@
 			<artifactId>appkit-webbase</artifactId>
 		</dependency>
 		
-		<dependency>
-			<groupId>de.xwic.sandbox</groupId>
-			<artifactId>util</artifactId>
-			<version>${project.version}</version>
-		</dependency>
 	</dependencies>
 
 	

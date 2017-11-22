@@ -229,14 +229,9 @@
 		
 		<module>de.xwic.sandbox.server</module>
 		<module>de.xwic.sandbox.model</module>
-		<module>de.xwic.sandbox.resources.model</module>
-		<module>de.xwic.sandbox.resources.ui</module>
 		<module>de.xwic.sandbox.security</module>
-		<module>de.xwic.sandbox.demoapp.model</module>
-		<module>de.xwic.sandbox.demoapp.ui</module>
 		<module>de.xwic.sandbox.crm.model</module>
 		<module>de.xwic.sandbox.crm.ui</module>
-		<module>de.xwic.sandbox.util</module>
 		<module>de.xwic.sandbox.system.ui</module>
 		<module>de.xwic.sandbox.system.model</module>
 	</modules>

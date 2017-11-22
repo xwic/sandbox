@@ -20,12 +20,6 @@
 
 		<dependency>
 			<groupId>de.xwic.sandbox</groupId>
-			<artifactId>util</artifactId>
-			<version>${project.version}</version>
-		</dependency>
-		
-		<dependency>
-			<groupId>de.xwic.sandbox</groupId>
 			<artifactId>crm-model</artifactId>
 			<version>${project.version}</version>
 		</dependency>

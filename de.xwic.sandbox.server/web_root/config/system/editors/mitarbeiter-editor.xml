@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<editor>
+	<id>default</id>
+	<entity>de.xwic.appkit.core.model.entities.IMitarbeiter</entity>
+	<script>
+		
+		
+	</script>
+	
+	<templates>
+		<style id="form">
+			padding: 5;
+		</style>
+		<style id="field">
+			width: 350;
+		</style>
+	</templates>
+	
+	<!-- The layout-->
+	<layout>
+		<!-- The root node of an editor is always a tab... -->
+		<tab title="General">
+			<composite layout="grid" cols="2" style="padding: 2">
+				<group title="Basics" layout="grid" cols="2">
+
+					<label property="vorname"/>
+					<text property="vorname" template="field"/>
+
+					<label property="nachname"/>
+					<text property="nachname" template="field"/>
+
+					<label property="zusatz"/>
+					<text property="zusatz" template="field"/>
+
+					<label property="email"/>
+					<text property="email" template="field"/>
+
+					<label property="telefon"/>
+					<text property="telefon" template="field"/>
+
+					<label property="handyNr"/>
+					<text property="handyNr" template="field"/>
+
+					<label property="vorgesetzter"/>
+					<entity property="vorgesetzter" template="field"/>
+
+					<label property="logonName"/>
+					<text property="logonName" template="field" readonly="true"/>
+
+				</group>
+
+				<group title="Security Roles" layout="grid" cols="1" template="form">
+					<userRoles property="logonName" cols="1"/>
+				</group>
+
+			</composite>		
+		</tab>
+	</layout>
+
+</editor>
