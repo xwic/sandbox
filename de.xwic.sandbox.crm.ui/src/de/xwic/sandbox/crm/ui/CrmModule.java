@@ -62,7 +62,6 @@ public class CrmModule extends Module {
 		if (securityManager.hasAccess(CasesListSubmodule.SCOPE_SMOD_CRM_CASES)) {		
 			list.add(new CasesListSubmodule(site));
 		}
-
 		return list;
 	}
 

@@ -13,44 +13,42 @@
  * See the License for the specific language governing permissions and 
  * limitations under the License.
  *******************************************************************************/
-package de.xwic.sandbox.app.home;
+package de.xwic.sandbox.app.samples;
 
-import java.util.ArrayList;
-import java.util.List;
-
-import de.xwic.appkit.webbase.home.HomeSubmodule;
-import de.xwic.appkit.webbase.toolkit.app.Module;
+import de.jwic.base.IControl;
+import de.jwic.base.IControlContainer;
+import de.jwic.base.ImageRef;
 import de.xwic.appkit.webbase.toolkit.app.Site;
 import de.xwic.appkit.webbase.toolkit.app.SubModule;
-import de.xwic.sandbox.app.samples.JWicSamplesSubmodule;
 
 /**
- * This module contains the 'Start-Page' for the user. 
+ * Displays a list of customers.
  */
-public class StartModule extends Module {
+public class JWicSamplesSubmodule extends SubModule {
 
+	private final static ImageRef MODULE_ICON = new ImageRef("images/module_icons/address_book.png");
+	
 	/**
 	 * @param site
 	 */
-	public StartModule(Site site) {
+	public JWicSamplesSubmodule(Site site) {
 		super(site);
-		setTitle("Get Started");
+		setTitle("Samples");
+		setDescription("A collection of sample controls to understand the very basics.");
+		setDefaultQuickLaunch(true);
+		setIconLarge(MODULE_ICON);
 	}
 
 	/*
 	 * (non-Javadoc)
 	 * 
-	 * @see de.xwic.appkit.webbase.toolkit.app.Module#createSubModules(de.xwic.appkit.webbase.toolkit.app.Site)
+	 * @see de.xwic.appkit.webbase.toolkit.app.SubModule#createControls(de.jwic.base.IControlContainer)
 	 */
 	@Override
-	protected List<SubModule> createSubModules(Site site) {
-		List<SubModule> subModules = new ArrayList<SubModule>();
-		
-		// All users have access to the 'Home' module, so no security check here.
-		subModules.add(new HomeSubmodule(site));
-		subModules.add(new JWicSamplesSubmodule(site));
+	public IControl createControls(IControlContainer container) {
 
-		return subModules;
+		return new SamplesPage(container, "samples");
+	
 	}
 
 }
