@@ -28,15 +28,14 @@
 					<label property="name"/>
 					<text property = "name" template="field"/>
 
-					<label property="shortDescription"/>
-					<text property = "shortDescription" template="field"/>
-
-					<label property="description"/>
-					<text property = "description" template="field"/>
-
 					<label property="category"/>
 					<plCombo property="category" template="field"/>
 
+					<label property="shortDescription"/>
+					<text property = "shortDescription" template="field" multiline="true" style="width: 350; height: 100; "/>
+					
+					<label property="description"/>
+					<htmleditor property = "description" template="field" style="width: 750; height: 400; "/>
 
 				</group>
 
