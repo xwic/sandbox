@@ -11,6 +11,7 @@ import de.jwic.controls.TabStrip;
 import de.jwic.controls.ToolBar;
 import de.jwic.controls.ToolBarGroup;
 import de.xwic.appkit.webbase.toolkit.app.InnerPage;
+import de.xwic.sandbox.app.samples.basics.BasicExamples;
 
 /**
  * This page contains a collection of examples of how to use JWic.
@@ -55,7 +56,7 @@ public class SamplesPage extends InnerPage {
 		new Playground(tab, "playground");
 		
 		tab = tabStrip.addTab("Basics");
-		
+		new BasicExamples(tab, "basics");
 		
 	}
 

@@ -64,9 +64,13 @@
   				<list file="crm/listsetup/Contact-default.list.xml" />
   				<editor file="crm/editors/Contact-default.editor.xml" />
   			</entity>
-  			<entity class="de.xwic.sandbox.crm.entities.ISupportCase" file="crm/entities/SupportCase.xml">
-  				<list file="crm/listsetup/SupportCase-default.list.xml" />
-  				<editor file="crm/editors/SupportCase-default.editor.xml" />
+ 			<entity class="de.xwic.sandbox.crm.entities.IProduct" file="crm/entities/Product.xml">
+  				<list file="crm/listsetup/Product-default.list.xml" />
+  				<editor file="crm/editors/Product-default.editor.xml" />
+  			</entity>
+  			<entity class="de.xwic.sandbox.crm.entities.IInstallBase" file="crm/entities/InstallBase.xml">
+  				<list file="crm/listsetup/InstallBase-default.list.xml" />
+  				<editor file="crm/editors/InstallBase-default.editor.xml" />
   			</entity>
 			
 		</entities>
@@ -111,7 +115,7 @@
  			MOD_CRM
  			SMOD_CRM_CUSTOMERS
  			SMOD_CRM_CONTACTS
- 			SMOD_CRM_CASES
+ 			SMOD_CRM_PRODUCTS
  			SMOD_CRM_SAMPLES
  			
  			CAN_MANAGE_ALL_ROLES

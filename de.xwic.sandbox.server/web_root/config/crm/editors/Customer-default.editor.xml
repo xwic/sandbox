@@ -56,6 +56,9 @@
             <subTab title="Contacts">
                 <listView type="de.xwic.sandbox.crm.entities.IContact" filterOn="customer" listProfile="default"/>
             </subTab>
+            <subTab title="Products">
+                <listView type="de.xwic.sandbox.crm.entities.IInstallBase" filterOn="customer" listProfile="default"/>
+            </subTab>
         </subTabs>
 
     </layout>

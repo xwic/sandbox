@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entities>
+	<entity class="de.xwic.sandbox.crm.entities.IProduct" autoLoadProperties="true" history="false" defaultDisplayProperty="name">
+		<title>${name}</title>
+		
+		<property name="name" maxLength="200" />
+		<property name="shortDescription" maxLength="1000" />
+		<property name="description"  />
+		<property name="category" picklistId="Product.category" >
+		     <picklistentry  key="sw"  >
+		         <name lang="en">Software</name>
+		     </picklistentry>
+		     <picklistentry  key="pc"  >
+		         <name lang="en">PC</name>
+		     </picklistentry>
+		     <picklistentry  key="laptop"  >
+		         <name lang="en">Laptop</name>
+		     </picklistentry>
+		     <picklistentry  key="monitor"  >
+		         <name lang="en">Monitor</name>
+		     </picklistentry>
+		</property>
+
+	</entity>
+</entities>

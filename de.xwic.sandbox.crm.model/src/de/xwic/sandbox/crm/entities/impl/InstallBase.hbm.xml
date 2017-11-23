@@ -5,10 +5,10 @@
 
 <hibernate-mapping>
 
-	<class name="de.xwic.sandbox.crm.entities.impl.SupportCase" table="CRM_SUPPORT_CASE">
+	<class name="de.xwic.sandbox.crm.entities.impl.InstallBase" table="CRM_INSTALL_BASE">
 	
 		 <id name="id" type="long">
-            <column name="SUPPORT_CASE_ID" not-null="true"/>
+            <column name="INSTALL_BASE_ID" not-null="true"/>
             <generator class="native"/>
         </id>
 
@@ -38,12 +38,10 @@
 		
 		<!-- Entity fields -->
       
-		<property name="caseNumber" column="CASE_NUMBER"   length="20" />
-		<property name="shortDescription" column="SHORT_DESCRIPTION"   length="200" />
 	    <many-to-one name="customer" class="de.xwic.sandbox.crm.entities.impl.Customer" column="CUSTOMER" not-null="false" lazy="proxy" />
-	    <many-to-one name="reportedBy" class="de.xwic.sandbox.crm.entities.impl.Contact" column="REPORTED_BY" not-null="false" lazy="proxy" />
-		<property name="description" column="DESCRIPTION"    type="materialized_clob"  />
-	    <many-to-one name="severity" class="de.xwic.appkit.core.model.entities.impl.PicklistEntry" column="SEVERITY" not-null="false" lazy="false"/>
+	    <many-to-one name="product" class="de.xwic.sandbox.crm.entities.impl.Product" column="PRODUCT" not-null="false" lazy="proxy" />
+		<property name="serialNr" column="SERIAL_NR"   length="100" />
+		<property name="purchaseDate" column="PURCHASE_DATE" />
       
 		<!-- End entity fields -->
 		

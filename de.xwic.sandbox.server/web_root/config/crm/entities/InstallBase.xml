@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entities>
+	<entity class="de.xwic.sandbox.crm.entities.IInstallBase" autoLoadProperties="true" history="false" defaultDisplayProperty="serialnr">
+		<title>${serialnr}</title>
+		
+		<property name="customer"  required="true" />
+		<property name="product"  required="true" />
+		<property name="serialNr" maxLength="100" required="true" />
+		<property name="purchaseDate"  required="true" />
+
+	</entity>
+</entities>

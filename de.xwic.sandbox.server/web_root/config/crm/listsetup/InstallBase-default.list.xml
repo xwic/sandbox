@@ -1,16 +1,14 @@
 <?xml version="1.0" encoding="iso-8859-1"?>
-<table type="de.xwic.sandbox.crm.entities.ISupportCase" id="default" default-sort="server" queryEntities="false">
+<table type="de.xwic.sandbox.crm.entities.IInstallBase" id="default" default-sort="server" queryEntities="false">
 
 	<action>CREATE</action>
 	<action>EDIT</action>
 	<action>DELETE</action>
 
-	<column id="caseNumber" default="1" width="150"/>
-	<column id="shortDescription" default="1" width="150"/>
 	<column id="customer" default="1" width="150"/>
-	<column id="reportedBy" default="1" width="150"/>
-	<column id="description" default="1" width="150"/>
-	<column id="severity" default="1" width="150"/>
+	<column id="product" default="1" width="150"/>
+	<column id="serialNr" default="1" width="150"/>
+	<column id="purchaseDate" default="1" width="150"/>
 
 	<column id="createdAt" default="0" width="120" />
 	<column id="createdFrom" default="0" width="120" />

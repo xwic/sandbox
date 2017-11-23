@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and 
  * limitations under the License.
  *******************************************************************************/
-package de.xwic.sandbox.crm.ui.cases;
+package de.xwic.sandbox.crm.ui.product;
 
 import de.jwic.base.IControl;
 import de.jwic.base.IControlContainer;
@@ -21,24 +21,23 @@ import de.jwic.base.ImageRef;
 import de.xwic.appkit.webbase.listpage.BasicListPage;
 import de.xwic.appkit.webbase.toolkit.app.Site;
 import de.xwic.appkit.webbase.toolkit.app.SubModule;
-import de.xwic.sandbox.crm.entities.IContact;
-import de.xwic.sandbox.crm.entities.ISupportCase;
+import de.xwic.sandbox.crm.entities.IProduct;
 
 /**
- * Displays a list of support cases.
+ * Displays a list of products.
  */
-public class CasesListSubmodule extends SubModule {
+public class ProductListSubmodule extends SubModule {
 
-	public final static String SCOPE_SMOD_CRM_CASES = "SMOD_CRM_CASES";
+	public final static String SCOPE_SMOD_CRM_PRODUCTS = "SMOD_CRM_PRODUCTS";
 	private final static ImageRef MODULE_ICON = new ImageRef("images/module_icons/address_book.png");
 	
 	/**
 	 * @param site
 	 */
-	public CasesListSubmodule(Site site) {
+	public ProductListSubmodule(Site site) {
 		super(site);
-		setTitle("Support Cases");
-		setDescription("List of support cases.");
+		setTitle("Products");
+		setDescription("A list of products that we sell to our customers.");
 		setDefaultQuickLaunch(true);
 		setIconLarge(MODULE_ICON);
 	}
@@ -50,7 +49,7 @@ public class CasesListSubmodule extends SubModule {
 	 */
 	@Override
 	public IControl createControls(IControlContainer container) {
-		return new BasicListPage(container, "listPage", ISupportCase.class);
+		return new BasicListPage(container, "listPage", IProduct.class);
 	}
 
 }

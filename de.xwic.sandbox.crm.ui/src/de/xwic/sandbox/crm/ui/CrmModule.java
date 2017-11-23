@@ -23,9 +23,9 @@ import de.xwic.appkit.core.dao.ISecurityManager;
 import de.xwic.appkit.webbase.toolkit.app.Module;
 import de.xwic.appkit.webbase.toolkit.app.Site;
 import de.xwic.appkit.webbase.toolkit.app.SubModule;
-import de.xwic.sandbox.crm.ui.cases.CasesListSubmodule;
 import de.xwic.sandbox.crm.ui.contact.ContactListSubmodule;
 import de.xwic.sandbox.crm.ui.customer.CustomerListSubmodule;
+import de.xwic.sandbox.crm.ui.product.ProductListSubmodule;
 
 /**
  * The module represents the entry point for the user. It defines the available sub-modules, which 
@@ -59,8 +59,8 @@ public class CrmModule extends Module {
 		if (securityManager.hasAccess(ContactListSubmodule.SCOPE_SMOD_CRM_CONTACTS)) {		
 			list.add(new ContactListSubmodule(site));
 		}
-		if (securityManager.hasAccess(CasesListSubmodule.SCOPE_SMOD_CRM_CASES)) {		
-			list.add(new CasesListSubmodule(site));
+		if (securityManager.hasAccess(ProductListSubmodule.SCOPE_SMOD_CRM_PRODUCTS)) {		
+			list.add(new ProductListSubmodule(site));
 		}
 		return list;
 	}

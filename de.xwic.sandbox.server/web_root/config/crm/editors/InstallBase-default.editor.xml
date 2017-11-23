@@ -4,7 +4,7 @@
 		xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
 
     <id>default</id>
-    <entity>de.xwic.sandbox.crm.entities.ISupportCase</entity>
+    <entity>de.xwic.sandbox.crm.entities.IInstallBase</entity>
     <script><![CDATA[
 		
 	]]></script>
@@ -25,23 +25,17 @@
 			<composite layout="grid" cols="2" style="padding: 2">
 				<group title="General" layout="grid" cols="2" template="form" colWidth="150;-1">
 					
-					<label property="caseNumber"/>
-					<text property = "caseNumber" template="field"/>
-
-					<label property="shortDescription"/>
-					<text property = "shortDescription" template="field"/>
-
 					<label property="customer"/>
 					<entity property="customer" template="field"/>
 
-					<label property="reportedBy"/>
-					<entity property="reportedBy" template="field"/>
+					<label property="product"/>
+					<entity property="product" template="field"/>
 
-					<label property="description"/>
-					<text property = "description" template="field"/>
+					<label property="serialNr"/>
+					<text property = "serialNr" template="field"/>
 
-					<label property="severity"/>
-					<plCombo property="severity" template="field"/>
+					<label property="purchaseDate"/>
+					<date property="purchaseDate" template="field"/>
 
 
 				</group>

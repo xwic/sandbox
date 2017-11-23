@@ -49,19 +49,24 @@
 			</property>
 		</entity>
 		
-		<entity name="SupportCase" defaultDisplayProperty="caseNumber" table="CRM_SUPPORT_CASE">
-			<property name="caseNumber" type="String" length="20"/>
-			<property name="shortDescription" type="String" length="200" required="true"/>
-			<property name="customer" type="Customer" required="true"/>
-			<property name="reportedBy" type="Contact"/>
+		<entity name="Product" defaultDisplayProperty="name" table="CRM_PRODUCT">
+			<property name="name" type="String" length="200"/>
+			<property name="shortDescription" type="String" length="1000" required="false"/>
 			<property name="description" type="String" length="max"/>
-			<property name="severity" type="IPicklistEntry">
-				<picklistEntry key="p1" defaultTitle="P1"/>
-				<picklistEntry key="p2" defaultTitle="P2"/>
-				<picklistEntry key="p3" defaultTitle="P3"/>
-				<picklistEntry key="p4" defaultTitle="P4"/>
+			<property name="category" type="IPicklistEntry">
+				<picklistEntry key="sw" defaultTitle="Software"/>
+				<picklistEntry key="pc" defaultTitle="PC"/>
+				<picklistEntry key="laptop" defaultTitle="Laptop"/>
+				<picklistEntry key="monitor" defaultTitle="Monitor"/>
 			</property>
 		</entity>
+		
+		<entity name="InstallBase" defaultDisplayProperty="serialnr" table="CRM_INSTALL_BASE">
+			<property name="customer" type="Customer" required="true"/>
+			<property name="product" type="Product" required="true"/>
+			<property name="serialNr" type="String" length="100" required="true"/>
+			<property name="purchaseDate" type="Date" required="true"/>
+		</entity>		
 	
 	</entities>
 	

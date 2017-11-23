@@ -33,7 +33,8 @@
 	<!-- CRM entities -->
 		<mapping resource="de/xwic/sandbox/crm/entities/impl/Customer.hbm.xml"/>
 		<mapping resource="de/xwic/sandbox/crm/entities/impl/Contact.hbm.xml"/>
-		<mapping resource="de/xwic/sandbox/crm/entities/impl/SupportCase.hbm.xml"/>
+		<mapping resource="de/xwic/sandbox/crm/entities/impl/Product.hbm.xml"/>
+		<mapping resource="de/xwic/sandbox/crm/entities/impl/InstallBase.hbm.xml"/>
 		
 	<!-- /CRM entities -->
 	
