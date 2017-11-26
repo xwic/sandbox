@@ -12,6 +12,9 @@ import de.jwic.controls.ToolBar;
 import de.jwic.controls.ToolBarGroup;
 import de.xwic.appkit.webbase.toolkit.app.InnerPage;
 import de.xwic.sandbox.app.samples.basics.BasicExamples;
+import de.xwic.sandbox.app.samples.pojo.MyBean;
+import de.xwic.sandbox.app.samples.pojo.PojoManipulateControl;
+import de.xwic.sandbox.app.samples.pojo.PojoModel;
 
 /**
  * This page contains a collection of examples of how to use JWic.
@@ -57,7 +60,10 @@ public class SamplesPage extends InnerPage {
 		
 		tab = tabStrip.addTab("Basics");
 		new BasicExamples(tab, "basics");
-		
+
+		tab = tabStrip.addTab("Pojo Manipulator");
+		new PojoManipulateControl(tab, "pojo");
+
 	}
 
 	/**

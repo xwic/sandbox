@@ -1,0 +1,10 @@
+#set($bean = $control.myBean)
+
+<div style="width: 400px;">
+	<div style="float: right; width: 90px; padding: 8px; border: 2px solid $bean.color.htmlColor; border-radius: 4px;">
+		$jwic.format("{0,number,currency}", $bean.price) 
+	</div>
+	
+	<h3>$!bean.title</h3>
+	<p>$!bean.description</p>
+</div>
