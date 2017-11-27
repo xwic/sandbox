@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+  <extensions>
+  	<!-- 
+    <extension extensionPointId="MyExtensionPoint" id="myExtension"
+         className="de.xwic.samples.editor.AppsEditorExtension" priority="0">
+      <attribute key="forEntity">de.xwic.samples.model.entities.IApplication</attribute>
+    </extension>
+    -->
+  </extensions>
+</config>
