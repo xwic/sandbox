@@ -30,7 +30,9 @@
 			<entity class="de.xwic.appkit.core.security.IUserSession"/>
 			<entity class="de.xwic.appkit.core.security.IRight"
 				file="common/entities/right.xml" />
-			<entity class="de.xwic.appkit.core.model.entities.IPickliste" />
+			<entity class="de.xwic.appkit.core.model.entities.IPickliste" >
+				<list file="system/listsetup/Picklist.xml" />
+			</entity>
 			<entity class="de.xwic.appkit.core.model.entities.IPicklistEntry" />
 			<entity class="de.xwic.appkit.core.model.entities.IPicklistText" />
 			<entity

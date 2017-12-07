@@ -1,0 +1,48 @@
+$insert.control('errorWarning')
+<div>
+	<table>
+		<tr>
+			<th>Key</th>
+			<td colspan="2">$insert.control('ibKey')</td>
+		</tr>
+		<tr>
+			<th>Sort Index</th>
+			<td>$insert.control('ibSortIndex')</td>
+			<td>$insert.control('chkDisabled')</td>
+		</tr>
+		#foreach($con in $control.pickListTextControls)
+			<tr>
+				$insert.control($con.getName())
+			</tr>
+		#end
+		
+		<tr>
+			<td style=""></td>
+			<td>$insert.control("bAdd")</td>
+		</tr>		
+		<tr>
+			<td colspan="2"></td>
+			<td><div style="float:right">$insert.control('btnSave')</div></td>
+		</tr>
+	</table>
+</div>
+<div class="v-spacer">
+</div>
+<div class="v-spacer">
+	<table>
+		<tr>
+			<td>
+				<img src="icons/information_large.png" title="Info" name="Info"/>
+			</td>
+			<td>
+				<span class="subLabel">
+					Making changes to the Picklists has an immediate effect in the application (the Picklist Cache is automatically reloaded upon making a change). <br>
+					However, if you change the Picklist Entry key or Picklist Text, please make sure to also update them in the code. <br>
+					If you add or delete a Picklist Entry, please make sure to also add them in the code. <br>
+					These are hardcoded in the xml file that describes the entity and the keys are defined as constants in the Interface defining the entity.
+				
+				</span>
+			</td>
+		</tr>
+	</table>
+</div>

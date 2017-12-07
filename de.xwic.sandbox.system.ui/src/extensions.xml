@@ -1,13 +1,19 @@
 <config>
 	<extensions>
-		<!--
-			ENTITY EDITORS 
-		 -->
-		
+		<!-- ENTITY EDITORS -->
+
 		<extension extensionPointId="entityEditors" id="roleEditor"
 			className="de.xwic.sandbox.system.ui.roles.editor.RoleEditorCreator"
 			priority="0">
-			<attribute key="editedEntity">de.xwic.appkit.core.security.IRole</attribute>
+			<attribute key="editedEntity">de.xwic.appkit.core.security.IRole
+			</attribute>
+		</extension>
+
+		<extension extensionPointId="entityEditors" id="picklistEditor"
+			className="de.xwic.sandbox.system.ui.picklist.editor.PicklistEditorCreator"
+			priority="0">
+			<attribute key="editedEntity">de.xwic.appkit.core.model.entities.IPickliste
+			</attribute>
 		</extension>
 	</extensions>
 </config>	

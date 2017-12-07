@@ -23,6 +23,7 @@ import de.xwic.appkit.webbase.toolkit.app.Site;
 import de.xwic.appkit.webbase.toolkit.app.SubModule;
 import de.xwic.sandbox.base.model.SandboxModelConfig;
 import de.xwic.sandbox.base.model.util.ConfigurationUtil;
+import de.xwic.sandbox.system.ui.picklist.PicklistsSubmodule;
 import de.xwic.sandbox.system.ui.roles.RolesSubmodule;
 
 /**
@@ -45,15 +46,18 @@ public class SystemModule extends Module {
 	@Override
 	protected List<SubModule> createSubModules(Site site) {
 		List<SubModule> list = new ArrayList<SubModule>();
-		
-		if (ConfigurationUtil.hasAccess(MitarbeiterListSubmodule.SCOPE_SMOD_SYSTEM_USERS)) {		
+
+		if (ConfigurationUtil.hasAccess(MitarbeiterListSubmodule.SCOPE_SMOD_SYSTEM_USERS)) {
 			list.add(new MitarbeiterListSubmodule(site));
 		}
 
-		if (ConfigurationUtil.hasAccess(SandboxModelConfig.SMOD_SYSTEM_ROLES)) {		
+		if (ConfigurationUtil.hasAccess(SandboxModelConfig.SMOD_SYSTEM_ROLES)) {
 			list.add(new RolesSubmodule(site));
 		}
 
+		if (ConfigurationUtil.hasAccess(SandboxModelConfig.SMOD_SYSTEM_PICKLIST)) {
+			list.add(new PicklistsSubmodule(site));
+		}
 		return list;
 	}
 

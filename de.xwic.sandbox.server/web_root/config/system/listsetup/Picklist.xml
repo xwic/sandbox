@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<table type="de.xwic.appkit.core.model.entities.IPickliste" id="default" default-sort="server" queryEntities="false">
+
+	<action>EDIT</action>
+
+	<column id="key" default="1" width="250"/>
+	<column id="title" default="1" width="250"/>
+	<column id="beschreibung" default="1" width="450"/>
+	<column id="createdAt" default="0" width="140"/>
+	<column id="createdFrom" default="0" width="70"/>
+	<column id="lastModifiedAt" default="0" width="140"/>
+	<column id="lastModifiedFrom" default="0" width="70"/>
+	
+</table>
