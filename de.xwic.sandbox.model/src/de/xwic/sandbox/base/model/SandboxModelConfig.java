@@ -55,6 +55,7 @@ public class SandboxModelConfig {
 	//System
 	public static final String MOD_SYSTEM = "MOD_SYSTEM";
 	public static final String SMOD_SYSTEM_ROLES = "SMOD_SYSTEM_ROLES";
+	public static final String SMOD_SYSTEM_PICKLIST = "SMOD_SYSTEM_PICKLIST";
 
 	/**
 	 * Register all daos and queries here for the model.
