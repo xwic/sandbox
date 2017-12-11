@@ -7,5 +7,11 @@
       <attribute key="forEntity">de.xwic.sandbox.crm.entities.ICustomer</attribute>
     </extension>
 
+		<extension extensionPointId="entityEditors" id="contactEditor"
+			className="de.xwic.sandbox.crm.ui.contact.editor.ContactEditorCreator"
+			priority="0">
+			<attribute key="editedEntity">de.xwic.sandbox.crm.entities.IContact
+			</attribute>
+		</extension>
   </extensions>
 </config>
