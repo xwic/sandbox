@@ -18,7 +18,9 @@ package de.xwic.sandbox.app;
 
 import java.util.Iterator;
 import java.util.Locale;
+import java.util.Map;
 
+import de.jwic.base.IControl;
 import de.jwic.base.Page;
 import de.jwic.base.SessionContext;
 import de.jwic.controls.AnchorLink;
@@ -32,8 +34,11 @@ import de.xwic.appkit.core.dao.DAOSystem;
 import de.xwic.appkit.core.security.IUser;
 import de.xwic.appkit.core.util.DateFormatter;
 import de.xwic.appkit.webbase.core.Platform;
+import de.xwic.appkit.webbase.entityselection.EntityComboSelector;
 import de.xwic.appkit.webbase.prefstore.IPreferenceStore;
+import de.xwic.appkit.webbase.toolkit.app.EditorToolkit;
 import de.xwic.appkit.webbase.toolkit.app.ExtendedApplication;
+import de.xwic.appkit.webbase.toolkit.app.IToolkitControlHelper;
 import de.xwic.appkit.webbase.toolkit.app.Module;
 import de.xwic.appkit.webbase.toolkit.app.Site;
 import de.xwic.appkit.webbase.toolkit.login.LoginControl;
@@ -44,6 +49,7 @@ import de.xwic.sandbox.app.home.StartModule;
 import de.xwic.sandbox.base.model.SandboxModelConfig;
 import de.xwic.sandbox.base.model.util.ConfigurationUtil;
 import de.xwic.sandbox.crm.ui.CrmModule;
+import de.xwic.sandbox.crm.ui.util.ToolkitEntitySelectionCombo;
 import de.xwic.sandbox.system.ui.SystemModule;
 
 /**
@@ -51,6 +57,11 @@ import de.xwic.sandbox.system.ui.SystemModule;
  *
  */
 public class SandboxApplication extends ExtendedApplication{
+	
+	static {
+		Map<Class<? extends IControl>, IToolkitControlHelper> allControls = EditorToolkit.allControls;
+		allControls.put(EntityComboSelector.class, new ToolkitEntitySelectionCombo());
+	}
 	
 	private static final String HELP_LINK = "help.link";
 
